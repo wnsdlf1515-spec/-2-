@@ -1,0 +1,2236 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#12625c"><title>다온시 리부트 · 우리 반이 도시를 살린다</title><style>:root{
+  --ink:#193f38;
+  --muted:#60716a;
+  --teal:#12665d;
+  --teal-dark:#104e47;
+  --paper:#f6f4ee;
+  --line:#d9dfd5;
+  --white:#fffefa;
+  --amber:#83591e;
+  --red:#a4393c;
+  --shadow:0 10px 30px #153d3110;
+  font-family:"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+  color:var(--ink);
+  background:var(--paper);
+  font-synthesis:none
+}
+*{
+  box-sizing:border-box
+}
+body{
+  margin:0;
+  font-size:24px;
+  line-height:1.6
+}
+button,input,textarea,select{
+  font:inherit
+}
+button{
+  cursor:pointer;
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:12px 20px;
+  background:var(--white);
+  color:var(--ink);
+  font-weight:700;
+  line-height:1.35;
+  transition:background .12s,box-shadow .12s
+}
+button:hover:not(:disabled){
+  background:#e8eee4
+}
+button:focus-visible,summary:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,[tabindex]:focus-visible{
+  outline:3px solid #dba33d;
+  outline-offset:4px
+}
+button:disabled{
+  opacity:.45;
+  cursor:not-allowed
+}
+button.primary{
+  background:var(--teal);
+  border-color:var(--teal);
+  color:#fff
+}
+button.primary:hover:not(:disabled){
+  background:var(--teal-dark)
+}
+button.secondary{
+  background:transparent;
+  border-color:#a2b8ae
+}
+button.quiet{
+  background:transparent;
+  border-color:transparent;
+  padding:8px 12px
+}
+button.small{
+  font-size:16px;
+  padding:7px 11px;
+  border-radius:8px
+}
+button.full{
+  width:100%
+}
+button.selected-button{
+  background:#dfefe5;
+  border:2px solid var(--teal);
+  color:var(--teal)
+}
+button.remove{
+  font-size:26px;
+  padding:0 7px;
+  border:0;
+  background:none
+}
+p{
+  margin:0 0 18px
+}
+h1,h2,h3{
+  line-height:1.3;
+  letter-spacing:-.035em;
+  word-break:keep-all
+}
+h1{
+  font-size:44px;
+  margin:0 0 24px
+}
+h2{
+  font-size:30px;
+  margin:10px 0 16px
+}
+h3{
+  font-size:28px;
+  margin:10px 0 18px
+}
+em{
+  font-style:normal
+}
+a{
+  color:var(--teal)
+}
+.muted,.caption{
+  color:var(--muted)
+}
+.caption{
+  font-size:16px;
+  line-height:1.7
+}
+.eyebrow{
+  font-size:15px;
+  font-weight:800;
+  letter-spacing:.08em;
+  color:var(--teal)
+}
+.tag{
+  display:inline-flex;
+  font-size:17px;
+  line-height:1.5;
+  padding:5px 12px;
+  border-radius:7px;
+  font-weight:700
+}
+.amber{
+  background:#f4e7ce;
+  color:#73501e
+}
+.green{
+  background:#dcecdf;
+  color:#285c3b
+}
+.negative-text{
+  color:var(--red)
+}
+.coin{
+  font-size:.75em;
+  color:#b38942
+}
+.skip-link{
+  position:fixed;
+  top:-100px;
+  left:12px;
+  background:#fff;
+  padding:10px;
+  z-index:100
+}
+.skip-link:focus{
+  top:12px
+}
+.topbar{
+  max-width:1600px;
+  margin:0 auto;
+  padding:22px 42px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  border-bottom:1px solid var(--line);
+  gap:16px
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:13px;
+  font-size:25px;
+  letter-spacing:-1px;
+  line-height:1.3
+}
+.brand small{
+  display:block;
+  font-size:11px;
+  letter-spacing:.01em;
+  color:var(--muted);
+  margin-top:4px
+}
+.brand-mark{
+  width:40px;
+  height:40px;
+  display:flex;
+  gap:4px;
+  align-items:flex-end;
+  border-bottom:3px solid var(--teal);
+  padding-bottom:4px
+}
+.brand-mark i{
+  width:10px;
+  background:var(--teal);
+  border-radius:3px 3px 0 0;
+  height:28px
+}
+.brand-mark i:nth-child(2){
+  height:37px
+}
+.brand-mark i:nth-child(3){
+  height:20px;
+  background:#bd9257
+}
+.topbar nav{
+  display:flex;
+  gap:6px;
+  font-size:17px
+}
+.home,.game{
+  max-width:1520px;
+  margin:auto;
+  padding:40px 42px
+}
+.home{
+  padding-top:40px
+}
+.live-dot{
+  display:inline-block;
+  width:8px;
+  height:8px;
+  background:#2c8f77;
+  border-radius:50%;
+  margin-right:7px
+}
+.hero-grid{
+  display:grid;
+  grid-template-columns:1fr 1.15fr;
+  gap:42px;
+  align-items:center;
+  margin:38px 0 45px
+}
+.kicker{
+  font-size:19px;
+  color:var(--muted);
+  margin-bottom:18px
+}
+.hero-grid h1{
+  font-size:clamp(40px,4vw,64px);
+  line-height:1.3;
+  letter-spacing:-.065em
+}
+.hero-grid h1 em{
+  color:var(--teal)
+}
+.hero-text{
+  font-size:23px;
+  line-height:1.9;
+  color:#4c6258;
+  margin:24px 0
+}
+.hero-actions{
+  display:flex;
+  gap:12px;
+  margin:28px 0 14px;
+  flex-wrap:wrap
+}
+.hero-actions button{
+  font-size:22px;
+  padding:18px 24px
+}
+.city-card{
+  border:1px solid #d5dfd3;
+  border-radius:24px;
+  background:#e8efe8;
+  padding:25px 22px 20px;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+  position:relative
+}
+.city-label{
+  display:flex;
+  justify-content:space-between;
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:.08em;
+  padding:0 8px
+}
+.city-art{
+  display:block;
+  width:100%;
+  height:auto;
+  margin:8px auto
+}
+.city-art.large{
+  min-height:230px
+}
+.city-card>p{
+  text-align:center;
+  margin:20px 0 10px;
+  font-size:24px;
+  line-height:1.6
+}
+.city-legend{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  flex-wrap:wrap;
+  font-size:12px
+}
+.city-legend i{
+  width:7px;
+  height:7px;
+  display:inline-block;
+  border-radius:50%;
+  margin-right:4px
+}
+.home-facts{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  padding:22px 0;
+  gap:30px
+}
+.home-facts>div{
+  display:flex;
+  flex-direction:column;
+  border-right:1px solid var(--line);
+  padding:0 20px
+}
+.home-facts>div:first-child{
+  padding-left:0
+}
+.home-facts>div:last-child{
+  border:0
+}
+.home-facts strong{
+  font-size:24px
+}
+.home-facts span{
+  font-size:17px;
+  color:var(--muted);
+  margin-top:5px
+}
+.intro-data{
+  margin-top:28px
+}
+.intro-data>p{
+  margin-top:16px
+}
+.intro-data summary{
+  font-size:20px
+}
+.page-footer{
+  max-width:1520px;
+  margin:auto;
+  padding:24px 42px;
+  font-size:13px;
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  color:var(--muted);
+  border-top:1px solid var(--line)
+}
+.goal-guide{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  align-items:center;
+  margin:24px 0
+}
+.goal-guide span{
+  background:#e6eee5;
+  border-radius:8px;
+  padding:5px 12px;
+  font-size:20px
+}
+.restore-note{
+  font-size:17px;
+  border-left:3px solid var(--teal);
+  padding-left:12px
+}
+.game{
+  padding-top:24px;
+  padding-bottom:36px
+}
+.game-heading{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:18px
+}
+.game-heading h1{
+  font-size:34px;
+  margin:6px 0 16px
+}
+.game-heading h1 span{
+  color:var(--muted);
+  font-size:24px;
+  margin-left:15px;
+  font-weight:500
+}
+.clock{
+  display:flex;
+  align-items:center;
+  gap:6px
+}
+.clock>span{
+  font-variant-numeric:tabular-nums;
+  font-size:32px;
+  font-weight:800;
+  padding-right:6px
+}
+.turn-route{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin:8px 0 20px
+}
+.turn-route>span{
+  font-size:15px;
+  color:var(--muted);
+  background:#eceee5;
+  padding:7px 13px;
+  border-radius:8px
+}
+.turn-route>span.current{
+  background:var(--teal);
+  color:white
+}
+.turn-route b{
+  margin-right:5px
+}
+.metrics{
+  display:grid;
+  grid-template-columns:repeat(5,minmax(0,1fr));
+  gap:12px;
+  margin:20px 0 8px
+}
+.metric{
+  background:var(--white);
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:16px 18px;
+  border-top:4px solid var(--dept)
+}
+.metric-name{
+  font-size:21px;
+  font-weight:700;
+  white-space:nowrap;
+  letter-spacing:-.06em
+}
+.metric-value{
+  display:flex;
+  gap:12px;
+  align-items:baseline
+}
+.metric-value strong{
+  font-size:43px;
+  line-height:1.55;
+  letter-spacing:-2px;
+  font-variant-numeric:tabular-nums
+}
+.metric-value>span{
+  font-size:15px;
+  color:var(--muted)
+}
+.metric-value .delta{
+  font-size:21px;
+  font-weight:800;
+  color:var(--teal)
+}
+.metric-value .down{
+  color:var(--red)
+}
+.meter{
+  height:6px;
+  background:#e8ebe2;
+  position:relative;
+  border-radius:4px
+}
+.meter span{
+  height:100%;
+  display:block;
+  background:var(--dept);
+  border-radius:4px
+}
+.meter i{
+  position:absolute;
+  top:-2px;
+  height:10px;
+  border-left:2px solid #102d25
+}
+.metric-target{
+  display:flex;
+  justify-content:space-between;
+  font-size:12px;
+  color:var(--muted);
+  margin-top:8px;
+  gap:4px
+}
+.goal-strip{
+  display:flex;
+  align-items:center;
+  gap:5px;
+  margin-bottom:20px;
+  font-size:16px
+}
+.goal-strip>span{
+  flex:1;
+  color:var(--muted)
+}
+.event-panel{
+  display:grid;
+  grid-template-columns:1.1fr 1fr;
+  gap:30px;
+  background:#fff9ee;
+  border:1px solid #e7dcc5;
+  border-radius:16px;
+  padding:22px 26px;
+  margin:20px 0 32px
+}
+.event-intro h2{
+  font-size:28px;
+  margin:8px 0
+}
+.event-intro p{
+  font-size:20px;
+  margin-bottom:0;
+  color:#675e49
+}
+.event-effects{
+  font-size:19px;
+  border-left:1px solid #e0d6c2;
+  padding-left:26px
+}
+.event-effects>div{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-bottom:8px
+}
+.event-effects>div>b{
+  min-width:80px;
+  font-size:16px
+}
+.event-effects details{
+  font-size:17px
+}
+.event-effects details p{
+  margin-top:8px
+}
+.effect{
+  font-size:17px;
+  display:inline-block;
+  padding:3px 8px;
+  border-radius:6px;
+  color:#285d4a;
+  background:#edf3e8;
+  margin:2px 4px 2px 0;
+  white-space:nowrap;
+  line-height:1.5
+}
+.effect.negative{
+  background:#fae9e4;
+  color:#9d3e39
+}
+.effect b{
+  font-size:1.08em;
+  margin-left:2px
+}
+.meeting-layout{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 305px;
+  gap:24px;
+  align-items:start
+}
+.section-heading{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px
+}
+.section-heading h2{
+  margin:4px 0 16px;
+  font-size:28px
+}
+.hint{
+  font-size:15px;
+  color:var(--muted)
+}
+.department-tabs{
+  display:flex;
+  border-bottom:1px solid var(--line);
+  gap:0;
+  margin:8px 0 16px
+}
+.department-tabs button{
+  flex:1;
+  border:0;
+  border-bottom:3px solid transparent;
+  border-radius:0;
+  background:transparent;
+  font-size:17px;
+  padding:13px 5px;
+  color:var(--muted);
+  word-break:keep-all;
+  letter-spacing:-.04em
+}
+.department-tabs button.active{
+  border-bottom-color:var(--teal);
+  color:var(--teal);
+  font-weight:800
+}
+.department-question{
+  font-size:21px;
+  margin:10px 0 18px;
+  color:#425f52
+}
+.policy-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:18px
+}
+.policy-card{
+  display:flex;
+  flex-direction:column;
+  border:2px solid #dce1d7;
+  border-radius:17px;
+  padding:22px 22px 18px;
+  background:var(--white);
+  box-shadow:0 4px 8px #173b2503;
+  min-width:0
+}
+.policy-card.selected{
+  border-color:var(--teal);
+  box-shadow:0 0 0 2px #cee2d5
+}
+.card-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px
+}
+.card-id{
+  color:var(--dept);
+  font-size:14px;
+  font-weight:800
+}
+.card-top strong{
+  font-size:29px;
+  line-height:1.1
+}
+.card-top small{
+  font-size:14px;
+  margin-left:4px
+}
+.policy-card h3{
+  font-size:28px;
+  margin:20px 0 12px
+}
+.policy-purpose{
+  font-size:24px;
+  line-height:1.7;
+  flex:1
+}
+.card-effects{
+  margin:10px 0 12px;
+  font-size:18px
+}
+.card-effects>div{
+  margin-bottom:12px
+}
+.card-effects dt{
+  font-size:15px;
+  color:var(--muted);
+  font-weight:700;
+  margin-bottom:3px
+}
+.card-effects dd{
+  margin:0
+}
+.card-effects .effect{
+  font-size:18px
+}
+.upkeep{
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  border-top:1px solid var(--line);
+  padding:12px 0;
+  font-size:16px
+}
+.policy-card details{
+  font-size:20px;
+  margin:0 0 20px
+}
+.policy-card details>p{
+  font-size:22px;
+  margin:12px 0
+}
+.policy-card summary{
+  font-size:17px;
+  color:var(--teal)
+}
+summary{
+  cursor:pointer;
+  font-weight:650;
+  line-height:1.5
+}
+summary:hover{
+  color:var(--teal)
+}
+.policy-card>button{
+  margin-top:auto;
+  width:100%;
+  font-size:23px
+}
+.synergy-note{
+  background:#ecf2e7;
+  padding:14px;
+  border-radius:10px;
+  margin:14px 0
+}
+.synergy-note p{
+  margin:8px 0;
+  font-size:21px
+}
+.synergy-note small{
+  display:block;
+  font-size:14px;
+  margin-top:6px
+}
+.locked-reason{
+  font-size:15px;
+  margin:8px 0 0;
+  color:var(--muted)
+}
+.budget-panel{
+  background:#eaf0e7;
+  border:1px solid #d6e0d1;
+  border-radius:16px;
+  padding:22px;
+  position:sticky;
+  top:18px;
+  font-size:18px
+}
+.budget-value{
+  font-size:52px;
+  font-weight:800;
+  line-height:1.4;
+  letter-spacing:-2px
+}
+.budget-value small{
+  font-size:18px;
+  margin-left:7px;
+  font-weight:500
+}
+.budget-equation{
+  font-size:14px;
+  color:var(--muted);
+  margin:2px 0 14px
+}
+.budget-line{
+  display:flex;
+  justify-content:space-between;
+  padding:8px 0;
+  gap:8px
+}
+.budget-line strong{
+  font-size:23px
+}
+.budget-line.balance{
+  border-top:1px solid #cddac8;
+  border-bottom:1px solid #cddac8
+}
+.selection-list{
+  padding:0;
+  list-style:none;
+  margin:16px 0
+}
+.selection-list li{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:8px;
+  font-size:17px;
+  line-height:1.5;
+  margin:10px 0
+}
+.future-budget{
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  padding:13px;
+  background:#dce8d7;
+  border-radius:9px;
+  margin-bottom:18px;
+  font-size:17px
+}
+.future-budget small{
+  display:block;
+  width:100%;
+  color:#506950;
+  font-size:14px
+}
+.input-label{
+  display:block;
+  font-size:17px;
+  font-weight:700
+}
+.input-label span{
+  font-size:12px;
+  font-weight:400;
+  color:var(--muted)
+}
+textarea{
+  width:100%;
+  min-height:100px;
+  padding:12px;
+  border:1px solid #b4c3b7;
+  border-radius:9px;
+  background:var(--white);
+  font-size:20px;
+  line-height:1.6;
+  resize:vertical;
+  color:var(--ink)
+}
+.budget-panel textarea{
+  margin-top:7px;
+  font-size:18px
+}
+.budget-panel .caption{
+  font-size:13px;
+  margin:5px 0 12px
+}
+.active-policies{
+  font-size:15px;
+  margin:14px 0 0
+}
+.active-policies p{
+  margin-top:10px;
+  font-size:16px
+}
+.discussion-prompt{
+  margin:24px 0;
+  padding:20px 22px;
+  border-left:4px solid #90ae88;
+  background:#eef1e8;
+  border-radius:0 10px 10px 0;
+  font-size:21px
+}
+.discussion-prompt p{
+  font-size:21px;
+  margin:4px 0 12px
+}
+.discussion-prompt button{
+  font-size:18px
+}
+.decision-dock{
+  position:sticky;
+  bottom:12px;
+  z-index:4;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  background:#173f38;
+  color:white;
+  border-radius:16px;
+  padding:18px 24px;
+  box-shadow:0 6px 25px #113d3930;
+  margin:20px 0
+}
+.decision-dock>div{
+  display:flex;
+  flex-direction:column
+}
+.decision-dock b{
+  font-size:23px
+}
+.decision-dock span{
+  font-size:15px;
+  color:#d2e3da
+}
+.decision-dock button.primary{
+  background:#f6e0ab;
+  border-color:#f6e0ab;
+  color:#254333;
+  font-size:23px
+}
+.decision-dock button.primary:hover:not(:disabled){
+  background:#ffedc5
+}
+.save-status{
+  font-size:13px;
+  color:var(--muted);
+  text-align:right;
+  margin-top:20px
+}
+.result-title{
+  margin:24px 0
+}
+.result-title h2{
+  font-size:34px;
+  margin:14px 0
+}
+.result-title>p{
+  font-size:22px;
+  color:var(--muted)
+}
+.result-explanation{
+  padding:26px 30px;
+  background:#e5eee3;
+  border:1px solid #cedcc9;
+  border-radius:16px;
+  margin-bottom:24px
+}
+.result-explanation p{
+  font-size:24px
+}
+.result-explanation .question{
+  margin-bottom:0
+}
+.question{
+  font-weight:700;
+  margin-top:20px;
+  color:var(--teal)
+}
+.synergy-result{
+  border-top:1px solid #c5d6c3;
+  padding-top:12px;
+  color:var(--teal)
+}
+.result-budget{
+  display:flex;
+  gap:18px;
+  flex-wrap:wrap;
+  padding:16px 0;
+  font-size:22px
+}
+.table-scroll{
+  overflow-x:auto
+}
+table{
+  width:100%;
+  border-collapse:collapse;
+  text-align:left;
+  background:var(--white);
+  font-size:20px
+}
+caption{
+  text-align:left;
+  padding:14px 0;
+  font-weight:700;
+  font-size:24px
+}
+th,td{
+  padding:13px 16px;
+  border-bottom:1px solid var(--line);
+  vertical-align:top
+}
+thead th{
+  background:#e8eee5;
+  font-size:16px;
+  white-space:nowrap
+}
+tbody th{
+  font-weight:600
+}
+table.ledger{
+  min-width:850px;
+  font-size:20px
+}
+.ledger th:first-child{
+  width:42%;
+  font-size:18px
+}
+.ledger td{
+  text-align:center
+}
+.subtotal{
+  background:#e8eee5;
+  font-weight:800
+}
+.line-kind{
+  display:inline-block;
+  padding:2px 6px;
+  background:#edf0e8;
+  font-size:12px;
+  margin-right:8px;
+  border-radius:4px;
+  vertical-align:middle;
+  white-space:nowrap
+}
+.result-ledger{
+  margin:20px 0;
+  font-size:20px
+}
+.pending{
+  border:1px dashed #a9bda4;
+  border-radius:12px;
+  margin:24px 0;
+  padding:20px 25px
+}
+.pending>div{
+  margin-top:10px
+}
+.pending p{
+  font-size:20px;
+  margin:12px 0 0
+}
+.result-actions{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin:24px 0
+}
+.goal-checks{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:12px;
+  margin:24px 0
+}
+.goal-check{
+  display:flex;
+  flex-direction:column;
+  gap:5px;
+  border:1px solid #cfdcc9;
+  background:#edf4e9;
+  border-radius:12px;
+  padding:16px;
+  font-size:18px
+}
+.goal-check.miss{
+  background:#fff2df;
+  border-color:#e2c8a0
+}
+.goal-check b{
+  font-size:28px
+}
+.goal-check small{
+  font-size:14px;
+  font-weight:500
+}
+.goal-check>span:last-child{
+  font-size:15px
+}
+.comparison,.compare-intro{
+  margin:30px 0;
+  padding:24px;
+  border:1px solid var(--line);
+  border-radius:16px;
+  background:#fffdf6
+}
+.comparison-grid{
+  display:grid;
+  grid-template-columns:repeat(5,minmax(0,1fr));
+  gap:12px;
+  margin:20px 0
+}
+.comparison-grid>div{
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+  font-size:17px
+}
+.comparison-grid b{
+  font-size:25px
+}
+.comparison-grid em{
+  color:var(--teal);
+  font-weight:700
+}
+.comparison p{
+  font-size:22px
+}
+.reflection-label{
+  display:block;
+  font-size:24px;
+  font-weight:700;
+  margin-bottom:12px
+}
+.history-attempt{
+  margin-bottom:32px
+}
+.history-attempt p{
+  font-size:20px
+}
+.history-attempt summary{
+  font-size:21px;
+  margin:15px 0
+}
+.history-attempt details>p{
+  margin:12px 0
+}
+.warning{
+  background:#fff0d6;
+  color:#764b19;
+  border:1px solid #e5c38c;
+  border-radius:10px;
+  padding:14px;
+  font-size:18px;
+  line-height:1.6
+}
+dialog{
+  border:1px solid #d0dbcf;
+  border-radius:18px;
+  padding:0;
+  width:min(1100px,calc(100% - 48px));
+  max-height:88vh;
+  color:var(--ink);
+  background:var(--white);
+  box-shadow:0 30px 80px #12342844
+}
+dialog::backdrop{
+  background:#183d35a8;
+  backdrop-filter:blur(3px)
+}
+.dialog-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  border-bottom:1px solid var(--line);
+  padding:22px 28px;
+  position:sticky;
+  top:0;
+  background:var(--white);
+  z-index:2
+}
+.dialog-head h2{
+  font-size:28px;
+  margin:0
+}
+.dialog-body{
+  padding:26px 28px
+}
+.dialog-body p{
+  font-size:24px
+}
+.dialog-body .caption{
+  font-size:17px
+}
+.dialog-body .result-actions button{
+  font-size:22px
+}
+.dialog-body .metrics{
+  gap:8px
+}
+.dialog-body .metric{
+  padding:12px
+}
+.dialog-body .metric-name{
+  font-size:17px
+}
+.tool-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  margin:24px 0
+}
+.notes-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px
+}
+.notes-grid section{
+  padding:20px;
+  border:1px solid var(--line);
+  border-radius:12px;
+  background:#f5f6ef
+}
+.notes-grid h3{
+  font-size:24px
+}
+.notes-grid label{
+  font-size:18px
+}
+.check-row{
+  display:flex;
+  gap:16px;
+  align-items:center;
+  flex-wrap:wrap;
+  margin:12px 0
+}
+.check-row label{
+  display:flex;
+  gap:8px;
+  align-items:center
+}
+input[type=checkbox]{
+  width:22px;
+  height:22px;
+  accent-color:var(--teal)
+}
+input[type=number]{
+  border:1px solid #a9baaa;
+  border-radius:9px;
+  padding:9px 12px;
+  width:120px;
+  margin:0 10px;
+  color:var(--ink);
+  background:white
+}
+#settings-form>label{
+  display:flex;
+  align-items:center;
+  margin:18px 0
+}
+#settings-form>button{
+  margin-top:12px
+}
+#toast{
+  position:fixed;
+  bottom:30px;
+  left:50%;
+  transform:translateX(-50%) translateY(20px);
+  background:#173f38;
+  color:white;
+  padding:16px 24px;
+  border-radius:12px;
+  z-index:100;
+  box-shadow:var(--shadow);
+  font-size:20px;
+  max-width:90vw;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .15s,transform .15s
+}
+#toast.visible{
+  opacity:1;
+  transform:translateX(-50%)
+}
+.help-steps{
+  padding-left:30px
+}
+.help-steps li{
+  margin:12px 0
+}
+.large-type .policy-purpose,.large-type .policy-card details>p,.large-type .result-explanation p,.large-type .department-question{
+  font-size:28px
+}
+.large-type .metric-name{
+  font-size:24px
+}
+.large-type .metric-value strong{
+  font-size:52px
+}
+.large-type .effect{
+  font-size:21px
+}
+.large-type .budget-panel{
+  font-size:22px
+}
+.large-type .policy-card h3{
+  font-size:32px
+}
+.paper-mode{
+  background:#e8eae4
+}
+.paper-toolbar{
+  position:sticky;
+  top:0;
+  z-index:5;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  padding:18px 32px;
+  background:#f5f5ec;
+  border-bottom:1px solid var(--line)
+}
+.paper-toolbar>div{
+  display:flex;
+  flex-direction:column
+}
+.paper-toolbar span{
+  font-size:14px
+}
+.paper-page{
+  width:210mm;
+  min-height:297mm;
+  margin:20px auto;
+  padding:15mm 17mm 13mm;
+  background:white;
+  color:#18362d;
+  box-shadow:var(--shadow);
+  font-size:11pt;
+  line-height:1.5;
+  position:relative
+}
+.paper-page>header{
+  font-size:8pt;
+  display:flex;
+  justify-content:space-between;
+  border-bottom:1px solid #b4c5b6;
+  padding-bottom:5mm;
+  margin-bottom:7mm
+}
+.paper-page h1{
+  font-size:23pt;
+  margin:0 0 6mm
+}
+.paper-page h2{
+  font-size:13pt;
+  margin:5mm 0 2mm
+}
+.paper-page p{
+  margin:2mm 0 3mm
+}
+.paper-page ol{
+  padding-left:6mm;
+  margin:2mm 0 4mm
+}
+.paper-page li{
+  margin:1.5mm 0
+}
+.paper-page table{
+  font-size:9pt;
+  line-height:1.4;
+  margin:3mm 0
+}
+.paper-page th,.paper-page td{
+  padding:2mm 2.5mm;
+  border:1px solid #c9d2c6
+}
+.paper-page thead th{
+  font-size:9pt;
+  white-space:normal
+}
+.paper-page .paper-small{
+  font-size:9pt
+}
+.paper-page footer{
+  font-size:8pt;
+  border-top:1px solid #cbd4c5;
+  padding-top:3mm;
+  margin-top:6mm
+}
+.paper-callout{
+  padding:3mm;
+  background:#edf3e8;
+  border-left:3px solid var(--teal);
+  margin:4mm 0
+}
+.writing-lines>div{
+  height:7mm;
+  border-bottom:1px solid #ccd6c8
+}
+.cell-space{
+  height:11mm
+}
+.paper-page .writing-lines{
+  margin-bottom:2mm
+}
+@media(min-width:1500px){
+  .meeting-layout{
+    grid-template-columns:minmax(0,1fr) 340px
+  }
+  .policy-card h3{
+    font-size:31px
+  }
+  .policy-purpose{
+    font-size:25px
+  }
+  .policy-card .effect{
+    font-size:19px
+  }
+}
+@media(max-width:1100px){
+  .home,.game{
+    padding:26px 24px
+  }
+  .topbar{
+    padding:18px 24px
+  }
+  .hero-grid{
+    gap:26px;
+    grid-template-columns:1fr 1fr
+  }
+  .hero-grid h1{
+    font-size:43px
+  }
+  .hero-text{
+    font-size:20px
+  }
+  .hero-actions button{
+    font-size:19px;
+    padding:14px 18px
+  }
+  .metric{
+    padding:12px
+  }
+  .metric-name{
+    font-size:18px
+  }
+  .meeting-layout{
+    grid-template-columns:minmax(0,1fr) 265px;
+    gap:18px
+  }
+  .policy-card{
+    padding:16px
+  }
+  .policy-card h3{
+    font-size:25px
+  }
+  .policy-purpose{
+    font-size:22px
+  }
+  .department-tabs button{
+    font-size:15px
+  }
+  .budget-panel{
+    padding:18px
+  }
+  .event-panel{
+    gap:18px;
+    padding:20px
+  }
+  .event-effects{
+    padding-left:18px
+  }
+  .metric-target span{
+    display:none
+  }
+  .large-type .metric-name{
+    font-size:20px
+  }
+}
+@media(max-width:800px){
+  body{
+    font-size:21px
+  }
+  .topbar{
+    padding:15px 18px;
+    flex-wrap:wrap
+  }
+  .topbar nav{
+    font-size:15px
+  }
+  .brand{
+    font-size:23px
+  }
+  .home,.game{
+    padding:22px 18px
+  }
+  .hero-grid{
+    grid-template-columns:1fr;
+    gap:25px;
+    margin-top:24px
+  }
+  .hero-grid h1{
+    font-size:46px
+  }
+  .hero-text{
+    font-size:23px
+  }
+  .city-card{
+    max-width:650px
+  }
+  .home-facts{
+    gap:8px
+  }
+  .home-facts>div{
+    padding:0 10px
+  }
+  .home-facts strong{
+    font-size:20px
+  }
+  .home-facts span{
+    font-size:14px
+  }
+  .page-footer{
+    padding:20px;
+    flex-direction:column;
+    gap:8px
+  }
+  .game-heading{
+    align-items:flex-start;
+    flex-direction:column;
+    gap:0
+  }
+  .game-heading h1{
+    margin-bottom:10px
+  }
+  .clock{
+    margin-bottom:8px
+  }
+  .metrics{
+    grid-template-columns:repeat(5,minmax(0,1fr));
+    gap:5px
+  }
+  .metric{
+    padding:8px 6px;
+    border-radius:9px
+  }
+  .metric-name{
+    font-size:14px;
+    white-space:normal;
+    min-height:42px
+  }
+  .metric-value strong{
+    font-size:32px
+  }
+  .metric-value{
+    gap:4px;
+    flex-wrap:wrap
+  }
+  .metric-value>span{
+    font-size:12px
+  }
+  .metric-value .delta{
+    font-size:16px
+  }
+  .metric-target{
+    font-size:10px
+  }
+  .goal-strip{
+    flex-wrap:wrap;
+    font-size:13px
+  }
+  .goal-strip>span{
+    min-width:100%
+  }
+  .event-panel{
+    grid-template-columns:1fr;
+    padding:18px;
+    gap:16px
+  }
+  .event-effects{
+    border-left:0;
+    border-top:1px solid #e0d6c2;
+    padding:15px 0 0
+  }
+  .meeting-layout{
+    grid-template-columns:1fr
+  }
+  .budget-panel{
+    position:static
+  }
+  .policy-card h3{
+    font-size:26px
+  }
+  .policy-purpose{
+    font-size:23px
+  }
+  .section-heading{
+    align-items:flex-start;
+    flex-direction:column;
+    gap:0
+  }
+  .department-tabs button{
+    font-size:15px
+  }
+  .decision-dock{
+    padding:14px;
+    gap:10px;
+    bottom:5px
+  }
+  .decision-dock span{
+    display:none
+  }
+  .decision-dock b{
+    font-size:18px
+  }
+  .decision-dock button.primary{
+    font-size:18px;
+    padding:12px
+  }
+  .goal-checks{
+    grid-template-columns:repeat(2,1fr)
+  }
+  .comparison-grid{
+    grid-template-columns:repeat(3,1fr)
+  }
+  .result-title h2{
+    font-size:29px
+  }
+  .result-explanation{
+    padding:20px
+  }
+  .result-explanation p{
+    font-size:22px
+  }
+  .result-actions button{
+    font-size:20px
+  }
+  .notes-grid{
+    grid-template-columns:1fr
+  }
+  .dialog-head{
+    padding:18px
+  }
+  .dialog-head h2{
+    font-size:24px
+  }
+  .dialog-body{
+    padding:20px
+  }
+  .dialog-body p{
+    font-size:21px
+  }
+  dialog{
+    width:calc(100% - 24px)
+  }
+  .tool-grid{
+    grid-template-columns:1fr
+  }
+  .paper-toolbar{
+    padding:12px;
+    flex-wrap:wrap
+  }
+  .paper-toolbar>div{
+    display:none
+  }
+  .paper-toolbar button{
+    font-size:18px
+  }
+  .paper-document{
+    overflow-x:auto
+  }
+  .paper-page{
+    margin:10px
+  }
+  .large-type .metric-name{
+    font-size:16px
+  }
+  .large-type .metric-value strong{
+    font-size:35px
+  }
+  .large-type .policy-purpose{
+    font-size:25px
+  }
+  .large-type .effect{
+    font-size:18px
+  }
+}
+@media(max-width:500px){
+  .policy-grid{
+    grid-template-columns:1fr
+  }
+  .department-tabs{
+    overflow-x:auto
+  }
+  .department-tabs button{
+    min-width:72px
+  }
+  .hero-grid h1{
+    font-size:40px
+  }
+  .home-facts{
+    grid-template-columns:1fr;
+    gap:14px
+  }
+  .home-facts>div{
+    border-right:0;
+    padding:0;
+    flex-direction:row;
+    gap:20px;
+    align-items:center
+  }
+  .topbar nav{
+    width:100%;
+    justify-content:space-between
+  }
+  .topbar nav button{
+    padding:6px;
+    font-size:14px
+  }
+  .hero-actions button{
+    font-size:19px
+  }
+  .metric-value>span:not(.delta){
+    display:none
+  }
+  .goal-checks{
+    grid-template-columns:1fr 1fr
+  }
+  .goal-check{
+    font-size:16px
+  }
+  .goal-check b{
+    font-size:24px
+  }
+  .comparison-grid{
+    grid-template-columns:repeat(2,1fr)
+  }
+  .clock{
+    flex-wrap:wrap
+  }
+  .dialog-body .metrics{
+    grid-template-columns:repeat(2,1fr)
+  }
+  .game-heading h1{
+    font-size:30px
+  }
+  .game-heading h1 span{
+    font-size:22px
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  *{
+    transition:none!important;
+    scroll-behavior:auto!important
+  }
+}
+@page{
+  size:A4;
+  margin:0
+}
+@media print{
+  body{
+    background:white!important
+  }
+  .paper-toolbar,.skip-link,#toast,dialog{
+    display:none!important
+  }
+  .paper-page{
+    width:210mm;
+    height:297mm;
+    min-height:0;
+    margin:0;
+    padding:13mm 16mm 11mm;
+    box-shadow:none;
+    break-after:page;
+    overflow:visible;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact
+  }
+  .paper-page:last-child{
+    break-after:auto
+  }
+  .paper-page h1{
+    font-size:21pt
+  }
+  .paper-page table{
+    font-size:8.5pt
+  }
+  .paper-page th,.paper-page td{
+    padding:1.6mm 2mm
+  }
+  .paper-page h2{
+    margin-top:4mm
+  }
+  .paper-page>header{
+    margin-bottom:5mm
+  }
+  .paper-page .cell-space{
+    height:10mm
+  }
+  .paper-page footer{
+    margin-top:4mm
+  }
+  body:not(.paper-mode) .topbar,body:not(.paper-mode) .decision-dock,body:not(.paper-mode) .clock{
+    display:none
+  }
+  body:not(.paper-mode) .game{
+    padding:10mm;
+    max-width:none
+  }
+}
+.arrival-strip{
+  display:flex;
+  gap:10px 20px;
+  flex-wrap:wrap;
+  align-items:center;
+  background:#e8eee4;
+  border-radius:12px;
+  padding:14px 20px;
+  margin:20px 0;
+  font-size:20px
+}
+.arrival-strip>span{
+  font-size:16px;
+  color:var(--muted)
+}
+@media print{
+  .paper-page.student-sheet,.paper-page.reflection-sheet{
+    line-height:1.4
+  }
+  .student-sheet>header,.reflection-sheet>header{
+    padding-bottom:3mm;
+    margin-bottom:3mm
+  }
+  .student-sheet h1,.reflection-sheet h1{
+    margin-bottom:4mm
+  }
+  .student-sheet h2,.reflection-sheet h2{
+    margin:2.5mm 0 1mm
+  }
+  .student-sheet p,.reflection-sheet p{
+    margin:1mm 0 2mm
+  }
+  .student-sheet table,.reflection-sheet table{
+    margin:2mm 0
+  }
+  .student-sheet .paper-callout{
+    margin:2mm 0;
+    padding:2mm
+  }
+  .student-sheet .cell-space,.reflection-sheet .cell-space{
+    height:8mm
+  }
+  .student-sheet .writing-lines>div,.reflection-sheet .writing-lines>div{
+    height:5mm
+  }
+  .student-sheet footer,.reflection-sheet footer{
+    margin-top:3mm;
+    padding-top:2mm
+  }
+}
+</style></head>
+<body><a class="skip-link" href="#main">본문으로 이동</a><div id="app"></div><dialog id="dialog" aria-labelledby="dialog-title"></dialog><div id="toast" role="status" aria-live="polite"></div><input id="import-file" type="file" accept=".json,application/json" hidden><noscript>이 게임은 브라우저의 JavaScript 사용 설정이 필요합니다.</noscript><script>window.DaonRules = {"version":"0.1-draft","metrics":["청년 정착 여건","지역 일자리 기반","가족·돌봄 접근성","고령기 건강·자립","이주·지역 연결"],"initial":[42,48,40,46,44],"trend":[-2,-1,-2,-2,-1],"rounds":3,"initial_reserve":2,"grant_per_round":12,"max_policies_per_round":3,"goal":{"minimum":50,"average":54,"reserve":2,"max_upkeep":5},"cards":[{"id":"Y1","department":"Y","name":"공공임대·빈집 전환","cost":5,"upkeep":1,"now":[8,1,2,0,0],"next":[3,0,0,0,0]},{"id":"Y2","department":"Y","name":"생활권 이동·주거 상담","cost":3,"upkeep":0,"now":[5,1,0,0,2],"next":[0,0,2,0,0]},{"id":"Y3","department":"Y","name":"직주근접 생활거점","cost":4,"upkeep":1,"now":[3,-1,3,0,0],"next":[4,0,4,0,0]},{"id":"E1","department":"E","name":"지역기업 청년 유급훈련","cost":5,"upkeep":1,"now":[3,7,0,0,0],"next":[0,3,0,0,0]},{"id":"E2","department":"E","name":"경력전환·세대협업 일자리","cost":4,"upkeep":0,"now":[0,4,0,4,1],"next":[0,2,0,2,0]},{"id":"E3","department":"E","name":"생활상권·지역조달 협약","cost":3,"upkeep":0,"now":[1,4,0,0,3],"next":[0,2,0,0,0]},{"id":"C1","department":"C","name":"공공돌봄 시간 확대","cost":5,"upkeep":2,"now":[3,-1,8,0,0],"next":[0,2,3,0,0]},{"id":"C2","department":"C","name":"돌봄 공백 연결센터","cost":4,"upkeep":1,"now":[0,2,5,2,0],"next":[0,0,3,0,0]},{"id":"C3","department":"C","name":"일·생활 균형 협약","cost":3,"upkeep":0,"now":[2,0,4,0,2],"next":[0,0,2,0,0]},{"id":"H1","department":"H","name":"방문건강·예방 지원","cost":5,"upkeep":1,"now":[0,0,2,8,0],"next":[0,0,0,3,0]},{"id":"H2","department":"H","name":"통합 건강·이동 거점","cost":4,"upkeep":1,"now":[0,1,3,5,0],"next":[0,0,0,2,0]},{"id":"H3","department":"H","name":"세대연결 생활지원","cost":3,"upkeep":0,"now":[1,0,0,4,3],"next":[0,0,0,2,0]},{"id":"I1","department":"I","name":"다언어 생활·노동 상담","cost":4,"upkeep":1,"now":[0,2,0,0,7],"next":[1,0,0,0,3]},{"id":"I2","department":"I","name":"전입주민·기존주민 공동기획","cost":3,"upkeep":0,"now":[2,0,0,2,4],"next":[0,0,0,0,2]},{"id":"I3","department":"I","name":"공정채용·정착 연계","cost":5,"upkeep":1,"now":[1,4,-1,0,6],"next":[0,3,0,0,2]}],"synergies":[{"pair":["Y1","E1"],"effect":[3,3,0,0,0]},{"pair":["Y3","C2"],"effect":[3,0,3,0,0]},{"pair":["E2","H2"],"effect":[0,3,0,3,0]},{"pair":["C1","I1"],"effect":[0,0,3,0,3]},{"pair":["C3","H3"],"effect":[0,0,2,2,2]},{"pair":["E3","I3"],"effect":[0,3,0,0,3]}],"events":[{"id":"rent","name":"주거비 부담 확대","base":[-4,0,-1,0,0],"mitigated":[-2,0,0,0,0],"protectors":["Y1","Y2","Y3"]},{"id":"care","name":"돌봄 서비스 대기 증가","base":[0,0,-4,-2,0],"mitigated":[0,0,-2,-1,0],"protectors":["C2","H1","H2"]},{"id":"jobs","name":"지역기업 구인·역량 불일치","base":[0,-4,0,-1,0],"mitigated":[0,-2,0,0,0],"protectors":["E1","E2","E3","I3"]},{"id":"heat","name":"폭염과 이동 지원 수요","base":[0,0,-1,-4,0],"mitigated":[0,0,0,-2,0],"protectors":["H1","H2","H3"]},{"id":"arrival","name":"전입 증가와 행정 서비스 수요","base":[0,2,0,0,-4],"mitigated":[0,2,0,0,-1],"protectors":["I1","I2","I3"]},{"id":"bus","name":"생활권 대중교통 감편","base":[-2,0,0,-2,-2],"mitigated":[-1,0,0,-1,-1],"protectors":["Y2","H2","I2"]}],"default_decks":{"Y":["Y1","Y2","Y3"],"E":["E2","E1","E3"],"C":["C2","C3","C1"],"H":["H2","H3","H1"],"I":["I1","I2","I3"]},"default_events":["rent","care","jobs"],"min_policies_per_round":1};
+(function (root, factory) {
+  if (typeof module === 'object' && module.exports) module.exports = factory(require('../design/rules-v0.1.json'));
+  else root.Daon = factory(root.DaonRules);
+})(typeof globalThis !== 'undefined' ? globalThis : this, function (R) {
+  'use strict';
+  const D = Object.keys(R.default_decks);
+  const cards = Object.fromEntries(R.cards.map(c => [c.id, c]));
+  const events = Object.fromEntries(R.events.map(e => [e.id, e]));
+  const clone = x => JSON.parse(JSON.stringify(x));
+  const sum = xs => xs.reduce((a, b) => a + b, 0);
+  const add = (a, b) => a.map((v, i) => v + b[i]);
+  const zero = () => R.metrics.map(() => 0);
+  const insist = (condition, message) => { if (!condition) throw new Error(message); };
+  function shuffled(items, seed) {
+    const list = [...items]; let s = (seed >>> 0) || 1;
+    for (let i = list.length - 1; i > 0; i--) {
+      s ^= s << 13; s ^= s >>> 17; s ^= s << 5; s >>>= 0;
+      const j = s % (i + 1); [list[i], list[j]] = [list[j], list[i]];
+    }
+    return list;
+  }
+  function scenario(seed = null) {
+    return {
+      kind: seed === null ? 'default' : 'random', seed,
+      initial: {metrics: [...R.initial], reserve: R.initial_reserve},
+      decks: Object.fromEntries(D.map((d, i) => [d, seed === null ? [...R.default_decks[d]] : shuffled(R.default_decks[d], seed + 101 * (i + 1))])),
+      events: seed === null ? [...R.default_events] : shuffled(Object.keys(events), seed + 1009).slice(0, R.rounds)
+    };
+  }
+  function initial(sc) { return {metrics: [...sc.initial.metrics], reserve: sc.initial.reserve, active: [], previous: [], synergies: [], turn: 0}; }
+  const upkeep = active => sum(active.map(id => cards[id].upkeep));
+  const funds = state => state.reserve + R.grant_per_round - upkeep(state.active);
+  const hand = (state, sc, d) => sc.decks[d].filter(id => !state.active.includes(id)).slice(0, 2);
+  function selectionError(state, sc, selected) {
+    if (!Array.isArray(selected) || selected.length < R.min_policies_per_round) return '정책을 1장 이상 선택해 주세요.';
+    if (selected.length > R.max_policies_per_round) return '한 턴에는 최대 3장까지 선택할 수 있습니다.';
+    if (selected.some(id => !Object.hasOwn(cards, id))) return '알 수 없는 정책입니다.';
+    if (new Set(selected).size !== selected.length) return '같은 정책을 중복 선택할 수 없습니다.';
+    if (new Set(selected.map(id => cards[id].department)).size !== selected.length) return '한 부서에서는 한 턴에 1장만 선택합니다.';
+    if (selected.some(id => !hand(state, sc, cards[id].department).includes(id))) return '이번 턴에 공개된 미실행 정책만 선택할 수 있습니다.';
+    if (sum(selected.map(id => cards[id].cost)) > funds(state)) return '공동 예산을 초과했습니다. 선택을 조정해 주세요.';
+    if (state.turn >= R.rounds) return '이 도전은 끝났습니다.';
+    return '';
+  }
+  function resolve(state, sc, selected) {
+    const error = selectionError(state, sc, selected); insist(!error, error);
+    const active = [...state.active, ...selected]; const lines = [];
+    const line = (kind, label, vector, ids = []) => lines.push({kind, label, vector: [...vector], ids});
+    state.previous.forEach(id => line('delayed', cards[id].name + ' · 이전 턴에서 도착', cards[id].next, [id]));
+    selected.forEach(id => line('policy', cards[id].name, cards[id].now, [id]));
+    const newSynergies = R.synergies.filter(s => s.pair.every(id => active.includes(id)) && !state.synergies.includes(s.pair.join('+')));
+    newSynergies.forEach(s => line('synergy', s.pair.map(id => cards[id].name).join(' + '), s.effect, s.pair));
+    const event = events[sc.events[state.turn]];
+    const protectors = event.protectors.filter(id => active.includes(id));
+    line('event', event.name + (protectors.length ? ' · 충격 완화' : ' · 기본 영향'), protectors.length ? event.mitigated : event.base, protectors);
+    line('trend', '미해결 서비스 공백·수요 누적', R.trend);
+    const raw = lines.reduce((values, entry) => add(values, entry.vector), [...state.metrics]);
+    const metrics = raw.map(v => Math.max(0, Math.min(100, v)));
+    if (metrics.some((v, i) => v !== raw[i])) line('clamp', '지표 범위 0–100 조정', metrics.map((v, i) => v - raw[i]));
+    const spent = sum(selected.map(id => cards[id].cost));
+    const next = {metrics, reserve: funds(state) - spent, active, previous: [...selected],
+      synergies: [...state.synergies, ...newSynergies.map(s => s.pair.join('+'))], turn: state.turn + 1};
+    return {before: clone(state), after: next, selected: [...selected], lines, eventId: event.id, protectors,
+      budget: {carry: state.reserve, grant: R.grant_per_round, operating: upkeep(state.active), available: funds(state), spent, reserve: next.reserve, nextOperating: upkeep(active)},
+      pending: selected.reduce((v, id) => add(v, cards[id].next), zero()), delta: metrics.map((v, i) => v - state.metrics[i])};
+  }
+  function replay(attempt) {
+    let state = initial(attempt.scenario); const results = [];
+    for (const turn of attempt.turns) { const result = resolve(state, attempt.scenario, turn.selected); results.push(result); state = result.after; }
+    return {state, results};
+  }
+  function goal(state) {
+    const checks = [
+      ...R.metrics.map((name, i) => ({label: name, value: state.metrics[i], target: R.goal.minimum, pass: state.metrics[i] >= R.goal.minimum, gap: Math.max(0, R.goal.minimum - state.metrics[i])})),
+      {label: '생활지표 평균', value: sum(state.metrics) / 5, target: R.goal.average, pass: sum(state.metrics) >= R.goal.average * 5, gap: Math.max(0, R.goal.average - sum(state.metrics) / 5)},
+      {label: '남은 예산', value: state.reserve, target: R.goal.reserve, pass: state.reserve >= R.goal.reserve, gap: Math.max(0, R.goal.reserve - state.reserve)},
+      {label: '이후 운영비', value: upkeep(state.active), target: R.goal.max_upkeep, pass: upkeep(state.active) <= R.goal.max_upkeep, gap: Math.max(0, upkeep(state.active) - R.goal.max_upkeep), upper: true}
+    ];
+    return {success: checks.every(c => c.pass), checks};
+  }
+  const blankNotes = () => ({reason: '', departments: Object.fromEntries(D.map(d => [d, {proposed: false, reviewed: false, text: ''}]))});
+  const attempt = (id, sc) => ({id, scenario: clone(sc), turns: [], phase: 'select', draft: {selected: [], notes: blankNotes()}, reflection: '', undoCount: 0});
+  function session(settings = {}, mode = 'lesson') {
+    return {schemaVersion: 1, rulesVersion: R.version, settings: {minutes: 50, groups: 5, turnSeconds: 240, largeText: false, ...settings}, mode,
+      attempts: [attempt(1, scenario())], audit: []};
+  }
+  const current = s => s.attempts[s.attempts.length - 1];
+  function commit(s) {
+    const next = clone(s); const a = current(next); insist(a.phase === 'select', '이미 확정한 턴입니다.');
+    resolve(replay(a).state, a.scenario, a.draft.selected);
+    a.turns.push(clone(a.draft)); a.phase = a.turns.length === R.rounds ? 'complete' : 'result';
+    a.draft = {selected: [], notes: blankNotes()}; return next;
+  }
+  function advance(s) {
+    const next = clone(s); const a = current(next); insist(a.phase === 'result', '다음 턴으로 이동할 수 없습니다.');
+    a.phase = 'select'; return next;
+  }
+  function undo(s) {
+    const next = clone(s); const a = current(next); insist(a.turns.length > 0, '되돌릴 확정 기록이 없습니다.');
+    a.draft = a.turns.pop(); a.phase = 'select'; a.undoCount++;
+    next.audit.push({attemptId: a.id, action: 'undo', turn: a.turns.length + 1}); return next;
+  }
+  function retry(s, seed = null) {
+    insist(s.mode === 'lesson', '연습을 마친 뒤 본 수업을 시작해 주세요.');
+    const next = clone(s); const a = current(next); insist(a.phase === 'complete', '3턴을 마친 뒤 재도전할 수 있습니다.');
+    insist(next.attempts.length < 50, '기록을 내보낸 뒤 새 수업을 시작해 주세요.');
+    next.attempts.push(attempt(a.id + 1, seed === null ? a.scenario : scenario(seed))); return next;
+  }
+  const sameConditions = (a, b) => JSON.stringify(a.scenario) === JSON.stringify(b.scenario);
+  const cleanString = (s, max = 1000) => { insist(typeof s === 'string' && s.length <= max, '기록의 글자 수나 형식을 확인해 주세요.'); return s; };
+  function cleanNotes(notes) {
+    insist(notes && typeof notes === 'object' && notes.departments, '회의 기록 형식이 올바르지 않습니다.');
+    const out = blankNotes(); out.reason = cleanString(notes.reason);
+    for (const d of D) {
+      const n = notes.departments[d]; insist(n && typeof n.proposed === 'boolean' && typeof n.reviewed === 'boolean', '부서 참여 기록이 올바르지 않습니다.');
+      out.departments[d] = {proposed: n.proposed, reviewed: n.reviewed, text: cleanString(n.text)};
+    }
+    return out;
+  }
+  function cleanScenario(sc) {
+    insist(sc && (sc.kind === 'default' || sc.kind === 'random'), '시나리오 형식이 올바르지 않습니다.');
+    insist(sc.seed === null || (Number.isInteger(sc.seed) && sc.seed >= 0 && sc.seed <= 0xffffffff), '시드 형식이 올바르지 않습니다.');
+    const expected = scenario(sc.seed);
+    insist(sc.kind === expected.kind && JSON.stringify(sc.initial) === JSON.stringify(expected.initial), '초기 도시 상태가 규칙과 다릅니다.');
+    insist(D.every(d => JSON.stringify(sc.decks?.[d]) === JSON.stringify(expected.decks[d])) && JSON.stringify(sc.events) === JSON.stringify(expected.events), '카드 또는 사건 순서가 시나리오와 다릅니다.');
+    return expected;
+  }
+  function parseSave(text) {
+    insist(typeof text === 'string' && text.length <= 2000000, '2MB 이하의 게임 기록 파일을 선택해 주세요.');
+    let data; try { data = JSON.parse(text); } catch { throw new Error('JSON 기록 파일을 읽을 수 없습니다. 원래 기록은 유지됩니다.'); }
+    insist(data && data.schemaVersion === 1 && data.rulesVersion === R.version, '지원하지 않는 기록 버전입니다. 해당 버전의 실행본을 사용해 주세요.');
+    insist(data.mode === 'lesson' || data.mode === 'practice', '수업 모드가 올바르지 않습니다.');
+    const settings = data.settings;
+    for (const [key, min, max] of [['minutes',20,120],['groups',2,10],['turnSeconds',60,600]]) insist(Number.isInteger(settings?.[key]) && settings[key] >= min && settings[key] <= max, '수업 설정의 범위가 올바르지 않습니다.');
+    insist(typeof settings.largeText === 'boolean', '화면 설정이 올바르지 않습니다.');
+    insist(Array.isArray(data.attempts) && data.attempts.length >= 1 && data.attempts.length <= 50, '도전 기록 수가 올바르지 않습니다.');
+    const out = session({minutes:settings.minutes,groups:settings.groups,turnSeconds:settings.turnSeconds,largeText:settings.largeText}, data.mode); out.attempts = [];
+    for (const [index, item] of data.attempts.entries()) {
+      insist(item.id === index + 1 && Array.isArray(item.turns) && item.turns.length <= R.rounds, '턴 또는 도전 번호가 올바르지 않습니다.');
+      const a = attempt(item.id, cleanScenario(item.scenario));
+      for (const turn of item.turns) {
+        const state = replay(a).state; const error = selectionError(state, a.scenario, turn.selected); insist(!error, '저장된 선택 오류: ' + error);
+        a.turns.push({selected: [...turn.selected], notes: cleanNotes(turn.notes)});
+      }
+      insist(['select','result','complete'].includes(item.phase), '진행 단계가 올바르지 않습니다.');
+      insist((item.phase === 'select' && a.turns.length < 3) || (item.phase === 'result' && a.turns.length > 0 && a.turns.length < 3) || (item.phase === 'complete' && a.turns.length === 3), '진행 단계와 턴 기록이 일치하지 않습니다.');
+      if (index < data.attempts.length-1) insist(item.phase === 'complete', '이전 도전이 완료되지 않았습니다.');
+      insist(item.draft && Array.isArray(item.draft.selected) && item.draft.selected.length <= 3, '선택 중인 카드 정보가 올바르지 않습니다.');
+      if (item.draft.selected.length) {
+        insist(item.phase === 'select', '결과 화면에 미확정 선택이 있습니다.');
+        const error = selectionError(replay(a).state, a.scenario, item.draft.selected); insist(!error, error);
+      }
+      a.phase = item.phase; a.draft = {selected: [...item.draft.selected], notes: cleanNotes(item.draft.notes)};
+      a.reflection = cleanString(item.reflection); insist(Number.isInteger(item.undoCount) && item.undoCount >= 0 && item.undoCount <= 10000, '취소 기록이 올바르지 않습니다.'); a.undoCount = item.undoCount;
+      out.attempts.push(a);
+    }
+    insist(Array.isArray(data.audit) && data.audit.length <= 10000, '변경 기록 형식이 올바르지 않습니다.');
+    out.audit = data.audit.map(entry => {
+      insist(entry && entry.action === 'undo' && Number.isInteger(entry.attemptId) && entry.attemptId >= 1 && entry.attemptId <= out.attempts.length && Number.isInteger(entry.turn) && entry.turn >= 1 && entry.turn <= 3, '변경 기록이 올바르지 않습니다.');
+      return {action: 'undo', attemptId: entry.attemptId, turn: entry.turn};
+    });
+    insist(data.mode !== 'practice' || out.attempts.length === 1, '연습 기록에 여러 도전이 있습니다.');
+    return out;
+  }
+  function exportSave(s) {
+    return JSON.stringify({...s, readableResults: s.attempts.map(a => ({attemptId:a.id, ...replay(a)}))}, null, 2);
+  }
+  return {R,D,cards,events,clone,sum,add,zero,shuffled,scenario,initial,upkeep,funds,hand,selectionError,resolve,replay,goal,blankNotes,session,current,commit,advance,undo,retry,sameConditions,parseSave,exportSave};
+});
+
+window.DaonContent = {
+  departments: {
+    Y: {name:'청년·주거부',short:'청년·주거',place:'살기 좋은 집',question:'일자리만 생기면 정착할 수 있을까요?',review:'주거·통근 여건과 연결해 검토해 주세요.',color:'#147d79'},
+    E: {name:'일자리·경제부',short:'일자리·경제',place:'함께 일하는 거리',question:'어떤 일자리와 지역 기반이 필요한가요?',review:'다음 운영비와 인력 확보를 확인해 주세요.',color:'#94612f'},
+    C: {name:'가족·돌봄부',short:'가족·돌봄',place:'틈 없는 돌봄',question:'누구에게 돌봄 공백이 남을까요?',review:'시간·접근성과 돌봄 부담을 살펴봐 주세요.',color:'#ae5265'},
+    H: {name:'고령사회·건강부',short:'고령사회·건강',place:'건강한 일상',question:'건강·이동·사회참여를 함께 보장하나요?',review:'이동과 전문 지원의 접근성을 검토해 주세요.',color:'#557245'},
+    I: {name:'이주·지역연결부',short:'이주·지역연결',place:'모두의 광장',question:'전입자와 기존 주민이 동등하게 참여하나요?',review:'정보·언어·권리의 장벽을 살펴봐 주세요.',color:'#6e5c94'}
+  },
+  cards: {
+    Y1:['주거 비용의 장벽을 낮춰 정착의 선택지를 넓힙니다.','처음 드는 비용과 계속 필요한 관리비를 함께 생각해 보세요.'],
+    Y2:['이동과 주거 정보에 접근하기 어려운 상황을 줄입니다.','주택 공급 자체가 늘어나는 정책은 아닙니다.'],
+    Y3:['일터·주거·돌봄을 가까운 생활권으로 연결합니다.','공사 중 영업 불편으로 일자리 기반 -1. 큰 효과는 다음 턴에 도착합니다.'],
+    E1:['유급 경험과 지역기업의 채용 경로를 연결합니다.','안정적인 일의 질과 살 곳을 함께 마련해야 정착으로 이어집니다.'],
+    E2:['여러 세대의 경력과 숙련이 이어지는 일자리를 만듭니다.','단기 성장보다 참여 기반을 넓힙니다. 건강·이동 여건도 살펴보세요.'],
+    E3:['생활상권과 지역 조달을 연결해 지역 안의 접점을 늘립니다.','작은 효과를 다른 정책과 연결할 수 있을까요?'],
+    C1:['다양한 가족이 필요한 시간에 돌봄을 이용하도록 돕습니다.','인력 재배치로 초기 일자리 매칭 지원 -1. 다음부터 운영비 2가 필요합니다.'],
+    C2:['흩어진 돌봄 서비스를 연결해 이용 공백을 줄입니다.','연결할 실제 서비스와 인력이 충분한지도 살펴보세요.'],
+    C3:['다양한 노동자와 가족의 시간 접근성을 높입니다.','기관과 기업의 협약 이행이 필요합니다. 출산을 의무로 만들지 않습니다.'],
+    H1:['방문과 예방 지원으로 건강한 생활과 자립을 돕습니다.','전문 인력과 지속적인 재원이 필요합니다.'],
+    H2:['건강·이동·돌봄 서비스를 생활 거점에서 연결합니다.','거점에서 먼 주민의 접근도 검토해 보세요.'],
+    H3:['서로 다른 세대가 생활 경험과 지원을 나눕니다.','전문 돌봄을 자원봉사로 대체하는 정책은 아닙니다.'],
+    I1:['언어·정보 장벽을 줄여 생활 서비스와 노동권에 접근하도록 돕습니다.','통역과 상담 인력을 지속해서 확보해야 합니다.'],
+    I2:['기존 주민과 전입 주민이 함께 생활 정보를 만들고 의사결정에 참여합니다.','주거와 일자리의 구조적 대책도 함께 필요합니다.'],
+    I3:['공정한 채용과 지역 정착의 경로를 연결합니다.','기관 인력 조정기에 돌봄 접수 대응 -1. 이주민이 아닌 제도의 준비 부족을 나타냅니다.']
+  },
+  synergies: ['일과 살 곳, 정착의 두 장벽을 함께 줄였습니다.','가까운 생활권과 돌봄 연결이 함께 작동합니다.','건강·이동 지원이 사회·경제활동 참여를 돕습니다.','서비스를 늘리고 이용 정보의 장벽도 줄였습니다.','시간 여건과 세대 간 생활 지원을 함께 확보했습니다.','공정한 참여 경로와 지역 경제의 접점을 연결했습니다.'],
+  events: {
+    rent:'주거비 부담이 자립과 가족의 생활 계획을 어렵게 합니다.',
+    care:'접수·연결·방문 서비스의 병목으로 돌봄 대기가 늘어납니다. 운영시간 확대만으로는 이 사건의 병목이 해소되지 않습니다.',
+    jobs:'기업이 찾는 역량과 주민이 가진 기회가 잘 연결되지 않습니다.',
+    heat:'폭염으로 건강·이동 지원이 더 필요해집니다.',
+    arrival:'전입은 새로운 참여와 경제활동의 기회입니다. 행정이 언어·정보·서비스 수요에 대응해야 합니다.',
+    bus:'생활권 교통편이 줄어 이동과 서비스 접근이 어려워집니다.'
+  }
+};
+
+window.DaonMaterials = {
+  render(E,C) {
+    const {R,D}=E;
+    const fx=v=>v.map((n,i)=>n?D[i]+(n>0?'+':'')+n:'').filter(Boolean).join(' · ')||'—';
+    const legend='Y 청년 정착 · E 일자리 기반 · C 돌봄 접근 · H 건강·자립 · I 이주·지역 연결';
+    const page=(title,sub,body)=>`<article class="paper-page ${sub.includes('학생용')?'student-sheet':title.includes('퇴장표')?'reflection-sheet':''}"><header><span>다온시 리부트 · 수업 자료 v0.2</span><span>${sub}</span></header><h1>${title}</h1>${body}<footer>인구 자료·효과 수치는 수업용 가정입니다. 실제 미래를 예측하지 않습니다.</footer></article>`;
+    const ruled=(n=2)=>'<div class="writing-lines">'+Array.from({length:n},()=>'<div></div>').join('')+'</div>';
+    const table=(head,rows)=>`<table><thead><tr>${head.map(x=>`<th>${x}</th>`).join('')}</tr></thead><tbody>${rows.map(r=>`<tr>${r.map(x=>`<td>${x}</td>`).join('')}</tr>`).join('')}</tbody></table>`;
+    const stages=[['0–6분','도시 소개·원인 연결','주거·고용·돌봄 → 선택의 제약 / 인구 이동 → 지역 서비스 변화'],['6–9분','1턴 연습·역할 확인','비용·다음 운영비·지연 효과 읽기, 기록은 본 도전과 분리'],['9–21분','1차 도전: 4분×3턴','부서 제안과 교차 검토, 예산 안에서 1–3장 결정'],['21–25분','결과 진단·수정 가설','유지 1개, 바꿀 선택·순서 1개, 예상 이유'],['25–37분','같은 조건 2차 도전','초기값·카드 덱·사건 순서 유지, 자동 보상 없음'],['37–45분','비교·현실 전이 토론','무엇을 바꿨고 어떤 조건 때문에 달라졌는가?'],['45–48분','개인 퇴장표','인과 연결, 상충, 실제로 더 확인할 자료'],['48–50분','지연 흡수·정리','기록 수합·파일 내보내기']];
+    const lesson=page('50분 공개수업 지도안','교사용 · 1',`<p><b>통합사회2 · 미래와 지속가능한 삶 · 인구 문제와 해결 방안</b><br>중심 질문: 인구 구조가 변하는 도시에서 누구의 삶도 뒤처지지 않게 하려면?</p><h2>학습 목표</h2><ol><li>주거·고용·돌봄, 저출생, 고령화, 청년 유출·지역 감소 중 세 가지 이상을 연결해 설명한다.</li><li>정책 두 개 이상의 비용·수혜·시차·상충을 비교하고, 다른 부서의 근거를 반영해 제안을 수정한다.</li><li>같은 사건 조건의 두 도전을 비교하고 게임의 가정과 현실에서 확인할 사실을 구분한다.</li></ol>${table(['시간','활동','학생 행동·교사의 질문'],stages)}<h2>한 턴 4분 운영</h2><p>상황 20초 → 모둠 논의 70초 → 5부서 제안 60초 → 협의·입력 50초 → 결과 설명 40초. 각 부서 발표 10초. 개인 근거는 활동지로 함께 드러낸다.</p><h2>평가와 사전 준비</h2><p>근거의 인과 연결, 상충 이해, 타 부서 의견 반영, 수정 이유를 관찰한다. 승리·도전 횟수로 평가하지 않는다. 모둠·역할을 미리 배정하고 활동지를 배부한다. PC·프로젝터·로컬 실행본·필기구 준비. 5개 모둠이 기본이며 역할을 합치거나 나누어 조정한다.</p><p><b>교과서·성취기준:</b> 사용 학교 판본과 원문을 대조해 기입한다. 이 자료에는 확인하지 않은 성취기준 문구·코드를 넣지 않았다.</p>`);
+    const guide=page('교사 진행 대본과 운영 규칙','교사용 · 2',`<h2>수업 시작 전 5분 점검</h2><ol><li>실행본을 내려받아 인터넷을 끊고 열어 본다. 창 크기·전체화면·큰 글씨를 확인한다.</li><li>‘1턴 연습’에서 Y1·C2·I2를 선택한다. 결과 48/50/45/48/47, 잔액 2칩을 확인한다.</li><li>‘연습 마치기’로 돌아온 뒤 본 수업을 시작한다. 5부서 활동지와 개인 기록 공간을 배부한다.</li><li>기록 내보내기·가져오기를 확인한다. 모둠 수가 달라도 다섯 부서 기능은 유지한다.</li></ol><h2>진행 대본</h2><p><b>도입:</b> “인구가 줄거나 나이 구성이 달라질 때, 사람들의 삶을 위해 무엇이 달라져야 할까요?”<br><b>회의:</b> “왜 필요한가요? 다른 정책과 어떤 조건이 연결되나요? 무엇을 포기하거나 보완해야 하나요?”<br><b>미선택 부서:</b> “이 정책이 우리 부서의 관심 영역에는 어떤 영향을 줄까요?”<br><b>결과:</b> “증가·감소를 만든 정책과 조건을 각각 짚어 봅시다.”<br><b>재도전:</b> “같은 조건에서 무엇을 바꾸면 결과가 달라질까요?”<br><b>현실 전이:</b> “이 모형에 빠진 사람과 조건은 무엇인가요? 실제 정책 판단에는 어떤 자료가 더 필요한가요?”</p><h2>필수 규칙</h2><p>첫 이월 2칩 + 매 턴 12칩. 이미 실행한 카드의 운영비를 먼저 낸다. 턴당 1–3장, 부서당 1장, 같은 카드는 도전당 1회. ‘다음 효과’는 다음 턴에 한 번. 시너지는 두 정책이 모인 턴에 한 번. 사건 완화 조건은 선택 전에 공개한다.</p><p>목표: 3턴 뒤 각 지표 50 이상, 평균 54 이상, 잔액 2 이상, 이후 운영비 5 이하. 미달이어도 중도 탈락하지 않는다. 기본 변화는 미해결 서비스 공백의 가정이며, 어떤 집단이 도시를 악화시킨다는 의미가 아니다.</p><h2>합의·시간·실수에 대처</h2><p>합의가 막히면 모둠별 1표, 동수면 근거를 되짚어 교사가 결정한다. 2분 이상 늦으면 2차 각 턴 논의 20초씩 단축하고 버퍼 2분을 쓴다. 비교 토론·퇴장표는 보존한다. 타이머가 끝나도 자동 진행되지 않는다.</p><p>확정 실수는 ‘직전 확정 취소’. 새로고침 뒤 ‘저장한 수업 이어가기’. PC를 바꾸면 JSON 기록을 가져온다. 새 수업은 기록을 지우므로 먼저 내보낸다. ‘새로운 조건’ 결과에는 조건 차이를 명시한다.</p><h2>언어 사용</h2><p>고령자·이주민·특정 성별을 문제 집단으로 지칭하지 않는다. 출산을 의무로 만들지 않는다. 인력 배치의 부작용은 제도 조건의 문제로 설명한다. 모든 인구 배경과 정책 수치는 가정이며 실제 효과 예측이 아니다.</p>`);
+    const departments=D.map((d,i)=>page(C.departments[d].name+' 정책회의 기록지',`학생용 · ${i+3}`,`<p>모둠 ________ 역할: 근거 ______ / 비용·시차 ______ / 영향·형평 ______ / 기록 ______ / 발표 ______<br>턴마다 발표·검토 역할을 바꿉니다. 개인은 발언 전 근거를 한 구절씩 적습니다.</p><div class="paper-callout"><b>${C.departments[d].question}</b><br>정책이 선택되지 않아도: ${C.departments[d].review}</div><h2>우리 부서의 카드</h2><p class="paper-small">${legend} · 비용에 이번 운영 포함, 운영비는 다음 턴부터. 화면에 공개된 카드만 이번 턴에 선택할 수 있습니다.</p>${table(['정책','비용 / 운영','이번 / 다음 1회','판단할 조건'],R.cards.filter(c=>c.department===d).map(c=>[c.id+' '+c.name,c.cost+' / '+c.upkeep,fx(c.now)+'<br>→ '+fx(c.next),C.cards[c.id][1]]))}<h2>모둠별 제안·교차 검토</h2>${table(['도전·턴','우리의 제안과 근거','다른 부서와 연결·우려','선택 여부 / 결과 해석'],[1,2].flatMap(a=>[1,2,3].map(t=>[a+'차 '+t+'턴','<div class="cell-space"></div>','<div class="cell-space"></div>','<div class="cell-space"></div>'])))}<h2>개인의 근거 한 구절</h2><p>“________ 때문에 ________가 어려워진다. 이 정책은 ________를 바꾸지만, ________도 필요하다.”</p>${ruled(2)}<h2>재도전의 수정 가설</h2><p>유지할 선택 / 바꿀 선택·순서 / 예상하는 변화와 이유</p>${ruled(2)}<p class="paper-small">이 기록은 승패 점수표가 아닙니다. 근거 제시와 판단의 변화가 중요한 학습의 증거입니다.</p>`)).join('');
+    const reflection=page('도전 비교와 개인 퇴장표','학생·교사용 · 8',`<p>모둠 ________ · 같은 조건 □ / 다른 조건 □</p>${table(['영역','1차 결과','2차 결과','어떤 선택·조건 때문에 달라졌나요?'],[...R.metrics,'잔액 / 이후 운영비'].map(n=>[n,'','', '<div class="cell-space"></div>']))}<h2>전략 변화 설명</h2><p>우리는 ________을(를) ________로 바꿨다. ________라는 경로로 ________가 달라졌다. 다만 현실에서는 ________ 자료가 더 필요하다.</p>${ruled(3)}<h2>개인 퇴장표</h2><ol><li>오늘 다룬 인구 문제의 원인·영향을 세 요소 이상 화살표로 연결해 보세요.${ruled(2)}</li><li>정책 하나의 장점과 상충 또는 기회비용을 설명해 보세요.${ruled(2)}</li><li>게임 결과를 현실에 적용하기 전에 확인할 사실·자료는 무엇인가요?${ruled(2)}</li></ol><h2>교사 관찰 기준 · 승패와 별개</h2>${table(['관찰 항목','확인할 증거'],[['인과 설명','상황 → 작동 경로 → 예상 영향이 연결되는가'],['정책 비교','비용·시차·대상·상충 중 두 가지 이상을 함께 고려하는가'],['협력·수정','다른 부서의 근거를 듣고 연결 또는 수정 이유를 남겼는가'],['모형 성찰','가정과 실제 사실을 구분하고 추가 자료를 제안하는가']])}`);
+    const policy=page('정책 효과·시너지 설계표','교사·학생 참고 · 9',`<p class="paper-small">${legend}. 단위는 가상의 점수·예산 칩. 빈 효과는 0. ‘다음’은 다음 턴에 한 번만 적용한다. 3턴에서 선택한 카드의 다음 효과는 종료 이후 예정 효과로만 표시한다.</p>${table(['ID·정책','비용','운영비','이번 턴','다음 턴 1회'],R.cards.map(c=>[c.id+' '+c.name,c.cost,c.upkeep,fx(c.now),fx(c.next)]))}<h2>두 정책이 모두 실행된 턴에 한 번만</h2>${table(['정책 조합','추가 효과','작동 원리'],R.synergies.map((s,i)=>[s.pair.join(' + '),fx(s.effect),C.synergies[i]]))}<p>운영비 0은 실제 서비스가 무료라는 뜻이 아닙니다. 기존 인력·예산 안에서 추가 공동 부담이 없다는 모형 가정입니다. 정책의 장단점과 상충 설명은 부서별 카드표를 함께 확인하세요.</p>`);
+    const event=page('사건·초기 상태·목표 설계표','교사·학생 참고 · 10',`<h2>초기 도시</h2><p>가상 인구 10만 명. 0–14세 1만 / 15–64세 6만 / 65세 이상 3만. 직전 1년 출생 500·사망 900·전체 순이동 -300 → 총 -700명. 청년 20–39세 순이동 -600은 전체 -300에 포함되며 다른 연령 순이동 합계는 +300입니다. 이 수치는 창작 배경이며 게임 지표를 인구수로 환산하지 않습니다.</p>${table(['지표','초기','매 턴 기본 변화'],R.metrics.map((m,i)=>[D[i]+' '+m,R.initial[i],R.trend[i]]))}<h2>사건은 턴당 하나, 3턴 중 중복 없음</h2>${table(['사건','기본 효과','대응 정책 중 하나','완화 후 효과'],R.events.map(e=>[e.name,fx(e.base),e.protectors.join(' / '),fx(e.mitigated)]))}<p>이미 실행했거나 이번에 선택한 정책도 완화에 기여합니다. 여러 대응 정책이 있어도 완화 효과는 중첩되지 않습니다. 전입은 기회와 서비스 대응 과제를 함께 나타냅니다. 돌봄 대기 사건은 접수·연결·방문의 병목으로 설정했습니다.</p><h2>공동 목표·예산</h2><p>3턴 종료: 각 지표 ≥50, 평균 ≥54, 잔액 ≥2칩, 이후 운영비 ≤5칩. 최초 이월 2 + 매 턴 12 − 기존 운영비 − 새 정책 비용 = 이월. 같은 정책 재사용 없음. 한 턴 1–3장, 부서당 1장.</p><h2>계산 순서</h2><p>이전 지표 + 직전 턴의 지연 효과 + 이번 즉시 효과 + 새 시너지 + 사건 + 기본 변화 → 전체 합산 후 0–100 제한. 사건 대응은 이번 신규 정책까지 포함합니다. 마지막 턴 이후 지연 효과를 이번 목표에 미리 더하지 않습니다.</p><h2>재도전</h2><p>같은 조건: 초기값·덱 전체 순서·사건 순서 복원, 능력치·예산 보상 없음. 새로운 조건: 덱과 사건을 다시 구성, 비교 시 조건 차이를 표시. 성공 여부보다 수정의 근거를 기록합니다.</p>`);
+    return `<div class="paper-toolbar"><button type="button" data-action="back" class="secondary">← 게임으로</button><div><b>수업 자료 10쪽</b><span>인쇄 대화상자에서 필요한 쪽만 선택할 수 있습니다.</span></div><button type="button" data-action="print" class="primary">인쇄 / PDF 저장</button></div><main id="main" class="paper-document">${lesson}${guide}${departments}${reflection}${policy}${event}</main>`;
+  }
+};
+
+(function () {
+  'use strict';
+  const E=window.Daon, C=window.DaonContent, R=E.R, D=E.D;
+  const app=document.getElementById('app'), dialog=document.getElementById('dialog');
+  const KEY='daon-reboot-v1', BACKUP=KEY+'-previous';
+  let game=null, saved=null, activeDepartment='Y', paper=false, storageError='', startupError='';
+  let clock={remaining:240,running:false,until:0}; let toastId, dialogReturn;
+  const esc=x=>String(x??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+  const signed=n=>(n>0?'+':'')+n;
+  const fmt=n=>Number.isInteger(n)?n:n.toFixed(1);
+  const button=(action,label,cls='',extra='')=>`<button type="button" data-action="${action}" class="${cls}" ${extra}>${label}</button>`;
+  const money=n=>`<span class="coin" aria-hidden="true">◈</span> ${n}`;
+  const effects=v=>v.map((n,i)=>n?`<span class="effect ${n<0?'negative':''}">${esc(C.departments[D[i]].short)} <b>${signed(n)}</b></span>`:'').join('')||'<span class="muted">변화 없음</span>';
+  const names=ids=>ids.map(id=>E.cards[id].name).join(' · ');
+  function notify(message) { const el=document.getElementById('toast');el.textContent=message;el.classList.add('visible');clearTimeout(toastId);toastId=setTimeout(()=>el.classList.remove('visible'),4000); }
+  function store() {
+    try { if(game) localStorage.setItem(KEY,JSON.stringify(game));else localStorage.removeItem(KEY);storageError=''; }
+    catch { storageError='자동 저장을 사용할 수 없습니다. 수업 기록 내보내기로 백업해 주세요.'; }
+    const el=document.getElementById('save-status');if(el) el.textContent=storageError||'이 기기에 자동 저장';
+  }
+  function backup() { try { const old=localStorage.getItem(KEY);if(old)localStorage.setItem(BACKUP,old); }catch{} }
+  try { const raw=localStorage.getItem(KEY);if(raw)saved=E.parseSave(raw); }catch(error) { startupError='자동 저장 기록을 불러오지 못했습니다. 파일 가져오기 또는 이전 백업 복구를 이용해 주세요.'; }
+  function showModal(title,html) {
+    dialogReturn=document.activeElement;
+    dialog.innerHTML=`<div class="dialog-head"><h2 id="dialog-title">${title}</h2>${button('close','닫기','small')}</div><div class="dialog-body">${html}</div>`;
+    if(!dialog.open)dialog.showModal();
+  }
+  function closeModal() { dialog.close();if(dialogReturn?.isConnected)dialogReturn.focus(); }
+  dialog.addEventListener('click',e=>{if(e.target===dialog)closeModal();});
+  function toolbar() {
+    return `<header class="topbar"><div class="brand"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><span>다온시 <b>리부트</b><small>우리 반이 도시를 살린다</small></span></div><nav aria-label="교사 도구">${button('help','진행 안내','quiet')}${button('materials','수업 자료','quiet')}${button('file-menu','저장·설정','quiet')}</nav></header>`;
+  }
+  function city(values=R.initial,large=false) {
+    const tree=(x,y)=>`<g transform="translate(${x} ${y})"><path d="M0 0v23" stroke="#69846c" stroke-width="5"/><circle cy="-7" r="17" fill="#9db49c"/><circle cx="-8" cy="-8" r="10" fill="#b4c8ad"/></g>`;
+    const buildings=D.map((d,i)=>{
+      const good=values[i]>=50, color=good?C.departments[d].color:'#839c98', x=32+i*171;
+      const windows=Array.from({length:6},(_,j)=>`<rect x="${20+(j%3)*27}" y="${66+Math.floor(j/3)*28}" width="14" height="17" rx="2" fill="${good?'#f4d58b':'#d9e4dd'}"/>`).join('');
+      let roof=i===0?`<path d="M-2 53L58 12l61 41" fill="${color}"/>`:i===2?`<path d="M0 50q58-57 116 0" fill="${color}"/>`:`<rect x="-4" y="31" width="124" height="21" rx="5" fill="${color}"/>`;
+      let symbol=i===3?'<path d="M52 65h12v14h14v12H64v14H52V91H38V79h14z" fill="#fff"/>':windows;
+      return `<g transform="translate(${x} ${i%2?42:64})">${roof}<rect y="51" width="116" height="104" rx="5" fill="${color}" opacity=".85"/>${symbol}<rect x="48" y="126" width="22" height="29" rx="3" fill="#f7f2e9"/><rect x="-7" y="158" width="130" height="27" rx="13" fill="${good?'#d8e9de':'#e6e9e0'}"/><text x="58" y="177" text-anchor="middle" fill="#294a43" font-size="17" font-weight="700">${good?'목표선 도달':'보완 중'} · ${values[i]}</text></g>`;
+    }).join('');
+    return `<svg class="city-art ${large?'large':''}" viewBox="0 0 910 310" role="img" aria-label="다온시의 다섯 생활 공간. ${D.map((d,i)=>C.departments[d].short+' '+values[i]+'점').join(', ')}"><rect width="910" height="310" rx="28" fill="#e8efe8"/><circle cx="795" cy="45" r="25" fill="#f3d491"/><path d="M15 250Q290 202 490 246T900 245" fill="none" stroke="#cbdacf" stroke-width="49"/><path d="M15 250Q290 202 490 246T900 245" fill="none" stroke="#f6f5e9" stroke-width="3" stroke-dasharray="12 10"/>${buildings}${tree(175,168)}${tree(505,201)}${tree(875,203)}<g fill="#476d62"><circle cx="327" cy="251" r="5"/><path d="M327 256v15m0-10l-7 7m7-7l7 7" stroke="#476d62" stroke-width="3"/><circle cx="591" cy="271" r="5"/><path d="M591 276v14m0-9l-7 7" stroke="#476d62" stroke-width="3"/></g></svg>`;
+  }
+  function metrics(state,delta=null) {
+    return `<div class="metrics">${D.map((d,i)=>`<article class="metric" style="--dept:${C.departments[d].color}"><div class="metric-name">${C.departments[d].short}</div><div class="metric-value"><strong data-metric="${d}">${state.metrics[i]}</strong>${delta?`<span class="delta ${delta[i]<0?'down':''}">${signed(delta[i])}</span>`:`<span>/ 100</span>`}</div><div class="meter"><span style="width:${state.metrics[i]}%"></span><i style="left:50%"></i></div><div class="metric-target">${state.metrics[i]>=50?'✓ 목표선 도달':'목표까지 '+(50-state.metrics[i])} <span>기준 50</span></div></article>`).join('')}</div>`;
+  }
+  function home() {
+    return `${toolbar()}<main id="main" class="home"><div class="eyebrow"><span class="live-dot"></span> 통합사회 · 인구 문제와 지속가능한 삶</div><div class="hero-grid"><section><p class="kicker">하나의 도시, 다섯 부서, 우리의 결정</p><h1>도시의 내일을<br><em>함께 바꾸는 시간.</em></h1><p class="hero-text">살 곳, 일자리, 돌봄, 건강, 그리고 연결.<br>한정된 예산으로 모두의 삶을 돌보는<br>다온시 정책회의를 시작합니다.</p><div class="hero-actions">${saved?button('resume','저장한 수업 이어가기 →','primary'):button('start','정책회의 시작하기 →','primary')}${button('practice','1턴 연습','secondary')}</div><p class="caption">교사 PC 1대 · 학생 계정 없이 · 인터넷 없이 실행</p>${saved?`<p class="restore-note">${saved.attempts.length}차 도전 · ${E.current(saved).turns.length}턴 확정 기록이 있습니다.</p>`:''}${startupError?`<p class="warning">${startupError}</p>`:''}</section><section class="city-card"><div class="city-label"><span>DAON CITY</span><span>가상 도시 · 인구 10만 명</span></div>${city(R.initial,true)}<div class="city-legend">${D.map(d=>`<span><i style="background:${C.departments[d].color}"></i>${C.departments[d].short}</span>`).join('')}</div><p>인구 구조가 달라져도,<br><b>누구의 삶도 뒤처지지 않도록.</b></p></section></div><div class="home-facts"><div><strong>5개 부서</strong><span>제안하고, 연결하고, 함께 결정</span></div><div><strong>3턴 × 2회</strong><span>같은 조건에서 전략을 바꾸기</span></div><div><strong>50분 수업</strong><span>진행 시간과 모둠 수 조정 가능</span></div></div><details class="intro-data"><summary>다온시의 인구 배경과 공동 목표</summary><p>가상 인구 10만 명 중 0–14세 1만, 15–64세 6만, 65세 이상 3만 명입니다. 직전 1년 출생 500명·사망 900명, 순이동 -300명으로 총 700명 감소했습니다. 청년의 주거·일자리와 모든 세대의 서비스 접근을 함께 살펴봅니다.</p>${goalGuide()}<p>위 인구 자료와 모든 효과 수치는 수업용 가정입니다. 정책 효과를 출산율이나 인구수로 환산하지 않습니다.</p></details></main>${footer()}`;
+  }
+  function footer() { return '<footer class="page-footer">다온시 리부트 · 수업 실행본 v0.2 <span>모든 수치와 사건은 수업용 가정입니다. 승패로 학생을 평가하지 않습니다.</span></footer>'; }
+  function goalGuide() { return '<div class="goal-guide"><b>3턴 뒤 공동 목표</b><span>각 지표 ≥ 50</span><span>평균 ≥ 54</span><span>잔액 ≥ 2칩</span><span>운영비 ≤ 5칩</span></div>'; }
+  function clockHTML() { return `<div class="clock"><span id="clock-display" aria-label="남은 토론 시간">${clockText()}</span>${button('clock',clock.running?'일시 정지':'타이머 시작','small',`aria-label="${clock.running?'타이머 일시 정지':'타이머 시작'}"`)}${button('clock-add','+30초','small')}${button('clock-reset','초기화','small')}</div>`; }
+  const clockText=()=>`${String(Math.floor(clock.remaining/60)).padStart(2,'0')}:${String(clock.remaining%60).padStart(2,'0')}`;
+  function eventPanel(a,state) {
+    const ev=E.events[a.scenario.events[state.turn]], has=ev.protectors.some(id=>state.active.includes(id));
+    return `<section class="event-panel"><div class="event-intro"><span class="tag amber">이번 턴 사건</span><h2>${ev.name}</h2><p>${C.events[ev.id]}</p></div><div class="event-effects"><div><b>기본 영향</b><div>${effects(ev.base)}</div></div><div><b>${has?'✓ 대응 정책 실행 중':'대응하면'}</b><div>${effects(ev.mitigated)}</div></div><details><summary>충격 완화 조건</summary><p>${names(ev.protectors)} 중 하나를 이미 실행했거나 이번에 선택하면 완화됩니다. 중복으로 더 완화되지는 않습니다.</p></details><details><summary>매 턴의 기본 변화</summary><div>${effects(R.trend)}</div><p>미해결된 서비스 공백과 수요 누적의 가정입니다. 인구집단의 책임을 뜻하지 않습니다.</p></details></div></section>`;
+  }
+  function policyCard(id,a,state) {
+    const c=E.cards[id], selected=a.draft.selected.includes(id), reason=E.selectionError(state,a.scenario,[...a.draft.selected,id]);
+    const synergies=R.synergies.map((s,i)=>({...s,index:i})).filter(s=>s.pair.includes(id));
+    const locked=!selected&&Boolean(reason);
+    return `<article class="policy-card ${selected?'selected':''}" style="--dept:${C.departments[c.department].color}" data-card="${id}"><div class="card-top"><span class="card-id">${id} · 정책 제안</span><strong>${money(c.cost)}<small>칩</small></strong></div><h3>${c.name}</h3><p class="policy-purpose">${C.cards[id][0]}</p><dl class="card-effects"><div><dt>이번 턴</dt><dd>${effects(c.now)}</dd></div><div><dt>${state.turn===2?'종료 이후':'다음 턴'} 1회</dt><dd>${effects(c.next)}</dd></div></dl><div class="upkeep">다음 턴부터 운영비 <b>${c.upkeep}칩 / 턴</b></div><details><summary>상충·연계 확인${synergies.length?' · 시너지 '+synergies.length:''}</summary><p>${C.cards[id][1]}</p>${synergies.map(s=>`<div class="synergy-note"><b>${names(s.pair.filter(x=>x!==id))}와 연결</b><p>${C.synergies[s.index]}</p>${effects(s.effect)}<small>두 정책을 실행한 턴에 한 번만 적용</small></div>`).join('')}${c.upkeep===0?'<p class="caption">운영비 0은 기존 예산 안에서 운영한다는 모형 가정입니다.</p>':''}</details>${button('select',selected?'✓ 선택됨 · 취소':'이 정책 선택',selected?'selected-button':'secondary',`data-id="${id}" aria-pressed="${selected}" ${locked?'disabled':''}`)}${locked?`<p class="locked-reason">${esc(reason)}</p>`:''}</article>`;
+  }
+  function selection(a,state) {
+    const selected=a.draft.selected, spent=E.sum(selected.map(id=>E.cards[id].cost)), nextOperating=E.upkeep([...state.active,...selected]);
+    const notes=a.draft.notes, completed=D.filter(d=>notes.departments[d].proposed&&notes.departments[d].reviewed).length;
+    return `${state.previous.length?`<div class="arrival-strip"><b>이번 턴에 도착할 이전 정책의 효과</b><div>${effects(state.previous.reduce((v,id)=>E.add(v,E.cards[id].next),E.zero()))}</div><span>아직 위 지표에 더하지 않았습니다. 결과 공개 때 한 번 반영합니다.</span></div>`:''}${eventPanel(a,state)}<section class="meeting-layout"><div class="policy-area"><div class="section-heading"><div><span class="eyebrow">정책회의</span><h2>어떤 변화를 먼저 만들까요?</h2></div><span class="hint">부서당 1장 · 전체 1–3장</span></div><div class="department-tabs" role="tablist" aria-label="정책 부서">${D.map(d=>`<button role="tab" type="button" data-action="department" data-id="${d}" id="tab-${d}" aria-controls="policy-panel" aria-selected="${activeDepartment===d}" tabindex="${activeDepartment===d?'0':'-1'}" class="${activeDepartment===d?'active':''}">${C.departments[d].short}${selected.some(id=>E.cards[id].department===d)?'<span aria-label="정책 선택됨"> ●</span>':''}</button>`).join('')}</div><div role="tabpanel" id="policy-panel" aria-labelledby="tab-${activeDepartment}" tabindex="0"><p class="department-question">${C.departments[activeDepartment].question}</p><div class="policy-grid">${E.hand(state,a.scenario,activeDepartment).map(id=>policyCard(id,a,state)).join('')}</div></div><div class="discussion-prompt"><b>선택되지 않은 부서도 함께</b><p>${C.departments[activeDepartment].review}</p>${button('notes',`제안·교차 검토 기록 ${completed}/5`,'secondary')}</div></div><aside class="budget-panel" aria-label="공동 예산"><span class="eyebrow">공동 예산</span><div class="budget-value">${money(E.funds(state))}<small>칩</small></div><p class="budget-equation">이월 ${state.reserve} + 배정 12 − 운영비 ${E.upkeep(state.active)}</p><div class="budget-line"><span>선택 비용</span><strong>${spent}칩</strong></div><div class="budget-line balance"><span>선택 후 잔액</span><strong>${E.funds(state)-spent}칩</strong></div><ul class="selection-list">${selected.length?selected.map(id=>`<li><span>${esc(E.cards[id].name)}</span>${button('select','×','remove',`data-id="${id}" aria-label="${E.cards[id].name} 선택 취소"`)}</li>`).join(''):'<li class="muted">아직 선택한 정책이 없습니다.</li>'}</ul><div class="future-budget"><span>${state.turn===2?'종료 이후':'다음 턴'} 운영비</span><b>${nextOperating}칩</b>${state.turn<2?`<small>다음 가용액 ${E.funds(state)-spent+12-nextOperating}칩</small>`:'<small>공동 목표: 5칩 이하</small>'}</div><label for="reason" class="input-label">우리의 선택 근거 <span>선택 사항</span></label><textarea id="reason" data-note="reason" maxlength="1000" placeholder="이 정책이 필요한 이유는…">${esc(notes.reason)}</textarea><p class="caption">종이 활동지에 기록해도 됩니다.</p>${button('preview','교사용 예상 결과','quiet full')}<details class="active-policies"><summary>이미 실행한 정책 ${state.active.length}장</summary><p>${state.active.length?names(state.active):'첫 정책을 함께 결정해 주세요.'}</p></details></aside></section><div class="decision-dock"><div><b>${selected.length} / 3장 선택</b><span>선택 후 잔액 ${E.funds(state)-spent}칩 · 다섯 부서의 의견을 확인하세요.</span></div>${button('confirm-open','정책 확정하고 결과 보기 →','primary',selected.length?'':'disabled')}</div>`;
+  }
+  function ledger(result) {
+    return `<div class="table-scroll"><table class="ledger"><caption>어떤 정책과 조건 때문에 달라졌나요?</caption><thead><tr><th scope="col">변화의 원인</th>${D.map(d=>`<th scope="col">${C.departments[d].short}</th>`).join('')}</tr></thead><tbody><tr class="subtotal"><th scope="row">시작 지표</th>${result.before.metrics.map(v=>`<td>${v}</td>`).join('')}</tr>${result.lines.map(l=>`<tr><th scope="row"><span class="line-kind">${({delayed:'지연',policy:'정책',synergy:'연계',event:'사건',trend:'기본',clamp:'범위'})[l.kind]}</span>${esc(l.label)}</th>${l.vector.map(v=>`<td class="${v<0?'negative-text':''}">${v?signed(v):'—'}</td>`).join('')}</tr>`).join('')}<tr class="subtotal"><th scope="row">최종 지표</th>${result.after.metrics.map(v=>`<td>${v}</td>`).join('')}</tr></tbody></table></div>`;
+  }
+  function explanation(result) {
+    const low=result.after.metrics.map((v,i)=>({v,i})).sort((a,b)=>a.v-b.v)[0];
+    const positive=result.lines.filter(l=>l.vector[low.i]>0), negative=result.lines.filter(l=>l.vector[low.i]<0);
+    const synergy=result.lines.filter(l=>l.kind==='synergy');
+    return `<div class="result-explanation"><span class="eyebrow">변화 읽기</span><h2>${R.metrics[low.i]} ${result.after.metrics[low.i]}점${result.after.metrics[low.i]<50?' · 다음 논의의 출발점':''}</h2><p>${positive.length?positive.map(l=>`${esc(l.label)} ${signed(l.vector[low.i])}`).join(', '):'이 지표를 직접 개선한 효과는 없었습니다.'}${negative.length?`<br>${negative.map(l=>`${esc(l.label)} ${signed(l.vector[low.i])}`).join(', ')}가 반영됐습니다.`:''} 최종 변화는 <b>${signed(result.delta[low.i])}</b>입니다.</p>${synergy.map(l=>`<p class="synergy-result">✦ ${C.synergies[R.synergies.findIndex(s=>s.pair.join('+')===l.ids.join('+'))]}</p>`).join('')}<p class="question">누구에게 도움이 됐나요? 아직 남은 공백은 무엇인가요?</p></div>`;
+  }
+  function resultScreen(a,replayed) {
+    const r=replayed.results.at(-1), complete=a.phase==='complete', goal=E.goal(r.after);
+    return `<section class="result-title"><span class="tag ${complete&&goal.success?'green':'amber'}">${complete?(goal.success?'균형 전환 달성':'전환 목표 미달 · 보완할 조건'):'정책 실행 결과'}</span><h2>${complete?(goal.success?'함께 만든 변화, 다음에도 이어질 수 있을까요?':'이번 선택에서 무엇을 바꿔 볼까요?'):`${r.after.turn}턴, 도시의 생활 여건이 달라졌습니다.`}</h2><p>${names(r.selected)}</p></section>${explanation(r)}${complete?`<section class="goal-checks" aria-label="공동 목표 결과">${goal.checks.map(c=>`<div class="goal-check ${c.pass?'pass':'miss'}"><span>${c.pass?'✓':'↗'} ${c.label}</span><b>${fmt(c.value)} <small>/ ${c.upper?'최대':'최소'} ${c.target}</small></b>${c.pass?'<span>충족</span>':`<span>${fmt(c.gap)} ${c.upper?'초과':'부족'}</span>`}</div>`).join('')}</section>`:''}<div class="result-budget"><b>예산 흐름</b><span>이월 ${r.budget.carry} + 배정 12 − 기존 운영비 ${r.budget.operating} − 새 정책 ${r.budget.spent} = <strong>잔액 ${r.budget.reserve}칩</strong></span><span>이후 운영비 <b>${r.budget.nextOperating}칩 / 턴</b></span></div><details class="result-ledger" open><summary>정책·지연·시너지·사건별 계산 펼쳐 보기</summary>${ledger(r)}</details><div class="pending"><b>${complete?'관찰 기간 이후에 이어질 효과':'다음 턴에 도착할 효과'}</b><div>${effects(r.pending)}</div>${complete?'<p>이번 목표 점수에는 포함되지 않았습니다. 늦게 시작한 장기 정책이 현실에서도 나쁘다는 뜻은 아닙니다.</p>':''}</div>${complete?comparisonSection(a):''}${complete?`<label class="reflection-label" for="reflection">다음 전략: 유지할 것 / 바꿀 것 / 예상 이유</label><textarea id="reflection" data-note="reflection" maxlength="1000" placeholder="다음 도전에서는…">${esc(a.reflection)}</textarea>`:''}<div class="result-actions">${button('undo','직전 확정 취소','secondary')}${game.mode==='practice'?button('end-practice','연습 마치고 처음으로','primary'):complete?`${button('retry-same','같은 조건으로 재도전 →','primary')}${button('retry-new','새로운 조건으로 도전','secondary')}`:button('advance','다음 턴으로 →','primary')}</div>${complete?'<p class="caption">동일 조건 재도전은 예산·능력치 보상 없이 시작합니다. 새로운 조건은 전략 향상의 직접 비교에 쓰지 않습니다.</p>':''}`;
+  }
+  function comparisonSection(a) {
+    if(game.attempts.length<2)return `<section class="compare-intro"><h2>다음 도전의 가설을 세워 주세요.</h2><p>어떤 선택이나 실행 순서를 바꾸면, 어떤 생활 여건이 달라질까요?</p></section>`;
+    const prev=game.attempts.at(-2), before=E.replay(prev).state, after=E.replay(a).state, same=E.sameConditions(prev,a);
+    return `<section class="comparison"><span class="tag ${same?'green':'amber'}">${same?'같은 초기값·카드 덱·사건 순서':'조건 다름 · 전략 효과를 단정하지 않기'}</span><h2>${prev.id}차 → ${a.id}차 도전 비교</h2><div class="comparison-grid">${D.map((d,i)=>`<div><span>${C.departments[d].short}</span><b>${before.metrics[i]} → ${after.metrics[i]}</b><em>${signed(after.metrics[i]-before.metrics[i])}</em></div>`).join('')}</div><p>잔액 ${before.reserve} → ${after.reserve}칩 · 운영비 ${E.upkeep(before.active)} → ${E.upkeep(after.active)}칩</p><div class="table-scroll"><table><thead><tr><th>턴</th><th>${prev.id}차 정책</th><th>${a.id}차 정책</th></tr></thead><tbody>${a.turns.map((t,i)=>`<tr><th>${i+1}</th><td>${esc(names(prev.turns[i].selected))}</td><td>${esc(names(t.selected))}</td></tr>`).join('')}</tbody></table></div><p class="question">무엇을 바꿨고, 어떤 경로로 결과가 달라졌나요? 현실에서는 어떤 자료가 더 필요한가요?</p></section>`;
+  }
+  function playing() {
+    const a=E.current(game), replayed=E.replay(a), state=replayed.state, selecting=a.phase==='select';
+    const shownTurn=selecting?state.turn+1:state.turn;
+    return `${toolbar()}<main id="main" class="game"><div class="game-heading"><div><span class="eyebrow">${game.mode==='practice'?'1턴 연습 · 본 수업 기록과 분리':a.scenario.kind==='default'?'공개수업 기본 시나리오':'새 조건 시나리오 · '+a.scenario.seed}</span><h1>${game.mode==='practice'?'연습 정책회의':a.id+'차 도전'} <span>${shownTurn} / 3턴</span></h1></div>${clockHTML()}</div><div class="turn-route">${a.scenario.events.map((id,i)=>`<span class="${i===shownTurn-1?'current':''}"><b>${i+1}</b> ${E.events[id].name}${i<state.turn?' ✓':''}</span>`).join('')}</div>${metrics(state,selecting?null:replayed.results.at(-1).delta)}<div class="goal-strip"><span>공동 목표: 각 지표 ≥50 · 평균 ≥54 · 잔액 ≥2 · 운영비 ≤5</span>${button('city','도시 모습','quiet small')}${button('history','도전 기록','quiet small')}${selecting&&state.turn>0?button('undo','직전 확정 취소','quiet small'):''}</div>${selecting?selection(a,state):resultScreen(a,replayed)}<p id="save-status" class="save-status">${storageError||'이 기기에 자동 저장'}</p></main>${footer()}`;
+  }
+  function render() {
+    document.body.classList.toggle('large-type',Boolean(game?.settings.largeText||saved?.settings.largeText));
+    document.body.classList.toggle('paper-mode',paper);
+    app.innerHTML=paper?window.DaonMaterials.render(E,C):game?playing():home();
+  }
+  function resetClock() { clock={remaining:game?.settings.turnSeconds||240,running:false,until:0}; }
+  function notesModal() {
+    const notes=E.current(game).draft.notes;
+    showModal('다섯 부서의 제안과 교차 검토',`<p>정책이 선택되지 않아도 검토 의견을 남깁니다. 종이 활동지로 기록하면 체크만 해도 됩니다.</p><div class="notes-grid">${D.map(d=>`<section><h3>${C.departments[d].name}</h3><div class="check-row"><label><input type="checkbox" data-dept="${d}" data-check="proposed" ${notes.departments[d].proposed?'checked':''}> 제안함</label><label><input type="checkbox" data-dept="${d}" data-check="reviewed" ${notes.departments[d].reviewed?'checked':''}> 다른 부서 검토함</label></div><label for="note-${d}">근거·연계·우려 <span class="muted">선택 사항</span></label><textarea id="note-${d}" maxlength="1000" data-dept="${d}" data-dept-text placeholder="어떤 조건을 보완해야 할까요?">${esc(notes.departments[d].text)}</textarea></section>`).join('')}</div>${button('notes-done','기록하고 회의로','primary')}`);
+  }
+  function configure(mode='lesson') {
+    showModal(mode==='practice'?'1턴 연습':'수업 준비',`<p>${mode==='practice'?'정책 선택과 결과 읽기를 한 번 연습합니다. 끝나면 기록을 분리하고 본 수업을 시작합니다.':'학생은 모둠 활동지와 대형 화면으로 참여합니다. 시간은 교사가 직접 조절합니다.'}</p><form id="settings-form"><label>수업 시간 <input name="minutes" type="number" value="50" min="20" max="120" required> 분</label><label>모둠 수 <input name="groups" type="number" value="5" min="2" max="10" required> 개</label><label>턴 타이머 <input name="turnSeconds" type="number" value="240" min="60" max="600" step="10" required> 초</label><p class="caption">모둠 수가 달라도 다섯 부서 기능은 유지합니다. 합치거나 제안·검토팀으로 나누어 배정하세요.</p><label class="check-row"><input type="checkbox" name="largeText"> 큰 글씨 모드</label><button class="primary" type="submit" data-mode="${mode}">시작하기</button></form>`);
+  }
+  function download(text,name,type='application/json') {
+    const url=URL.createObjectURL(new Blob([text],{type}));const a=document.createElement('a');a.href=url;a.download=name;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),5000);
+  }
+  function fileMenu() {
+    showModal('수업 기록과 화면 설정',`<p>자동 저장은 지금 사용하는 브라우저에 남습니다. 다른 PC에서 이어가려면 파일로 내보내세요.</p><div class="tool-grid">${button('export','수업 기록 내보내기','primary',game||saved?'':'disabled')}${button('import','기록 파일 가져오기','secondary')}${button('backup-restore','이전 백업 복구','secondary')}${button('font','큰 글씨 켜기 / 끄기','secondary')}${button('fullscreen','전체화면 전환','secondary')}${button('new-game','새 수업 시작','secondary')}</div><p class="caption">현재 수업 ${game?.settings.minutes||saved?.settings.minutes||50}분 · ${game?.settings.groups||saved?.settings.groups||5}모둠. 파일 가져오기와 새 수업 전에는 기존 자동 저장 기록을 이전 백업으로 보관합니다.</p><p class="warning">${storageError||startupError||'교실 PC의 브라우저 데이터가 지워지면 자동 저장도 사라집니다. 수업 종료 전 기록 파일을 보관하세요.'}</p>`);
+  }
+  function help() { showModal('교사 진행 안내',`<ol class="help-steps"><li><b>상황 20초</b> · 이번 사건과 이전 턴의 변화를 읽습니다.</li><li><b>부서 논의 70초</b> · 각자 근거를 한 구절씩 남깁니다.</li><li><b>제안 60초</b> · 부서별 10초, 다른 정책의 영향도 검토합니다.</li><li><b>공동 선택 50초</b> · 1–3장을 고릅니다. 다음 운영비까지 확인합니다.</li><li><b>결과 40초</b> · 원인을 설명하고 다음 턴으로 이동합니다.</li></ol>${goalGuide()}<p>매 턴 배정 12칩, 최초 이월 2칩. 새 정책의 이번 운영은 도입비에 포함됩니다. 다음 턴부터 운영비를 냅니다. 같은 카드는 도전당 한 번만, 부서당 턴당 한 장입니다.</p><p>3턴을 마친 뒤 4분 동안 수정할 전략을 적고, 같은 조건으로 다시 도전하세요. 성공 여부보다 근거·상충 이해·제안 수정 과정을 관찰합니다.</p><p>타이머는 안내용입니다. 끝나도 자동 확정하지 않습니다. 실수한 확정은 되돌릴 수 있습니다.</p>${button('materials','지도안·부서 활동지·규칙 인쇄','primary')}`); }
+  function history() {
+    showModal('도전별 선택과 판단 기록',game.attempts.map(a=>`<section class="history-attempt"><h3>${a.id}차 도전 ${a.phase==='complete'?(E.goal(E.replay(a).state).success?'· 목표 달성':'· 보완 필요'):'· 진행 중'}</h3><p>${a.scenario.events.map(id=>E.events[id].name).join(' → ')}</p>${a.turns.map((t,i)=>`<details><summary>${i+1}턴 · ${esc(names(t.selected))}</summary><p>공동 근거: ${esc(t.notes.reason||'종이 활동지 또는 구두 논의')}</p>${D.map(d=>`<p><b>${C.departments[d].short}</b> · 제안 ${t.notes.departments[d].proposed?'✓':'미표시'} / 검토 ${t.notes.departments[d].reviewed?'✓':'미표시'}<br>${esc(t.notes.departments[d].text)}</p>`).join('')}${ledger(E.replay(a).results[i])}</details>`).join('')}<p>전략 메모: ${esc(a.reflection||'아직 작성하지 않았습니다.')}</p><p>직전 확정 취소 ${a.undoCount}회 · 취소는 도전 횟수를 늘리지 않습니다.</p></section>`).join(''));
+  }
+  function act(action,el) {
+    if(action==='close') {closeModal();render();return;}
+    if(action==='start')return configure();
+    if(action==='practice') { if(saved) { showModal('저장한 수업이 있습니다','<p>저장한 수업을 먼저 이어가거나 기록을 내보낸 뒤 새 수업에서 연습해 주세요.</p>'+button('resume','저장한 수업 이어가기','primary'));return; }return configure('practice'); }
+    if(action==='resume') {game=E.clone(saved);saved=null;closeModal();resetClock();render();return;}
+    if(action==='help')return help();
+    if(action==='materials') { closeModal();paper=true;clock.running=false;render();window.scrollTo(0,0);return; }
+    if(action==='back') {paper=false;render();window.scrollTo(0,0);return;}
+    if(action==='print')return window.print();
+    if(action==='file-menu')return fileMenu();
+    if(action==='export') {const s=game||saved;if(s)download(E.exportSave(s),`다온시-${s.attempts.length}차-수업기록.json`);return;}
+    if(action==='import') {document.getElementById('import-file').click();return;}
+    if(action==='backup-restore') {
+      const raw=localStorage.getItem(BACKUP);if(!raw)throw new Error('이전 백업이 없습니다. 내보낸 기록 파일을 가져올 수 있습니다.');
+      const parsed=E.parseSave(raw);return showModal('이전 백업 복구',`<p>${parsed.attempts.length}차 도전 기록으로 돌아갑니다. 현재 기록은 파일로 내보낸 뒤 복구할 수 있습니다.</p>${button('export','현재 기록 내보내기','secondary')}${button('backup-apply','백업으로 복구','primary')}`);
+    }
+    if(action==='backup-apply') {const parsed=E.parseSave(localStorage.getItem(BACKUP));backup();game=parsed;saved=null;store();closeModal();resetClock();render();notify('이전 백업을 복구했습니다.');return;}
+    if(action==='font') {if(game){game.settings.largeText=!game.settings.largeText;store();}else if(saved){saved.settings.largeText=!saved.settings.largeText;try{localStorage.setItem(KEY,JSON.stringify(saved));}catch{}}else document.body.classList.toggle('large-type');if(game||saved)render();return;}
+    if(action==='fullscreen') {if(document.fullscreenElement)document.exitFullscreen().catch(()=>notify('전체화면을 종료하지 못했습니다.'));else document.documentElement.requestFullscreen?.().catch(()=>notify('브라우저 전체화면 기능을 사용해 주세요.'));return;}
+    if(action==='new-game')return showModal('새 수업을 시작할까요?',`<p>현재 도전 목록을 새로 시작합니다. 보관할 기록은 먼저 파일로 내보내세요.</p><div class="result-actions">${button('export','현재 기록 내보내기','secondary',game||saved?'':'disabled')}${button('new-apply','새 수업 준비','primary')}</div>`);
+    if(action==='new-apply') {backup();game=null;saved=null;store();resetClock();render();configure();return;}
+    if(!game)return;
+    const a=E.current(game), state=E.replay(a).state;
+    if(action==='department') {activeDepartment=el.dataset.id;render();document.getElementById('tab-'+activeDepartment)?.focus();return;}
+    if(action==='select') {
+      if(a.phase!=='select')return;
+      const id=el.dataset.id;const next=a.draft.selected.includes(id)?a.draft.selected.filter(x=>x!==id):[...a.draft.selected,id];
+      if(next.length){const error=E.selectionError(state,a.scenario,next);if(error)throw new Error(error);}
+      a.draft.selected=next;store();render();return;
+    }
+    if(action==='notes')return notesModal();
+    if(action==='notes-done'){closeModal();store();render();return;}
+    if(action==='preview') {
+      const r=E.resolve(state,a.scenario,a.draft.selected);return showModal('교사용 예상 결과',`<p>학생들이 먼저 원인과 변화를 예상한 뒤 공개해 주세요. 확정 전이므로 도시 상태는 아직 바뀌지 않습니다.</p>${metrics(r.after,r.delta)}${ledger(r)}`);
+    }
+    if(action==='confirm-open') {
+      const error=E.selectionError(state,a.scenario,a.draft.selected);if(error)throw new Error(error);
+      const spent=E.sum(a.draft.selected.map(id=>E.cards[id].cost));
+      return showModal('이 정책 조합으로 실행할까요?',`<p class="confirm-policies">${names(a.draft.selected)}</p><p>도입 비용 <b>${spent}칩</b> · 잔액 <b>${E.funds(state)-spent}칩</b><br>이후 운영비 <b>${E.upkeep([...state.active,...a.draft.selected])}칩 / 턴</b></p><p>선택되지 않은 부서의 검토 의견도 들었나요?</p><div class="result-actions">${button('close','다시 논의하기','secondary')}${button('confirm','확정 · 결과 공개','primary')}</div>`);
+    }
+    if(action==='confirm') {game=E.commit(game);clock.running=false;store();closeModal();render();window.scrollTo(0,0);return;}
+    if(action==='advance') {game=E.advance(game);store();resetClock();activeDepartment='Y';render();window.scrollTo(0,0);return;}
+    if(action==='undo')return showModal('직전 확정을 되돌릴까요?',`<p>직전 정책 실행과 모든 효과를 함께 되돌립니다. 선택·회의 기록은 수정할 수 있게 복원됩니다. 이번 턴에서 새로 선택 중인 내용은 교체됩니다.</p>${button('undo-apply','직전 확정 되돌리기','primary')}`);
+    if(action==='undo-apply'){game=E.undo(game);store();resetClock();closeModal();render();window.scrollTo(0,0);return;}
+    if(action==='retry-same'||action==='retry-new') {
+      let seed=null;
+      if(action==='retry-new'){const bytes=new Uint32Array(1);crypto.getRandomValues(bytes);seed=bytes[0];if(seed===a.scenario.seed)seed=(seed+1)>>>0;}
+      game=E.retry(game,seed);store();resetClock();activeDepartment='Y';render();window.scrollTo(0,0);notify(action==='retry-same'?'같은 초기값·덱·사건 순서로 다시 시작합니다.':'새로운 카드·사건 조건입니다.');return;
+    }
+    if(action==='end-practice'){game=null;saved=null;store();resetClock();render();window.scrollTo(0,0);return;}
+    if(action==='clock'){clock.running=!clock.running;if(clock.running)clock.until=Date.now()+clock.remaining*1000;render();return;}
+    if(action==='clock-add'){clock.remaining+=30;if(clock.running)clock.until+=30000;render();return;}
+    if(action==='clock-reset'){resetClock();render();return;}
+    if(action==='city')return showModal('우리의 선택이 바꾸는 생활 공간',`${city(state.metrics,true)}<p>공간의 색과 표시는 다섯 생활 지표의 목표선 도달 여부를 나타냅니다. 인구 증가나 건물 수를 예측하지 않습니다.</p>${metrics(state)}`);
+    if(action==='history')return history();
+  }
+  document.addEventListener('click',e=>{const el=e.target.closest('[data-action]');if(!el||el.disabled)return;try{act(el.dataset.action,el);}catch(error){notify(error.message);}});
+  document.addEventListener('keydown',e=>{
+    if(e.target.getAttribute('role')==='tab'&&['ArrowLeft','ArrowRight','Home','End'].includes(e.key)){
+      e.preventDefault();let i=D.indexOf(activeDepartment);i=e.key==='Home'?0:e.key==='End'?4:(i+(e.key==='ArrowRight'?1:4))%5;act('department',{dataset:{id:D[i]}});
+    }
+  });
+  document.addEventListener('input',e=>{
+    if(!game)return;const a=E.current(game),el=e.target;
+    if(el.dataset.note==='reason')a.draft.notes.reason=el.value;
+    else if(el.dataset.note==='reflection')a.reflection=el.value;
+    else if(el.hasAttribute('data-dept-text'))a.draft.notes.departments[el.dataset.dept].text=el.value;
+    else if(el.dataset.check)a.draft.notes.departments[el.dataset.dept][el.dataset.check]=el.checked;
+    else return;store();
+  });
+  document.addEventListener('submit',e=>{
+    if(e.target.id!=='settings-form')return;e.preventDefault();
+    const f=new FormData(e.target);backup();game=E.session({minutes:Number(f.get('minutes')),groups:Number(f.get('groups')),turnSeconds:Number(f.get('turnSeconds')),largeText:f.get('largeText')==='on'},e.submitter.dataset.mode);
+    saved=null;store();closeModal();resetClock();activeDepartment='Y';render();window.scrollTo(0,0);
+  });
+  document.getElementById('import-file').addEventListener('change',async e=>{
+    const file=e.target.files[0];e.target.value='';if(!file)return;
+    try {if(file.size>2000000)throw new Error('2MB 이하의 기록 파일을 선택해 주세요.');const parsed=E.parseSave(await file.text());
+      showModal('기록 파일을 불러올까요?',`<p>${parsed.attempts.length}차 도전 · ${E.current(parsed).turns.length}턴 확정 기록입니다. 현재 기록은 이전 백업으로 보관합니다.</p>${button('export','현재 기록 내보내기','secondary',game||saved?'':'disabled')}<button type="button" id="apply-import" class="primary">이 기록으로 이어가기</button>`);
+      document.getElementById('apply-import').onclick=()=>{backup();game=parsed;saved=null;store();closeModal();resetClock();render();notify('기록 파일을 검증하고 복구했습니다.');};
+    }catch(error){notify(error.message);}
+  });
+  setInterval(()=>{
+    if(!clock.running)return;clock.remaining=Math.max(0,Math.ceil((clock.until-Date.now())/1000));
+    const el=document.getElementById('clock-display');if(el)el.textContent=clockText();
+    if(clock.remaining===0){clock.running=false;notify('토론 시간이 끝났습니다. 교사가 다음 진행을 결정해 주세요.');render();}
+  },250);
+  render();
+})();
+</script></body></html>
