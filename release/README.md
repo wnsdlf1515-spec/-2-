@@ -1,3 +1,9 @@
+# 도시 시각화 v0.3
+
+[새 실행본 ZIP 다운로드](https://github.com/wnsdlf1515-spec/-2-/raw/refs/heads/main/release/daon-reboot-v0.3.zip)
+
+압축을 풀고 index.html을 여세요. 도시 지도에 계획·실행 정책과 시너지 연결선이 표시됩니다. 수업 자료와 규칙은 아래 v0.2와 동일합니다.
+
 # 다온시 리부트 v0.2 — 수업용 다운로드
 
 고등학교 통합사회2 인구 문제 공개수업용 협력 정책 게임입니다.
