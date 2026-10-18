@@ -1,0 +1,2654 @@
+[
+  {
+    "scenario": "departure",
+    "seed": 2026,
+    "strategy": "jobs_first",
+    "success": true,
+    "population": 10063,
+    "employment": 4301,
+    "employmentChange": 201,
+    "cash": 20.58,
+    "balance": 2.26,
+    "coverage": 69.8,
+    "health": 60,
+    "events": [
+      "vacancy:oldtown",
+      "enterprise:center",
+      "care_request:oldtown"
+    ],
+    "ending": "정착 기반을 되찾은 도시",
+    "actions": [
+      {
+        "type": "start",
+        "id": "jobs",
+        "district": "oldtown",
+        "turn": 0
+      },
+      {
+        "type": "advance",
+        "turn": 0
+      },
+      {
+        "type": "start",
+        "id": "integration",
+        "district": null,
+        "turn": 1
+      },
+      {
+        "type": "advance",
+        "turn": 1
+      },
+      {
+        "type": "event",
+        "optionId": "connect",
+        "turn": 2
+      },
+      {
+        "type": "start",
+        "id": "houses",
+        "district": "industry",
+        "turn": 2
+      },
+      {
+        "type": "advance",
+        "turn": 2
+      },
+      {
+        "type": "start",
+        "id": "jobs",
+        "district": "industry",
+        "turn": 3
+      },
+      {
+        "type": "advance",
+        "turn": 3
+      },
+      {
+        "type": "event",
+        "optionId": "train",
+        "turn": 4
+      },
+      {
+        "type": "start",
+        "id": "consolidate",
+        "district": "center",
+        "turn": 4
+      },
+      {
+        "type": "advance",
+        "turn": 4
+      },
+      {
+        "type": "advance",
+        "turn": 5
+      },
+      {
+        "type": "event",
+        "optionId": "outreach",
+        "turn": 6
+      },
+      {
+        "type": "advance",
+        "turn": 6
+      },
+      {
+        "type": "advance",
+        "turn": 7
+      }
+    ]
+  },
+  {
+    "scenario": "departure",
+    "seed": 2026,
+    "strategy": "houses_first",
+    "success": false,
+    "population": 9916,
+    "employment": 4113,
+    "employmentChange": 13,
+    "cash": 46.51,
+    "balance": 3.08,
+    "coverage": 70.2,
+    "health": 60.1,
+    "events": [
+      "enterprise:center",
+      "vacancy:oldtown",
+      "care_request:oldtown"
+    ],
+    "ending": "일자리 기반을 다진 도시",
+    "actions": [
+      {
+        "type": "start",
+        "id": "houses",
+        "district": "industry",
+        "turn": 0
+      },
+      {
+        "type": "advance",
+        "turn": 0
+      },
+      {
+        "type": "start",
+        "id": "jobs",
+        "district": "oldtown",
+        "turn": 1
+      },
+      {
+        "type": "advance",
+        "turn": 1
+      },
+      {
+        "type": "event",
+        "optionId": "train",
+        "turn": 2
+      },
+      {
+        "type": "start",
+        "id": "integration",
+        "district": null,
+        "turn": 2
+      },
+      {
+        "type": "advance",
+        "turn": 2
+      },
+      {
+        "type": "start",
+        "id": "consolidate",
+        "district": "center",
+        "turn": 3
+      },
+      {
+        "type": "advance",
+        "turn": 3
+      },
+      {
+        "type": "event",
+        "optionId": "connect",
+        "turn": 4
+      },
+      {
+        "type": "advance",
+        "turn": 4
+      },
+      {
+        "type": "advance",
+        "turn": 5
+      },
+      {
+        "type": "event",
+        "optionId": "outreach",
+        "turn": 6
+      },
+      {
+        "type": "advance",
+        "turn": 6
+      },
+      {
+        "type": "advance",
+        "turn": 7
+      }
+    ]
+  },
+  {
+    "scenario": "departure",
+    "seed": 2026,
+    "strategy": "services",
+    "success": false,
+    "population": 9606,
+    "employment": 3791,
+    "employmentChange": -309,
+    "cash": 39.99,
+    "balance": 2.07,
+    "coverage": 91.7,
+    "health": 85.5,
+    "events": [
+      "enterprise:center",
+      "vacancy:oldtown",
+      "reuse:center"
+    ],
+    "ending": "작아져도 서로를 돌보는 도시",
+    "actions": [
+      {
+        "type": "start",
+        "id": "care",
+        "district": "oldtown",
+        "turn": 0
+      },
+      {
+        "type": "advance",
+        "turn": 0
+      },
+      {
+        "type": "start",
+        "id": "health",
+        "district": null,
+        "turn": 1
+      },
+      {
+        "type": "advance",
+        "turn": 1
+      },
+      {
+        "type": "event",
+        "optionId": "train",
+        "turn": 2
+      },
+      {
+        "type": "start",
+        "id": "consolidate",
+        "district": "industry",
+        "turn": 2
+      },
+      {
+        "type": "advance",
+        "turn": 2
+      },
+      {
+        "type": "start",
+        "id": "consolidate",
+        "district": "oldtown",
+        "turn": 3
+      },
+      {
+        "type": "advance",
+        "turn": 3
+      },
+      {
+        "type": "event",
+        "optionId": "connect",
+        "turn": 4
+      },
+      {
+        "type": "advance",
+        "turn": 4
+      },
+      {
+        "type": "advance",
+        "turn": 5
+      },
+      {
+        "type": "event",
+        "optionId": "share",
+        "turn": 6
+      },
+      {
+        "type": "advance",
+        "turn": 6
+      },
+      {
+        "type": "advance",
+        "turn": 7
+      }
+    ]
+  },
+  {
+    "scenario": "departure",
+    "seed": 2026,
+    "strategy": "concentrated",
+    "success": false,
+    "population": 9581,
+    "employment": 3921,
+    "employmentChange": -179,
+    "cash": 15.88,
+    "balance": -0.12,
+    "coverage": 76.5,
+    "health": 61.4,
+    "events": [
+      "enterprise:center",
+      "vacancy:oldtown",
+      "care_request:oldtown"
+    ],
+    "ending": "다음 선택을 남긴 도시",
+    "actions": [
+      {
+        "type": "start",
+        "id": "jobs",
+        "district": "industry",
+        "turn": 0
+      },
+      {
+        "type": "advance",
+        "turn": 0
+      },
+      {
+        "type": "start",
+        "id": "houses",
+        "district": "industry",
+        "turn": 1
+      },
+      {
+        "type": "advance",
+        "turn": 1
+      },
+      {
+        "type": "event",
+        "optionId": "train",
+        "turn": 2
+      },
+      {
+        "type": "advance",
+        "turn": 2
+      },
+      {
+        "type": "start",
+        "id": "care",
+        "district": "industry",
+        "turn": 3
+      },
+      {
+        "type": "advance",
+        "turn": 3
+      },
+      {
+        "type": "event",
+        "optionId": "connect",
+        "turn": 4
+      },
+      {
+        "type": "start",
+        "id": "consolidate",
+        "district": "industry",
+        "turn": 4
+      },
+      {
+        "type": "advance",
+        "turn": 4
+      },
+      {
+        "type": "advance",
+        "turn": 5
+      },
+      {
+        "type": "event",
+        "optionId": "outreach",
+        "turn": 6
+      },
+      {
+        "type": "advance",
+        "turn": 6
+      },
+      {
+        "type": "advance",
+        "turn": 7
+      }
+    ]
+  },
+  {
+    "scenario": "departure",
+    "seed": 2026,
+    "strategy": "none",
+    "success": false,
+    "population": 9524,
+    "employment": 3738,
+    "employmentChange": -362,
+    "cash": 120.87,
+    "balance": 2.74,
+    "coverage": 67.6,
+    "health": 56.6,
+    "events": [
+      "enterprise:center",
+      "vacancy:oldtown",
+      "care_request:oldtown"
+    ],
+    "ending": "다음 선택을 남긴 도시",
+    "actions": [
+      {
+        "type": "advance",
+        "turn": 0
+      },
+      {
+        "type": "advance",
+        "turn": 1
+      },
+      {
+        "type": "event",
+        "optionId": "train",
+        "turn": 2
+      },
+      {
+        "type": "advance",
+        "turn": 2
+      },
+      {
+        "type": "advance",
+        "turn": 3
+      },
+      {
+        "type": "event",
+        "optionId": "connect",
+        "turn": 4
+      },
+      {
+        "type": "advance",
+        "turn": 4
+      },
+      {
+        "type": "advance",
+        "turn": 5
+      },
+      {
+        "type": "event",
+        "optionId": "outreach",
+        "turn": 6
+      },
+      {
+        "type": "advance",
+        "turn": 6
+      },
+      {
+        "type": "advance",
+        "turn": 7
+      }
+    ]
+  },
+  {
+    "scenario": "departure",
+    "seed": 71,
+    "strategy": "jobs_first",
+    "success": true,
+    "population": 10063,
+    "employment": 4301,
+    "employmentChange": 201,
+    "cash": 20.58,
+    "balance": 2.26,
+    "coverage": 69.8,
+    "health": 61.6,
+    "events": [
+      "medical:center",
+      "employment:center",
+      "vacancy:industry"
+    ],
+    "ending": "정착 기반을 되찾은 도시",
+    "actions": [
+      {
+        "type": "start",
+        "id": "jobs",
+        "district": "oldtown",
+        "turn": 0
+      },
+      {
+        "type": "advance",
+        "turn": 0
+      },
+      {
+        "type": "start",
+        "id": "integration",
+        "district": null,
+        "turn": 1
+      },
+      {
+        "type": "advance",
+        "turn": 1
+      },
+      {
+        "type": "event",
+        "optionId": "route",
+        "turn": 2
+      },
+      {
+        "type": "start",
+        "id": "houses",
+        "district": "industry",
+        "turn": 2
+      },
+      {
+        "type": "advance",
+        "turn": 2
+      },
+      {
+        "type": "start",
+        "id": "jobs",
+        "district": "industry",
+        "turn": 3
+      },
+      {
+        "type": "advance",
+        "turn": 3
+      },
+      {
+        "type": "event",
+        "optionId": "care_training",
+        "turn": 4
+      },
+      {
+        "type": "start",
+        "id": "consolidate",
+        "district": "center",
+        "turn": 4
+      },
+      {
+        "type": "advance",
+        "turn": 4
+      },
+      {
+        "type": "advance",
+        "turn": 5
+      },
+      {
+        "type": "event",
+        "optionId": "connect",
+        "turn": 6
+      },
+      {
+        "type": "advance",
+        "turn": 6
+      },
+      {
+        "type": "advance",
+        "turn": 7
+      }
+    ]
+  },
+  {
+    "scenario": "departure",
+    "seed": 71,
+    "strategy": "houses_first",
+    "success": false,
+    "population": 9916,
+    "employment": 4113,
+    "employmentChange": 13,
+    "cash": 46.51,
+    "balance": 3.08,
+    "coverage": 70.2,
+    "health": 60.1,
+    "events": [
+      "vacancy:industry",
+      "employment:oldtown",
+      "care_request:industry"
+    ],
+    "ending": "일자리 기반을 다진 도시",
+    "actions": [
+      {
+        "type": "start",
+        "id": "houses",
+        "district": "industry",
+        "turn": 0
+      },
+      {
+        "type": "advance",
+        "turn": 0
+      },
+      {
+        "type": "start",
+        "id": "jobs",
+        "district": "oldtown",
+        "turn": 1
+      },
+      {
+        "type": "advance",
+        "turn": 1
+      },
+      {
+        "type": "event",
+        "optionId": "connect",
+        "turn": 2
+      },
+      {
+        "type": "start",
+        "id": "integration",
+        "district": null,
+        "turn": 2
+      },
+      {
+        "type": "advance",
+        "turn": 2
+      },
+      {
+        "type": "start",
+        "id": "consolidate",
+        "district": "center",
+        "turn": 3
+      },
+      {
+        "type": "advance",
+        "turn": 3
+      },
+      {
+        "type": "event",
+        "optionId": "care_training",
+        "turn": 4
+      },
+      {
+        "type": "advance",
+        "turn": 4
+      },
+      {
+        "type": "advance",
+        "turn": 5
+      },
+      {
+        "type": "event",
+        "optionId": "outreach",
+        "turn": 6
+      },
+      {
+        "type": "advance",
+        "turn": 6
+      },
+      {
+        "type": "advance",
+        "turn": 7
+      }
+    ]
+  },
+  {
+    "scenario": "departure",
+    "seed": 71,
+    "strategy": "services",
+    "success": false,
+    "population": 9606,
+    "employment": 3791,
+    "employmentChange": -309,
+    "cash": 39.99,
+    "balance": 2.07,
+    "coverage": 91.7,
+    "health": 84.3,
+    "events": [
+      "vacancy:oldtown",
+      "employment:oldtown",
+      "enterprise:industry"
+    ],
+    "ending": "작아져도 서로를 돌보는 도시",
+    "actions": [
+      {
+        "type": "start",
+        "id": "care",
+        "district": "oldtown",
+        "turn": 0
+      },
+      {
+        "type": "advance",
+        "turn": 0
+      },
+      {
+        "type": "start",
+        "id": "health",
+        "district": null,
+        "turn": 1
+      },
+      {
+        "type": "advance",
+        "turn": 1
+      },
+      {
+        "type": "event",
+        "optionId": "connect",
+        "turn": 2
+      },
+      {
+        "type": "start",
+        "id": "consolidate",
+        "district": "industry",
+        "turn": 2
+      },
+      {
+        "type": "advance",
+        "turn": 2
+      },
+      {
+        "type": "start",
+        "id": "consolidate",
+        "district": "oldtown",
+        "turn": 3
+      },
+      {
+        "type": "advance",
+        "turn": 3
+      },
+      {
+        "type": "event",
+        "optionId": "care_training",
+        "turn": 4
+      },
+      {
+        "type": "advance",
+        "turn": 4
+      },
+      {
+        "type": "advance",
+        "turn": 5
+      },
+      {
+        "type": "event",
+        "optionId": "train",
+        "turn": 6
+      },
+      {
+        "type": "advance",
+        "turn": 6
+      },
+      {
+        "type": "advance",
+        "turn": 7
+      }
+    ]
+  },
+  {
+    "scenario": "departure",
+    "seed": 71,
+    "strategy": "concentrated",
+    "success": false,
+    "population": 9581,
+    "employment": 3921,
+    "employmentChange": -179,
+    "cash": 15.88,
+    "balance": -0.12,
+    "coverage": 76.5,
+    "health": 63.3,
+    "events": [
+      "vacancy:oldtown",
+      "employment:center",
+      "medical:oldtown"
+    ],
+    "ending": "다음 선택을 남긴 도시",
+    "actions": [
+      {
+        "type": "start",
+        "id": "jobs",
+        "district": "industry",
+        "turn": 0
+      },
+      {
+        "type": "advance",
+        "turn": 0
+      },
+      {
+        "type": "start",
+        "id": "houses",
+        "district": "industry",
+        "turn": 1
+      },
+      {
+        "type": "advance",
+        "turn": 1
+      },
+      {
+        "type": "event",
+        "optionId": "connect",
+        "turn": 2
+      },
+      {
+        "type": "advance",
+        "turn": 2
+      },
+      {
+        "type": "start",
+        "id": "care",
+        "district": "industry",
+        "turn": 3
+      },
+      {
+        "type": "advance",
+        "turn": 3
+      },
+      {
+        "type": "event",
+        "optionId": "care_training",
+        "turn": 4
+      },
+      {
+        "type": "start",
+        "id": "consolidate",
+        "district": "industry",
+        "turn": 4
+      },
+      {
+        "type": "advance",
+        "turn": 4
+      },
+      {
+        "type": "advance",
+        "turn": 5
+      },
+      {
+        "type": "event",
+        "optionId": "route",
+        "turn": 6
+      },
+      {
+        "type": "advance",
+        "turn": 6
+      },
+      {
+        "type": "advance",
+        "turn": 7
+      }
+    ]
+  },
+  {
+    "scenario": "departure",
+    "seed": 71,
+    "strategy": "none",
+    "success": false,
+    "population": 9524,
+    "employment": 3738,
+    "employmentChange": -362,
+    "cash": 120.87,
+    "balance": 2.74,
+    "coverage": 67.6,
+    "health": 56.6,
+    "events": [
+      "vacancy:oldtown",
+      "employment:center",
+      "care_request:industry"
+    ],
+    "ending": "다음 선택을 남긴 도시",
+    "actions": [
+      {
+        "type": "advance",
+        "turn": 0
+      },
+      {
+        "type": "advance",
+        "turn": 1
+      },
+      {
+        "type": "event",
+        "optionId": "connect",
+        "turn": 2
+      },
+      {
+        "type": "advance",
+        "turn": 2
+      },
+      {
+        "type": "advance",
+        "turn": 3
+      },
+      {
+        "type": "event",
+        "optionId": "care_training",
+        "turn": 4
+      },
+      {
+        "type": "advance",
+        "turn": 4
+      },
+      {
+        "type": "advance",
+        "turn": 5
+      },
+      {
+        "type": "event",
+        "optionId": "outreach",
+        "turn": 6
+      },
+      {
+        "type": "advance",
+        "turn": 6
+      },
+      {
+        "type": "advance",
+        "turn": 7
+      }
+    ]
+  },
+  {
+    "scenario": "arrival",
+    "seed": 2026,
+    "strategy": "jobs_first",
+    "success": true,
+    "population": 9997,
+    "employment": 4265,
+    "employmentChange": 165,
+    "cash": 19.21,
+    "balance": 2.03,
+    "coverage": 57.7,
+    "health": 60,
+    "events": [
+      "enterprise:center",
+      "vacancy:oldtown",
+      "care_request:oldtown"
+    ],
+    "ending": "정착 기반을 되찾은 도시",
+    "actions": [
+      {
+        "type": "start",
+        "id": "jobs",
+        "district": "oldtown",
+        "turn": 0
+      },
+      {
+        "type": "advance",
+        "turn": 0
+      },
+      {
+        "type": "start",
+        "id": "integration",
+        "district": null,
+        "turn": 1
+      },
+      {
+        "type": "advance",
+        "turn": 1
+      },
+      {
+        "type": "event",
+        "optionId": "train",
+        "turn": 2
+      },
+      {
+        "type": "start",
+        "id": "houses",
+        "district": "industry",
+        "turn": 2
+      },
+      {
+        "type": "advance",
+        "turn": 2
+      },
+      {
+        "type": "start",
+        "id": "jobs",
+        "district": "industry",
+        "turn": 3
+      },
+      {
+        "type": "advance",
+        "turn": 3
+      },
+      {
+        "type": "event",
+        "optionId": "connect",
+        "turn": 4
+      },
+      {
+        "type": "start",
+        "id": "consolidate",
+        "district": "center",
+        "turn": 4
+      },
+      {
+        "type": "advance",
+        "turn": 4
+      },
+      {
+        "type": "advance",
+        "turn": 5
+      },
+      {
+        "type": "event",
+        "optionId": "outreach",
+        "turn": 6
+      },
+      {
+        "type": "advance",
+        "turn": 6
+      },
+      {
+        "type": "advance",
+        "turn": 7
+      }
+    ]
+  },
+  {
+    "scenario": "arrival",
+    "seed": 2026,
+    "strategy": "houses_first",
+    "success": true,
+    "population": 10034,
+    "employment": 4186,
+    "employmentChange": 86,
+    "cash": 47.29,
+    "balance": 3.54,
+    "coverage": 58,
+    "health": 60,
+    "events": [
+      "enterprise:center",
+      "vacancy:oldtown",
+      "care_request:oldtown"
+    ],
+    "ending": "정착 기반을 되찾은 도시",
+    "actions": [
+      {
+        "type": "start",
+        "id": "houses",
+        "district": "industry",
+        "turn": 0
+      },
+      {
+        "type": "advance",
+        "turn": 0
+      },
+      {
+        "type": "start",
+        "id": "jobs",
+        "district": "oldtown",
+        "turn": 1
+      },
+      {
+        "type": "advance",
+        "turn": 1
+      },
+      {
+        "type": "event",
+        "optionId": "train",
+        "turn": 2
+      },
+      {
+        "type": "start",
+        "id": "integration",
+        "district": null,
+        "turn": 2
+      },
+      {
+        "type": "advance",
+        "turn": 2
+      },
+      {
+        "type": "start",
+        "id": "consolidate",
+        "district": "center",
+        "turn": 3
+      },
+      {
+        "type": "advance",
+        "turn": 3
+      },
+      {
+        "type": "event",
+        "optionId": "connect",
+        "turn": 4
+      },
+      {
+        "type": "advance",
+        "turn": 4
+      },
+      {
+        "type": "advance",
+        "turn": 5
+      },
+      {
+        "type": "event",
+        "optionId": "outreach",
+        "turn": 6
+      },
+      {
+        "type": "advance",
+        "turn": 6
+      },
+      {
+        "type": "advance",
+        "turn": 7
+      }
+    ]
+  },
+  {
+    "scenario": "arrival",
+    "seed": 2026,
+    "strategy": "services",
+    "success": false,
+    "population": 9558,
+    "employment": 3761,
+    "employmentChange": -339,
+    "cash": 39.39,
+    "balance": 1.88,
+    "coverage": 88.9,
+    "health": 84.2,
+    "events": [
+      "enterprise:center",
+      "vacancy:oldtown",
+      "care_request:industry"
+    ],
+    "ending": "작아져도 서로를 돌보는 도시",
+    "actions": [
+      {
+        "type": "start",
+        "id": "care",
+        "district": "oldtown",
+        "turn": 0
+      },
+      {
+        "type": "advance",
+        "turn": 0
+      },
+      {
+        "type": "start",
+        "id": "health",
+        "district": null,
+        "turn": 1
+      },
+      {
+        "type": "advance",
+        "turn": 1
+      },
+      {
+        "type": "event",
+        "optionId": "train",
+        "turn": 2
+      },
+      {
+        "type": "start",
+        "id": "consolidate",
+        "district": "industry",
+        "turn": 2
+      },
+      {
+        "type": "advance",
+        "turn": 2
+      },
+      {
+        "type": "start",
+        "id": "consolidate",
+        "district": "oldtown",
+        "turn": 3
+      },
+      {
+        "type": "advance",
+        "turn": 3
+      },
+      {
+        "type": "event",
+        "optionId": "connect",
+        "turn": 4
+      },
+      {
+        "type": "advance",
+        "turn": 4
+      },
+      {
+        "type": "advance",
+        "turn": 5
+      },
+      {
+        "type": "event",
+        "optionId": "outreach",
+        "turn": 6
+      },
+      {
+        "type": "advance",
+        "turn": 6
+      },
+      {
+        "type": "advance",
+        "turn": 7
+      }
+    ]
+  },
+  {
+    "scenario": "arrival",
+    "seed": 2026,
+    "strategy": "concentrated",
+    "success": false,
+    "population": 9528,
+    "employment": 3882,
+    "employmentChange": -218,
+    "cash": 14.61,
+    "balance": -0.36,
+    "coverage": 76.5,
+    "health": 61.3,
+    "events": [
+      "enterprise:center",
+      "vacancy:oldtown",
+      "care_request:oldtown"
+    ],
+    "ending": "다음 선택을 남긴 도시",
+    "actions": [
+      {
+        "type": "start",
+        "id": "jobs",
+        "district": "industry",
+        "turn": 0
+      },
+      {
+        "type": "advance",
+        "turn": 0
+      },
+      {
+        "type": "start",
+        "id": "houses",
+        "district": "industry",
+        "turn": 1
+      },
+      {
+        "type": "advance",
+        "turn": 1
+      },
+      {
+        "type": "event",
+        "optionId": "train",
+        "turn": 2
+      },
+      {
+        "type": "advance",
+        "turn": 2
+      },
+      {
+        "type": "start",
+        "id": "care",
+        "district": "industry",
+        "turn": 3
+      },
+      {
+        "type": "advance",
+        "turn": 3
+      },
+      {
+        "type": "event",
+        "optionId": "connect",
+        "turn": 4
+      },
+      {
+        "type": "start",
+        "id": "consolidate",
+        "district": "industry",
+        "turn": 4
+      },
+      {
+        "type": "advance",
+        "turn": 4
+      },
+      {
+        "type": "advance",
+        "turn": 5
+      },
+      {
+        "type": "event",
+        "optionId": "outreach",
+        "turn": 6
+      },
+      {
+        "type": "advance",
+        "turn": 6
+      },
+      {
+        "type": "advance",
+        "turn": 7
+      }
+    ]
+  },
+  {
+    "scenario": "arrival",
+    "seed": 2026,
+    "strategy": "none",
+    "success": false,
+    "population": 9476,
+    "employment": 3705,
+    "employmentChange": -395,
+    "cash": 120.01,
+    "balance": 2.53,
+    "coverage": 64.2,
+    "health": 56.6,
+    "events": [
+      "enterprise:center",
+      "vacancy:oldtown",
+      "care_request:oldtown"
+    ],
+    "ending": "다음 선택을 남긴 도시",
+    "actions": [
+      {
+        "type": "advance",
+        "turn": 0
+      },
+      {
+        "type": "advance",
+        "turn": 1
+      },
+      {
+        "type": "event",
+        "optionId": "train",
+        "turn": 2
+      },
+      {
+        "type": "advance",
+        "turn": 2
+      },
+      {
+        "type": "advance",
+        "turn": 3
+      },
+      {
+        "type": "event",
+        "optionId": "connect",
+        "turn": 4
+      },
+      {
+        "type": "advance",
+        "turn": 4
+      },
+      {
+        "type": "advance",
+        "turn": 5
+      },
+      {
+        "type": "event",
+        "optionId": "outreach",
+        "turn": 6
+      },
+      {
+        "type": "advance",
+        "turn": 6
+      },
+      {
+        "type": "advance",
+        "turn": 7
+      }
+    ]
+  },
+  {
+    "scenario": "arrival",
+    "seed": 71,
+    "strategy": "jobs_first",
+    "success": true,
+    "population": 9997,
+    "employment": 4265,
+    "employmentChange": 165,
+    "cash": 19.21,
+    "balance": 2.03,
+    "coverage": 57.7,
+    "health": 60,
+    "events": [
+      "vacancy:oldtown",
+      "employment:center",
+      "care_request:oldtown"
+    ],
+    "ending": "정착 기반을 되찾은 도시",
+    "actions": [
+      {
+        "type": "start",
+        "id": "jobs",
+        "district": "oldtown",
+        "turn": 0
+      },
+      {
+        "type": "advance",
+        "turn": 0
+      },
+      {
+        "type": "start",
+        "id": "integration",
+        "district": null,
+        "turn": 1
+      },
+      {
+        "type": "advance",
+        "turn": 1
+      },
+      {
+        "type": "event",
+        "optionId": "connect",
+        "turn": 2
+      },
+      {
+        "type": "start",
+        "id": "houses",
+        "district": "industry",
+        "turn": 2
+      },
+      {
+        "type": "advance",
+        "turn": 2
+      },
+      {
+        "type": "start",
+        "id": "jobs",
+        "district": "industry",
+        "turn": 3
+      },
+      {
+        "type": "advance",
+        "turn": 3
+      },
+      {
+        "type": "event",
+        "optionId": "care_training",
+        "turn": 4
+      },
+      {
+        "type": "start",
+        "id": "consolidate",
+        "district": "center",
+        "turn": 4
+      },
+      {
+        "type": "advance",
+        "turn": 4
+      },
+      {
+        "type": "advance",
+        "turn": 5
+      },
+      {
+        "type": "event",
+        "optionId": "outreach",
+        "turn": 6
+      },
+      {
+        "type": "advance",
+        "turn": 6
+      },
+      {
+        "type": "advance",
+        "turn": 7
+      }
+    ]
+  },
+  {
+    "scenario": "arrival",
+    "seed": 71,
+    "strategy": "houses_first",
+    "success": true,
+    "population": 10034,
+    "employment": 4186,
+    "employmentChange": 86,
+    "cash": 47.29,
+    "balance": 3.54,
+    "coverage": 58,
+    "health": 60,
+    "events": [
+      "vacancy:industry",
+      "employment:center",
+      "care_request:industry"
+    ],
+    "ending": "정착 기반을 되찾은 도시",
+    "actions": [
+      {
+        "type": "start",
+        "id": "houses",
+        "district": "industry",
+        "turn": 0
+      },
+      {
+        "type": "advance",
+        "turn": 0
+      },
+      {
+        "type": "start",
+        "id": "jobs",
+        "district": "oldtown",
+        "turn": 1
+      },
+      {
+        "type": "advance",
+        "turn": 1
+      },
+      {
+        "type": "event",
+        "optionId": "connect",
+        "turn": 2
+      },
+      {
+        "type": "start",
+        "id": "integration",
+        "district": null,
+        "turn": 2
+      },
+      {
+        "type": "advance",
+        "turn": 2
+      },
+      {
+        "type": "start",
+        "id": "consolidate",
+        "district": "center",
+        "turn": 3
+      },
+      {
+        "type": "advance",
+        "turn": 3
+      },
+      {
+        "type": "event",
+        "optionId": "care_training",
+        "turn": 4
+      },
+      {
+        "type": "advance",
+        "turn": 4
+      },
+      {
+        "type": "advance",
+        "turn": 5
+      },
+      {
+        "type": "event",
+        "optionId": "outreach",
+        "turn": 6
+      },
+      {
+        "type": "advance",
+        "turn": 6
+      },
+      {
+        "type": "advance",
+        "turn": 7
+      }
+    ]
+  },
+  {
+    "scenario": "arrival",
+    "seed": 71,
+    "strategy": "services",
+    "success": false,
+    "population": 9558,
+    "employment": 3761,
+    "employmentChange": -339,
+    "cash": 39.39,
+    "balance": 1.88,
+    "coverage": 88.9,
+    "health": 84.2,
+    "events": [
+      "vacancy:oldtown",
+      "employment:oldtown",
+      "enterprise:industry"
+    ],
+    "ending": "작아져도 서로를 돌보는 도시",
+    "actions": [
+      {
+        "type": "start",
+        "id": "care",
+        "district": "oldtown",
+        "turn": 0
+      },
+      {
+        "type": "advance",
+        "turn": 0
+      },
+      {
+        "type": "start",
+        "id": "health",
+        "district": null,
+        "turn": 1
+      },
+      {
+        "type": "advance",
+        "turn": 1
+      },
+      {
+        "type": "event",
+        "optionId": "connect",
+        "turn": 2
+      },
+      {
+        "type": "start",
+        "id": "consolidate",
+        "district": "industry",
+        "turn": 2
+      },
+      {
+        "type": "advance",
+        "turn": 2
+      },
+      {
+        "type": "start",
+        "id": "consolidate",
+        "district": "oldtown",
+        "turn": 3
+      },
+      {
+        "type": "advance",
+        "turn": 3
+      },
+      {
+        "type": "event",
+        "optionId": "care_training",
+        "turn": 4
+      },
+      {
+        "type": "advance",
+        "turn": 4
+      },
+      {
+        "type": "advance",
+        "turn": 5
+      },
+      {
+        "type": "event",
+        "optionId": "train",
+        "turn": 6
+      },
+      {
+        "type": "advance",
+        "turn": 6
+      },
+      {
+        "type": "advance",
+        "turn": 7
+      }
+    ]
+  },
+  {
+    "scenario": "arrival",
+    "seed": 71,
+    "strategy": "concentrated",
+    "success": false,
+    "population": 9528,
+    "employment": 3882,
+    "employmentChange": -218,
+    "cash": 14.61,
+    "balance": -0.36,
+    "coverage": 77.7,
+    "health": 62.9,
+    "events": [
+      "vacancy:oldtown",
+      "employment:center",
+      "medical:center"
+    ],
+    "ending": "다음 선택을 남긴 도시",
+    "actions": [
+      {
+        "type": "start",
+        "id": "jobs",
+        "district": "industry",
+        "turn": 0
+      },
+      {
+        "type": "advance",
+        "turn": 0
+      },
+      {
+        "type": "start",
+        "id": "houses",
+        "district": "industry",
+        "turn": 1
+      },
+      {
+        "type": "advance",
+        "turn": 1
+      },
+      {
+        "type": "event",
+        "optionId": "connect",
+        "turn": 2
+      },
+      {
+        "type": "advance",
+        "turn": 2
+      },
+      {
+        "type": "start",
+        "id": "care",
+        "district": "industry",
+        "turn": 3
+      },
+      {
+        "type": "advance",
+        "turn": 3
+      },
+      {
+        "type": "event",
+        "optionId": "care_training",
+        "turn": 4
+      },
+      {
+        "type": "start",
+        "id": "consolidate",
+        "district": "industry",
+        "turn": 4
+      },
+      {
+        "type": "advance",
+        "turn": 4
+      },
+      {
+        "type": "advance",
+        "turn": 5
+      },
+      {
+        "type": "event",
+        "optionId": "route",
+        "turn": 6
+      },
+      {
+        "type": "advance",
+        "turn": 6
+      },
+      {
+        "type": "advance",
+        "turn": 7
+      }
+    ]
+  },
+  {
+    "scenario": "arrival",
+    "seed": 71,
+    "strategy": "none",
+    "success": false,
+    "population": 9476,
+    "employment": 3705,
+    "employmentChange": -395,
+    "cash": 120.01,
+    "balance": 2.53,
+    "coverage": 64.2,
+    "health": 56.6,
+    "events": [
+      "vacancy:oldtown",
+      "employment:center",
+      "care_request:industry"
+    ],
+    "ending": "다음 선택을 남긴 도시",
+    "actions": [
+      {
+        "type": "advance",
+        "turn": 0
+      },
+      {
+        "type": "advance",
+        "turn": 1
+      },
+      {
+        "type": "event",
+        "optionId": "connect",
+        "turn": 2
+      },
+      {
+        "type": "advance",
+        "turn": 2
+      },
+      {
+        "type": "advance",
+        "turn": 3
+      },
+      {
+        "type": "event",
+        "optionId": "care_training",
+        "turn": 4
+      },
+      {
+        "type": "advance",
+        "turn": 4
+      },
+      {
+        "type": "advance",
+        "turn": 5
+      },
+      {
+        "type": "event",
+        "optionId": "outreach",
+        "turn": 6
+      },
+      {
+        "type": "advance",
+        "turn": 6
+      },
+      {
+        "type": "advance",
+        "turn": 7
+      }
+    ]
+  },
+  {
+    "scenario": "aging",
+    "seed": 2026,
+    "strategy": "jobs_first",
+    "success": false,
+    "population": 9950,
+    "employment": 4289,
+    "employmentChange": 189,
+    "cash": 20.97,
+    "balance": 2.18,
+    "coverage": 66.3,
+    "health": 57.3,
+    "events": [
+      "enterprise:center",
+      "vacancy:oldtown",
+      "care_request:oldtown"
+    ],
+    "ending": "일자리 기반을 다진 도시",
+    "actions": [
+      {
+        "type": "start",
+        "id": "jobs",
+        "district": "oldtown",
+        "turn": 0
+      },
+      {
+        "type": "advance",
+        "turn": 0
+      },
+      {
+        "type": "start",
+        "id": "integration",
+        "district": null,
+        "turn": 1
+      },
+      {
+        "type": "advance",
+        "turn": 1
+      },
+      {
+        "type": "event",
+        "optionId": "train",
+        "turn": 2
+      },
+      {
+        "type": "start",
+        "id": "houses",
+        "district": "industry",
+        "turn": 2
+      },
+      {
+        "type": "advance",
+        "turn": 2
+      },
+      {
+        "type": "start",
+        "id": "jobs",
+        "district": "industry",
+        "turn": 3
+      },
+      {
+        "type": "advance",
+        "turn": 3
+      },
+      {
+        "type": "event",
+        "optionId": "connect",
+        "turn": 4
+      },
+      {
+        "type": "start",
+        "id": "consolidate",
+        "district": "center",
+        "turn": 4
+      },
+      {
+        "type": "advance",
+        "turn": 4
+      },
+      {
+        "type": "advance",
+        "turn": 5
+      },
+      {
+        "type": "event",
+        "optionId": "outreach",
+        "turn": 6
+      },
+      {
+        "type": "advance",
+        "turn": 6
+      },
+      {
+        "type": "advance",
+        "turn": 7
+      }
+    ]
+  },
+  {
+    "scenario": "aging",
+    "seed": 2026,
+    "strategy": "houses_first",
+    "success": false,
+    "population": 9944,
+    "employment": 4201,
+    "employmentChange": 101,
+    "cash": 49.09,
+    "balance": 3.63,
+    "coverage": 65.1,
+    "health": 57.3,
+    "events": [
+      "enterprise:center",
+      "vacancy:oldtown",
+      "care_request:oldtown"
+    ],
+    "ending": "일자리 기반을 다진 도시",
+    "actions": [
+      {
+        "type": "start",
+        "id": "houses",
+        "district": "industry",
+        "turn": 0
+      },
+      {
+        "type": "advance",
+        "turn": 0
+      },
+      {
+        "type": "start",
+        "id": "jobs",
+        "district": "oldtown",
+        "turn": 1
+      },
+      {
+        "type": "advance",
+        "turn": 1
+      },
+      {
+        "type": "event",
+        "optionId": "train",
+        "turn": 2
+      },
+      {
+        "type": "start",
+        "id": "integration",
+        "district": null,
+        "turn": 2
+      },
+      {
+        "type": "advance",
+        "turn": 2
+      },
+      {
+        "type": "start",
+        "id": "consolidate",
+        "district": "center",
+        "turn": 3
+      },
+      {
+        "type": "advance",
+        "turn": 3
+      },
+      {
+        "type": "event",
+        "optionId": "connect",
+        "turn": 4
+      },
+      {
+        "type": "advance",
+        "turn": 4
+      },
+      {
+        "type": "advance",
+        "turn": 5
+      },
+      {
+        "type": "event",
+        "optionId": "outreach",
+        "turn": 6
+      },
+      {
+        "type": "advance",
+        "turn": 6
+      },
+      {
+        "type": "advance",
+        "turn": 7
+      }
+    ]
+  },
+  {
+    "scenario": "aging",
+    "seed": 2026,
+    "strategy": "services",
+    "success": true,
+    "population": 9467,
+    "employment": 3807,
+    "employmentChange": -293,
+    "cash": 40.93,
+    "balance": 2.17,
+    "coverage": 90.2,
+    "health": 81.6,
+    "events": [
+      "enterprise:center",
+      "vacancy:oldtown",
+      "care_request:industry"
+    ],
+    "ending": "돌봄과 일상을 지킨 도시",
+    "actions": [
+      {
+        "type": "start",
+        "id": "care",
+        "district": "oldtown",
+        "turn": 0
+      },
+      {
+        "type": "advance",
+        "turn": 0
+      },
+      {
+        "type": "start",
+        "id": "health",
+        "district": null,
+        "turn": 1
+      },
+      {
+        "type": "advance",
+        "turn": 1
+      },
+      {
+        "type": "event",
+        "optionId": "train",
+        "turn": 2
+      },
+      {
+        "type": "start",
+        "id": "consolidate",
+        "district": "industry",
+        "turn": 2
+      },
+      {
+        "type": "advance",
+        "turn": 2
+      },
+      {
+        "type": "start",
+        "id": "consolidate",
+        "district": "oldtown",
+        "turn": 3
+      },
+      {
+        "type": "advance",
+        "turn": 3
+      },
+      {
+        "type": "event",
+        "optionId": "connect",
+        "turn": 4
+      },
+      {
+        "type": "advance",
+        "turn": 4
+      },
+      {
+        "type": "advance",
+        "turn": 5
+      },
+      {
+        "type": "event",
+        "optionId": "outreach",
+        "turn": 6
+      },
+      {
+        "type": "advance",
+        "turn": 6
+      },
+      {
+        "type": "advance",
+        "turn": 7
+      }
+    ]
+  },
+  {
+    "scenario": "aging",
+    "seed": 2026,
+    "strategy": "concentrated",
+    "success": false,
+    "population": 9457,
+    "employment": 3945,
+    "employmentChange": -155,
+    "cash": 16.78,
+    "balance": 0.03,
+    "coverage": 70.8,
+    "health": 58.8,
+    "events": [
+      "enterprise:center",
+      "vacancy:oldtown",
+      "care_request:oldtown"
+    ],
+    "ending": "다음 선택을 남긴 도시",
+    "actions": [
+      {
+        "type": "start",
+        "id": "jobs",
+        "district": "industry",
+        "turn": 0
+      },
+      {
+        "type": "advance",
+        "turn": 0
+      },
+      {
+        "type": "start",
+        "id": "houses",
+        "district": "industry",
+        "turn": 1
+      },
+      {
+        "type": "advance",
+        "turn": 1
+      },
+      {
+        "type": "event",
+        "optionId": "train",
+        "turn": 2
+      },
+      {
+        "type": "advance",
+        "turn": 2
+      },
+      {
+        "type": "start",
+        "id": "care",
+        "district": "industry",
+        "turn": 3
+      },
+      {
+        "type": "advance",
+        "turn": 3
+      },
+      {
+        "type": "event",
+        "optionId": "connect",
+        "turn": 4
+      },
+      {
+        "type": "start",
+        "id": "consolidate",
+        "district": "industry",
+        "turn": 4
+      },
+      {
+        "type": "advance",
+        "turn": 4
+      },
+      {
+        "type": "advance",
+        "turn": 5
+      },
+      {
+        "type": "event",
+        "optionId": "outreach",
+        "turn": 6
+      },
+      {
+        "type": "advance",
+        "turn": 6
+      },
+      {
+        "type": "advance",
+        "turn": 7
+      }
+    ]
+  },
+  {
+    "scenario": "aging",
+    "seed": 2026,
+    "strategy": "none",
+    "success": false,
+    "population": 9383,
+    "employment": 3751,
+    "employmentChange": -349,
+    "cash": 121.71,
+    "balance": 2.82,
+    "coverage": 60.9,
+    "health": 54,
+    "events": [
+      "enterprise:center",
+      "vacancy:oldtown",
+      "care_request:oldtown"
+    ],
+    "ending": "다음 선택을 남긴 도시",
+    "actions": [
+      {
+        "type": "advance",
+        "turn": 0
+      },
+      {
+        "type": "advance",
+        "turn": 1
+      },
+      {
+        "type": "event",
+        "optionId": "train",
+        "turn": 2
+      },
+      {
+        "type": "advance",
+        "turn": 2
+      },
+      {
+        "type": "advance",
+        "turn": 3
+      },
+      {
+        "type": "event",
+        "optionId": "connect",
+        "turn": 4
+      },
+      {
+        "type": "advance",
+        "turn": 4
+      },
+      {
+        "type": "advance",
+        "turn": 5
+      },
+      {
+        "type": "event",
+        "optionId": "outreach",
+        "turn": 6
+      },
+      {
+        "type": "advance",
+        "turn": 6
+      },
+      {
+        "type": "advance",
+        "turn": 7
+      }
+    ]
+  },
+  {
+    "scenario": "aging",
+    "seed": 71,
+    "strategy": "jobs_first",
+    "success": false,
+    "population": 9950,
+    "employment": 4289,
+    "employmentChange": 189,
+    "cash": 20.97,
+    "balance": 2.18,
+    "coverage": 66.3,
+    "health": 58.6,
+    "events": [
+      "vacancy:oldtown",
+      "reuse:center",
+      "care_request:industry"
+    ],
+    "ending": "일자리 기반을 다진 도시",
+    "actions": [
+      {
+        "type": "start",
+        "id": "jobs",
+        "district": "oldtown",
+        "turn": 0
+      },
+      {
+        "type": "advance",
+        "turn": 0
+      },
+      {
+        "type": "start",
+        "id": "integration",
+        "district": null,
+        "turn": 1
+      },
+      {
+        "type": "advance",
+        "turn": 1
+      },
+      {
+        "type": "event",
+        "optionId": "connect",
+        "turn": 2
+      },
+      {
+        "type": "start",
+        "id": "houses",
+        "district": "industry",
+        "turn": 2
+      },
+      {
+        "type": "advance",
+        "turn": 2
+      },
+      {
+        "type": "start",
+        "id": "jobs",
+        "district": "industry",
+        "turn": 3
+      },
+      {
+        "type": "advance",
+        "turn": 3
+      },
+      {
+        "type": "event",
+        "optionId": "share",
+        "turn": 4
+      },
+      {
+        "type": "start",
+        "id": "consolidate",
+        "district": "center",
+        "turn": 4
+      },
+      {
+        "type": "advance",
+        "turn": 4
+      },
+      {
+        "type": "advance",
+        "turn": 5
+      },
+      {
+        "type": "event",
+        "optionId": "outreach",
+        "turn": 6
+      },
+      {
+        "type": "advance",
+        "turn": 6
+      },
+      {
+        "type": "advance",
+        "turn": 7
+      }
+    ]
+  },
+  {
+    "scenario": "aging",
+    "seed": 71,
+    "strategy": "houses_first",
+    "success": false,
+    "population": 9944,
+    "employment": 4201,
+    "employmentChange": 101,
+    "cash": 49.09,
+    "balance": 3.63,
+    "coverage": 65.1,
+    "health": 57.3,
+    "events": [
+      "vacancy:industry",
+      "employment:center",
+      "care_request:industry"
+    ],
+    "ending": "일자리 기반을 다진 도시",
+    "actions": [
+      {
+        "type": "start",
+        "id": "houses",
+        "district": "industry",
+        "turn": 0
+      },
+      {
+        "type": "advance",
+        "turn": 0
+      },
+      {
+        "type": "start",
+        "id": "jobs",
+        "district": "oldtown",
+        "turn": 1
+      },
+      {
+        "type": "advance",
+        "turn": 1
+      },
+      {
+        "type": "event",
+        "optionId": "connect",
+        "turn": 2
+      },
+      {
+        "type": "start",
+        "id": "integration",
+        "district": null,
+        "turn": 2
+      },
+      {
+        "type": "advance",
+        "turn": 2
+      },
+      {
+        "type": "start",
+        "id": "consolidate",
+        "district": "center",
+        "turn": 3
+      },
+      {
+        "type": "advance",
+        "turn": 3
+      },
+      {
+        "type": "event",
+        "optionId": "care_training",
+        "turn": 4
+      },
+      {
+        "type": "advance",
+        "turn": 4
+      },
+      {
+        "type": "advance",
+        "turn": 5
+      },
+      {
+        "type": "event",
+        "optionId": "outreach",
+        "turn": 6
+      },
+      {
+        "type": "advance",
+        "turn": 6
+      },
+      {
+        "type": "advance",
+        "turn": 7
+      }
+    ]
+  },
+  {
+    "scenario": "aging",
+    "seed": 71,
+    "strategy": "services",
+    "success": true,
+    "population": 9467,
+    "employment": 3807,
+    "employmentChange": -293,
+    "cash": 40.93,
+    "balance": 2.17,
+    "coverage": 90.2,
+    "health": 81.6,
+    "events": [
+      "vacancy:oldtown",
+      "employment:center",
+      "care_request:industry"
+    ],
+    "ending": "돌봄과 일상을 지킨 도시",
+    "actions": [
+      {
+        "type": "start",
+        "id": "care",
+        "district": "oldtown",
+        "turn": 0
+      },
+      {
+        "type": "advance",
+        "turn": 0
+      },
+      {
+        "type": "start",
+        "id": "health",
+        "district": null,
+        "turn": 1
+      },
+      {
+        "type": "advance",
+        "turn": 1
+      },
+      {
+        "type": "event",
+        "optionId": "connect",
+        "turn": 2
+      },
+      {
+        "type": "start",
+        "id": "consolidate",
+        "district": "industry",
+        "turn": 2
+      },
+      {
+        "type": "advance",
+        "turn": 2
+      },
+      {
+        "type": "start",
+        "id": "consolidate",
+        "district": "oldtown",
+        "turn": 3
+      },
+      {
+        "type": "advance",
+        "turn": 3
+      },
+      {
+        "type": "event",
+        "optionId": "care_training",
+        "turn": 4
+      },
+      {
+        "type": "advance",
+        "turn": 4
+      },
+      {
+        "type": "advance",
+        "turn": 5
+      },
+      {
+        "type": "event",
+        "optionId": "outreach",
+        "turn": 6
+      },
+      {
+        "type": "advance",
+        "turn": 6
+      },
+      {
+        "type": "advance",
+        "turn": 7
+      }
+    ]
+  },
+  {
+    "scenario": "aging",
+    "seed": 71,
+    "strategy": "concentrated",
+    "success": false,
+    "population": 9457,
+    "employment": 3945,
+    "employmentChange": -155,
+    "cash": 16.78,
+    "balance": 0.03,
+    "coverage": 71.9,
+    "health": 61.6,
+    "events": [
+      "vacancy:oldtown",
+      "reuse:industry",
+      "medical:center"
+    ],
+    "ending": "다음 선택을 남긴 도시",
+    "actions": [
+      {
+        "type": "start",
+        "id": "jobs",
+        "district": "industry",
+        "turn": 0
+      },
+      {
+        "type": "advance",
+        "turn": 0
+      },
+      {
+        "type": "start",
+        "id": "houses",
+        "district": "industry",
+        "turn": 1
+      },
+      {
+        "type": "advance",
+        "turn": 1
+      },
+      {
+        "type": "event",
+        "optionId": "connect",
+        "turn": 2
+      },
+      {
+        "type": "advance",
+        "turn": 2
+      },
+      {
+        "type": "start",
+        "id": "care",
+        "district": "industry",
+        "turn": 3
+      },
+      {
+        "type": "advance",
+        "turn": 3
+      },
+      {
+        "type": "event",
+        "optionId": "share",
+        "turn": 4
+      },
+      {
+        "type": "start",
+        "id": "consolidate",
+        "district": "industry",
+        "turn": 4
+      },
+      {
+        "type": "advance",
+        "turn": 4
+      },
+      {
+        "type": "advance",
+        "turn": 5
+      },
+      {
+        "type": "event",
+        "optionId": "route",
+        "turn": 6
+      },
+      {
+        "type": "advance",
+        "turn": 6
+      },
+      {
+        "type": "advance",
+        "turn": 7
+      }
+    ]
+  },
+  {
+    "scenario": "aging",
+    "seed": 71,
+    "strategy": "none",
+    "success": false,
+    "population": 9383,
+    "employment": 3751,
+    "employmentChange": -349,
+    "cash": 121.71,
+    "balance": 2.82,
+    "coverage": 62.5,
+    "health": 55.3,
+    "events": [
+      "vacancy:oldtown",
+      "reuse:center",
+      "care_request:industry"
+    ],
+    "ending": "다음 선택을 남긴 도시",
+    "actions": [
+      {
+        "type": "advance",
+        "turn": 0
+      },
+      {
+        "type": "advance",
+        "turn": 1
+      },
+      {
+        "type": "event",
+        "optionId": "connect",
+        "turn": 2
+      },
+      {
+        "type": "advance",
+        "turn": 2
+      },
+      {
+        "type": "advance",
+        "turn": 3
+      },
+      {
+        "type": "event",
+        "optionId": "share",
+        "turn": 4
+      },
+      {
+        "type": "advance",
+        "turn": 4
+      },
+      {
+        "type": "advance",
+        "turn": 5
+      },
+      {
+        "type": "event",
+        "optionId": "outreach",
+        "turn": 6
+      },
+      {
+        "type": "advance",
+        "turn": 6
+      },
+      {
+        "type": "advance",
+        "turn": 7
+      }
+    ]
+  }
+]

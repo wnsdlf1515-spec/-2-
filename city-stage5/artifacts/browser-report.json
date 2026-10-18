@@ -1,0 +1,1007 @@
+{
+  "passed": true,
+  "errors": [],
+  "checks": [
+    "3 scenarios actual UI completed8turns",
+    "24 saved state + nativepixel exact matches",
+    "doubleclick investment/event/advance guarded",
+    "3 identical-condition retries clean and archived",
+    "initial3scenario maps differ",
+    "390px page no horizontal overflow"
+  ],
+  "runs": [
+    {
+      "goal": "settlement",
+      "scenario": "departure",
+      "seed": 2026,
+      "year": 2034,
+      "cash": 20.58,
+      "population": 10063,
+      "metrics": {
+        "population": 10063,
+        "employed": 4301,
+        "employmentChange": 201,
+        "laborSupply": 4782,
+        "occupiedHomes": 3977,
+        "housingCapacity": 4110,
+        "jobCapacity": 4460,
+        "serviceCapacity": 130,
+        "effectiveCapacity": 130,
+        "serviceUsed": 127,
+        "serviceDemand": 182,
+        "unmet": 55,
+        "coverage": 0.6978021978021978,
+        "healthAccess": 0.6001262049090728,
+        "revenue": 26.26,
+        "expenses": 24,
+        "policyExpenses": 4,
+        "baseExpenses": 20,
+        "annualBalance": 2.26,
+        "committedBalance": 2.26,
+        "cumulativeMigration": 532,
+        "births": 55,
+        "deaths": 118,
+        "inflow": 109,
+        "outflow": 73,
+        "internalIn": 0,
+        "internalOut": 0,
+        "naturalChange": -63,
+        "netMigration": 36,
+        "populationChange": -27
+      },
+      "success": true,
+      "ending": {
+        "title": "정착 기반을 되찾은 도시",
+        "description": "초기 대비 인구 63명, 취업 201명, 서비스 충족 0.77%p 변화. 선택한 목표 달성.",
+        "remaining": [],
+        "suggestion": "다음 도전에서는 미충족 수요가 큰 지역의 정원·인력·접근성 중 무엇이 부족한지 먼저 확인하세요."
+      },
+      "actions": [
+        {
+          "type": "start",
+          "id": "jobs",
+          "district": "oldtown",
+          "turn": 0
+        },
+        {
+          "type": "advance",
+          "turn": 0
+        },
+        {
+          "type": "start",
+          "id": "integration",
+          "district": null,
+          "turn": 1
+        },
+        {
+          "type": "advance",
+          "turn": 1
+        },
+        {
+          "type": "event",
+          "optionId": "connect",
+          "turn": 2
+        },
+        {
+          "type": "start",
+          "id": "houses",
+          "district": "industry",
+          "turn": 2
+        },
+        {
+          "type": "advance",
+          "turn": 2
+        },
+        {
+          "type": "start",
+          "id": "jobs",
+          "district": "industry",
+          "turn": 3
+        },
+        {
+          "type": "advance",
+          "turn": 3
+        },
+        {
+          "type": "event",
+          "optionId": "train",
+          "turn": 4
+        },
+        {
+          "type": "start",
+          "id": "consolidate",
+          "district": "center",
+          "turn": 4
+        },
+        {
+          "type": "advance",
+          "turn": 4
+        },
+        {
+          "type": "advance",
+          "turn": 5
+        },
+        {
+          "type": "event",
+          "optionId": "outreach",
+          "turn": 6
+        },
+        {
+          "type": "advance",
+          "turn": 6
+        },
+        {
+          "type": "advance",
+          "turn": 7
+        }
+      ],
+      "events": [
+        {
+          "id": "vacancy",
+          "title": "빈집 공동 정비 기회",
+          "area": "housing",
+          "district": "oldtown",
+          "turn": 2,
+          "choice": "connect",
+          "label": "빈집 상담과 생활 연결",
+          "description": "1년 후 돌봄 접근성 +4%p. 상담 공간을 공유하며 주택 공급은 늘리지 않습니다.",
+          "cost": 0,
+          "readyTurn": 3,
+          "applied": true,
+          "delta": {
+            "access": 0.04
+          },
+          "condition": "거주 가능한 빈집 45호 이상",
+          "evidence": {
+            "id": "oldtown",
+            "name": "기존 주거 생활권",
+            "population": 3972,
+            "children": 490,
+            "workingAge": 2198,
+            "seniors": 1284,
+            "laborSupply": 1714,
+            "housingCapacity": 1690,
+            "occupiedHomes": 1515,
+            "vacantHomes": 175,
+            "jobCapacity": 1600,
+            "employed": 1453,
+            "vacantJobs": 147,
+            "serviceCapacity": 35,
+            "staff": 70,
+            "serviceStaff": 70,
+            "effectiveCapacity": 35,
+            "serviceDemand": 86,
+            "localUsed": 35,
+            "serviceUsed": 47,
+            "importedService": 12,
+            "exportedService": 0,
+            "access": 0.68,
+            "healthAccess": 0.45,
+            "unmet": 39,
+            "coverage": 0.5465116279069767,
+            "bottlenecks": [
+              "돌봄 미충족 39명"
+            ]
+          }
+        },
+        {
+          "id": "enterprise",
+          "title": "지역 기업의 입주 제안",
+          "area": "work",
+          "district": "center",
+          "turn": 4,
+          "choice": "train",
+          "label": "기존 주민 교육 협력",
+          "description": "1년 후 돌봄 인력 환산 정원 +12명. 일자리 확장을 포기하고 기존 교육 공간을 공유합니다.",
+          "cost": 0,
+          "readyTurn": 5,
+          "applied": true,
+          "delta": {
+            "staff": 12
+          },
+          "condition": "빈 주택 35호 미만 · 빈 일자리 30개 이상",
+          "evidence": {
+            "id": "center",
+            "name": "중심 생활권",
+            "population": 3158,
+            "children": 393,
+            "workingAge": 2008,
+            "seniors": 757,
+            "laborSupply": 1566,
+            "housingCapacity": 1210,
+            "occupiedHomes": 1203,
+            "vacantHomes": 7,
+            "jobCapacity": 1420,
+            "employed": 1367,
+            "vacantJobs": 53,
+            "serviceCapacity": 80,
+            "staff": 85,
+            "serviceStaff": 85,
+            "effectiveCapacity": 80,
+            "serviceDemand": 53,
+            "localUsed": 47,
+            "serviceUsed": 47,
+            "importedService": 0,
+            "exportedService": 12,
+            "access": 0.9,
+            "healthAccess": 0.72,
+            "unmet": 6,
+            "coverage": 0.8867924528301887,
+            "bottlenecks": [
+              "주택 여유 부족",
+              "돌봄 미충족 6명"
+            ]
+          }
+        },
+        {
+          "id": "care_request",
+          "title": "돌봄 운영 확대 요청",
+          "area": "care",
+          "district": "oldtown",
+          "turn": 6,
+          "choice": "outreach",
+          "label": "방문 일정을 함께 조정",
+          "description": "1년 후 돌봄 접근성 +8%p. 정원과 인력은 그대로이므로 공급 부족은 남을 수 있습니다.",
+          "cost": 0,
+          "readyTurn": 7,
+          "applied": true,
+          "delta": {
+            "access": 0.08
+          },
+          "condition": "돌봄 미충족 15명 이상",
+          "evidence": {
+            "id": "oldtown",
+            "name": "기존 주거 생활권",
+            "population": 4009,
+            "children": 470,
+            "workingAge": 2278,
+            "seniors": 1261,
+            "laborSupply": 1776,
+            "housingCapacity": 1690,
+            "occupiedHomes": 1579,
+            "vacantHomes": 111,
+            "jobCapacity": 1600,
+            "employed": 1576,
+            "vacantJobs": 24,
+            "serviceCapacity": 35,
+            "staff": 70,
+            "serviceStaff": 70,
+            "effectiveCapacity": 35,
+            "serviceDemand": 85,
+            "localUsed": 35,
+            "serviceUsed": 47,
+            "importedService": 12,
+            "exportedService": 0,
+            "access": 0.7200000000000001,
+            "healthAccess": 0.45,
+            "unmet": 38,
+            "coverage": 0.5529411764705883,
+            "bottlenecks": [
+              "채용 가능한 일자리 부족",
+              "돌봄 미충족 38명"
+            ]
+          }
+        }
+      ],
+      "achievements": [
+        {
+          "id": "home:oldtown",
+          "title": "다시 채워지는 주거지",
+          "description": "기존 주거 생활권의 실제 입주가 초기보다 20호 넘게 증가",
+          "area": "housing",
+          "district": "oldtown",
+          "turn": 3
+        },
+        {
+          "id": "home:industry",
+          "title": "다시 채워지는 주거지",
+          "description": "산업·신규 주거 생활권의 실제 입주가 초기보다 20호 넘게 증가",
+          "area": "housing",
+          "district": "industry",
+          "turn": 4
+        },
+        {
+          "id": "reuse:center",
+          "title": "기존 시설의 새 역할",
+          "description": "중심 생활권의 시설 재편 운영과 서비스 충족률 70%",
+          "area": "plot",
+          "district": "center",
+          "turn": 5
+        }
+      ],
+      "projects": [
+        {
+          "id": "jobs",
+          "key": "jobs:oldtown",
+          "district": "oldtown",
+          "status": "active",
+          "startedTurn": 0,
+          "readyTurn": 1
+        },
+        {
+          "id": "integration",
+          "key": "integration",
+          "district": null,
+          "status": "active",
+          "startedTurn": 1,
+          "readyTurn": 1
+        },
+        {
+          "id": "houses",
+          "key": "houses:industry",
+          "district": "industry",
+          "status": "active",
+          "startedTurn": 2,
+          "readyTurn": 4
+        },
+        {
+          "id": "jobs",
+          "key": "jobs:industry",
+          "district": "industry",
+          "status": "active",
+          "startedTurn": 3,
+          "readyTurn": 4
+        },
+        {
+          "id": "consolidate",
+          "key": "consolidate:center",
+          "district": "center",
+          "status": "active",
+          "startedTurn": 4,
+          "readyTurn": 5
+        }
+      ]
+    },
+    {
+      "goal": "settlement",
+      "scenario": "arrival",
+      "seed": 2026,
+      "year": 2034,
+      "cash": 47.29,
+      "population": 10034,
+      "metrics": {
+        "population": 10034,
+        "employed": 4186,
+        "employmentChange": 86,
+        "laborSupply": 4773,
+        "occupiedHomes": 3966,
+        "housingCapacity": 4004,
+        "jobCapacity": 4960,
+        "serviceCapacity": 105,
+        "effectiveCapacity": 105,
+        "serviceUsed": 105,
+        "serviceDemand": 181,
+        "unmet": 76,
+        "coverage": 0.580110497237569,
+        "healthAccess": 0.5995535180386685,
+        "revenue": 25.54,
+        "expenses": 22,
+        "policyExpenses": 2,
+        "baseExpenses": 20,
+        "annualBalance": 3.54,
+        "committedBalance": 3.54,
+        "cumulativeMigration": 505,
+        "births": 55,
+        "deaths": 117,
+        "inflow": 156,
+        "outflow": 65,
+        "internalIn": 0,
+        "internalOut": 0,
+        "naturalChange": -62,
+        "netMigration": 91,
+        "populationChange": 29
+      },
+      "success": true,
+      "ending": {
+        "title": "정착 기반을 되찾은 도시",
+        "description": "초기 대비 인구 34명, 취업 86명, 서비스 충족 -8.07%p 변화. 선택한 목표 달성.",
+        "remaining": [],
+        "suggestion": "다음 도전에서는 미충족 수요가 큰 지역의 정원·인력·접근성 중 무엇이 부족한지 먼저 확인하세요."
+      },
+      "actions": [
+        {
+          "type": "start",
+          "id": "houses",
+          "district": "industry",
+          "turn": 0
+        },
+        {
+          "type": "advance",
+          "turn": 0
+        },
+        {
+          "type": "start",
+          "id": "jobs",
+          "district": "oldtown",
+          "turn": 1
+        },
+        {
+          "type": "advance",
+          "turn": 1
+        },
+        {
+          "type": "event",
+          "optionId": "train",
+          "turn": 2
+        },
+        {
+          "type": "start",
+          "id": "integration",
+          "district": null,
+          "turn": 2
+        },
+        {
+          "type": "advance",
+          "turn": 2
+        },
+        {
+          "type": "start",
+          "id": "consolidate",
+          "district": "center",
+          "turn": 3
+        },
+        {
+          "type": "advance",
+          "turn": 3
+        },
+        {
+          "type": "event",
+          "optionId": "connect",
+          "turn": 4
+        },
+        {
+          "type": "advance",
+          "turn": 4
+        },
+        {
+          "type": "advance",
+          "turn": 5
+        },
+        {
+          "type": "event",
+          "optionId": "outreach",
+          "turn": 6
+        },
+        {
+          "type": "advance",
+          "turn": 6
+        },
+        {
+          "type": "advance",
+          "turn": 7
+        }
+      ],
+      "events": [
+        {
+          "id": "enterprise",
+          "title": "지역 기업의 입주 제안",
+          "area": "work",
+          "district": "center",
+          "turn": 2,
+          "choice": "train",
+          "label": "기존 주민 교육 협력",
+          "description": "1년 후 돌봄 인력 환산 정원 +12명. 일자리 확장을 포기하고 기존 교육 공간을 공유합니다.",
+          "cost": 0,
+          "readyTurn": 3,
+          "applied": true,
+          "delta": {
+            "staff": 12
+          },
+          "condition": "빈 주택 35호 미만 · 빈 일자리 30개 이상",
+          "evidence": {
+            "id": "center",
+            "name": "중심 생활권",
+            "population": 3153,
+            "children": 398,
+            "workingAge": 2025,
+            "seniors": 730,
+            "laborSupply": 1579,
+            "housingCapacity": 1202,
+            "occupiedHomes": 1190,
+            "vacantHomes": 12,
+            "jobCapacity": 1670,
+            "employed": 1375,
+            "vacantJobs": 295,
+            "serviceCapacity": 60,
+            "staff": 85,
+            "serviceStaff": 85,
+            "effectiveCapacity": 60,
+            "serviceDemand": 51,
+            "localUsed": 45,
+            "serviceUsed": 45,
+            "importedService": 0,
+            "exportedService": 12,
+            "access": 0.9,
+            "healthAccess": 0.72,
+            "unmet": 6,
+            "coverage": 0.8823529411764706,
+            "bottlenecks": [
+              "주택 여유 부족",
+              "돌봄 미충족 6명"
+            ]
+          }
+        },
+        {
+          "id": "vacancy",
+          "title": "빈집 공동 정비 기회",
+          "area": "housing",
+          "district": "oldtown",
+          "turn": 4,
+          "choice": "connect",
+          "label": "빈집 상담과 생활 연결",
+          "description": "1년 후 돌봄 접근성 +4%p. 상담 공간을 공유하며 주택 공급은 늘리지 않습니다.",
+          "cost": 0,
+          "readyTurn": 5,
+          "applied": true,
+          "delta": {
+            "access": 0.04
+          },
+          "condition": "거주 가능한 빈집 45호 이상",
+          "evidence": {
+            "id": "oldtown",
+            "name": "기존 주거 생활권",
+            "population": 3914,
+            "children": 477,
+            "workingAge": 2170,
+            "seniors": 1267,
+            "laborSupply": 1692,
+            "housingCapacity": 1600,
+            "occupiedHomes": 1518,
+            "vacantHomes": 82,
+            "jobCapacity": 1610,
+            "employed": 1452,
+            "vacantJobs": 158,
+            "serviceCapacity": 35,
+            "staff": 70,
+            "serviceStaff": 70,
+            "effectiveCapacity": 35,
+            "serviceDemand": 85,
+            "localUsed": 35,
+            "serviceUsed": 35,
+            "importedService": 0,
+            "exportedService": 0,
+            "access": 0.68,
+            "healthAccess": 0.45,
+            "unmet": 50,
+            "coverage": 0.4117647058823529,
+            "bottlenecks": [
+              "돌봄 미충족 50명"
+            ]
+          }
+        },
+        {
+          "id": "care_request",
+          "title": "돌봄 운영 확대 요청",
+          "area": "care",
+          "district": "oldtown",
+          "turn": 6,
+          "choice": "outreach",
+          "label": "방문 일정을 함께 조정",
+          "description": "1년 후 돌봄 접근성 +8%p. 정원과 인력은 그대로이므로 공급 부족은 남을 수 있습니다.",
+          "cost": 0,
+          "readyTurn": 7,
+          "applied": true,
+          "delta": {
+            "access": 0.08
+          },
+          "condition": "돌봄 미충족 15명 이상",
+          "evidence": {
+            "id": "oldtown",
+            "name": "기존 주거 생활권",
+            "population": 3934,
+            "children": 467,
+            "workingAge": 2212,
+            "seniors": 1255,
+            "laborSupply": 1725,
+            "housingCapacity": 1600,
+            "occupiedHomes": 1550,
+            "vacantHomes": 50,
+            "jobCapacity": 1610,
+            "employed": 1514,
+            "vacantJobs": 96,
+            "serviceCapacity": 35,
+            "staff": 70,
+            "serviceStaff": 70,
+            "effectiveCapacity": 35,
+            "serviceDemand": 84,
+            "localUsed": 35,
+            "serviceUsed": 35,
+            "importedService": 0,
+            "exportedService": 0,
+            "access": 0.7200000000000001,
+            "healthAccess": 0.45,
+            "unmet": 49,
+            "coverage": 0.4166666666666667,
+            "bottlenecks": [
+              "돌봄 미충족 49명"
+            ]
+          }
+        }
+      ],
+      "achievements": [
+        {
+          "id": "reuse:center",
+          "title": "기존 시설의 새 역할",
+          "description": "중심 생활권의 시설 재편 운영과 서비스 충족률 70%",
+          "area": "plot",
+          "district": "center",
+          "turn": 4
+        },
+        {
+          "id": "home:industry",
+          "title": "다시 채워지는 주거지",
+          "description": "산업·신규 주거 생활권의 실제 입주가 초기보다 20호 넘게 증가",
+          "area": "housing",
+          "district": "industry",
+          "turn": 4
+        },
+        {
+          "id": "home:oldtown",
+          "title": "다시 채워지는 주거지",
+          "description": "기존 주거 생활권의 실제 입주가 초기보다 20호 넘게 증가",
+          "area": "housing",
+          "district": "oldtown",
+          "turn": 5
+        }
+      ],
+      "projects": [
+        {
+          "id": "houses",
+          "key": "houses:industry",
+          "district": "industry",
+          "status": "active",
+          "startedTurn": 0,
+          "readyTurn": 2
+        },
+        {
+          "id": "jobs",
+          "key": "jobs:oldtown",
+          "district": "oldtown",
+          "status": "active",
+          "startedTurn": 1,
+          "readyTurn": 2
+        },
+        {
+          "id": "integration",
+          "key": "integration",
+          "district": null,
+          "status": "active",
+          "startedTurn": 2,
+          "readyTurn": 2
+        },
+        {
+          "id": "consolidate",
+          "key": "consolidate:center",
+          "district": "center",
+          "status": "active",
+          "startedTurn": 3,
+          "readyTurn": 4
+        }
+      ]
+    },
+    {
+      "goal": "resilience",
+      "scenario": "aging",
+      "seed": 2026,
+      "year": 2034,
+      "cash": 40.93,
+      "population": 9467,
+      "metrics": {
+        "population": 9467,
+        "employed": 3807,
+        "employmentChange": -293,
+        "laborSupply": 4192,
+        "occupiedHomes": 3802,
+        "housingCapacity": 3920,
+        "jobCapacity": 4300,
+        "serviceCapacity": 190,
+        "effectiveCapacity": 190,
+        "serviceUsed": 174,
+        "serviceDemand": 193,
+        "unmet": 19,
+        "coverage": 0.9015544041450777,
+        "healthAccess": 0.815745220238724,
+        "revenue": 23.17,
+        "expenses": 21,
+        "policyExpenses": 1,
+        "baseExpenses": 20,
+        "annualBalance": 2.17,
+        "committedBalance": 2.17,
+        "cumulativeMigration": 76,
+        "births": 49,
+        "deaths": 126,
+        "inflow": 83,
+        "outflow": 67,
+        "internalIn": 0,
+        "internalOut": 0,
+        "naturalChange": -77,
+        "netMigration": 16,
+        "populationChange": -61
+      },
+      "success": true,
+      "ending": {
+        "title": "돌봄과 일상을 지킨 도시",
+        "description": "초기 대비 인구 -533명, 취업 -293명, 서비스 충족 30.16%p 변화. 선택한 목표 달성.",
+        "remaining": [],
+        "suggestion": "다음에는 주택과 일자리 중 부족한 조건을 먼저 해결하고, 정착 연결의 시행 시점을 바꿔 보세요."
+      },
+      "actions": [
+        {
+          "type": "start",
+          "id": "care",
+          "district": "oldtown",
+          "turn": 0
+        },
+        {
+          "type": "advance",
+          "turn": 0
+        },
+        {
+          "type": "start",
+          "id": "health",
+          "district": null,
+          "turn": 1
+        },
+        {
+          "type": "advance",
+          "turn": 1
+        },
+        {
+          "type": "event",
+          "optionId": "train",
+          "turn": 2
+        },
+        {
+          "type": "start",
+          "id": "consolidate",
+          "district": "industry",
+          "turn": 2
+        },
+        {
+          "type": "advance",
+          "turn": 2
+        },
+        {
+          "type": "start",
+          "id": "consolidate",
+          "district": "oldtown",
+          "turn": 3
+        },
+        {
+          "type": "advance",
+          "turn": 3
+        },
+        {
+          "type": "event",
+          "optionId": "connect",
+          "turn": 4
+        },
+        {
+          "type": "advance",
+          "turn": 4
+        },
+        {
+          "type": "advance",
+          "turn": 5
+        },
+        {
+          "type": "event",
+          "optionId": "outreach",
+          "turn": 6
+        },
+        {
+          "type": "advance",
+          "turn": 6
+        },
+        {
+          "type": "advance",
+          "turn": 7
+        }
+      ],
+      "events": [
+        {
+          "id": "enterprise",
+          "title": "지역 기업의 입주 제안",
+          "area": "work",
+          "district": "center",
+          "turn": 2,
+          "choice": "train",
+          "label": "기존 주민 교육 협력",
+          "description": "1년 후 돌봄 인력 환산 정원 +12명. 일자리 확장을 포기하고 기존 교육 공간을 공유합니다.",
+          "cost": 0,
+          "readyTurn": 3,
+          "applied": true,
+          "delta": {
+            "staff": 12
+          },
+          "condition": "빈 주택 35호 미만 · 빈 일자리 30개 이상",
+          "evidence": {
+            "id": "center",
+            "name": "중심 생활권",
+            "population": 3163,
+            "children": 396,
+            "workingAge": 1949,
+            "seniors": 818,
+            "laborSupply": 1520,
+            "housingCapacity": 1210,
+            "occupiedHomes": 1198,
+            "vacantHomes": 12,
+            "jobCapacity": 1450,
+            "employed": 1390,
+            "vacantJobs": 60,
+            "serviceCapacity": 80,
+            "staff": 85,
+            "serviceStaff": 85,
+            "effectiveCapacity": 80,
+            "serviceDemand": 57,
+            "localUsed": 57,
+            "serviceUsed": 57,
+            "importedService": 0,
+            "exportedService": 23,
+            "access": 1,
+            "healthAccess": 0.8999999999999999,
+            "unmet": 0,
+            "coverage": 1,
+            "bottlenecks": [
+              "주택 여유 부족"
+            ]
+          }
+        },
+        {
+          "id": "vacancy",
+          "title": "빈집 공동 정비 기회",
+          "area": "housing",
+          "district": "oldtown",
+          "turn": 4,
+          "choice": "connect",
+          "label": "빈집 상담과 생활 연결",
+          "description": "1년 후 돌봄 접근성 +4%p. 상담 공간을 공유하며 주택 공급은 늘리지 않습니다.",
+          "cost": 0,
+          "readyTurn": 5,
+          "applied": true,
+          "delta": {
+            "access": 0.04
+          },
+          "condition": "거주 가능한 빈집 45호 이상",
+          "evidence": {
+            "id": "oldtown",
+            "name": "기존 주거 생활권",
+            "population": 3811,
+            "children": 468,
+            "workingAge": 1846,
+            "seniors": 1497,
+            "laborSupply": 1439,
+            "housingCapacity": 1600,
+            "occupiedHomes": 1500,
+            "vacantHomes": 100,
+            "jobCapacity": 1430,
+            "employed": 1376,
+            "vacantJobs": 54,
+            "serviceCapacity": 95,
+            "staff": 100,
+            "serviceStaff": 100,
+            "effectiveCapacity": 95,
+            "serviceDemand": 99,
+            "localUsed": 89,
+            "serviceUsed": 99,
+            "importedService": 10,
+            "exportedService": 6,
+            "access": 0.8999999999999999,
+            "healthAccess": 0.7200000000000001,
+            "unmet": 0,
+            "coverage": 1,
+            "bottlenecks": []
+          }
+        },
+        {
+          "id": "care_request",
+          "title": "돌봄 운영 확대 요청",
+          "area": "care",
+          "district": "industry",
+          "turn": 6,
+          "choice": "outreach",
+          "label": "방문 일정을 함께 조정",
+          "description": "1년 후 돌봄 접근성 +8%p. 정원과 인력은 그대로이므로 공급 부족은 남을 수 있습니다.",
+          "cost": 0,
+          "readyTurn": 7,
+          "applied": true,
+          "delta": {
+            "access": 0.08
+          },
+          "condition": "돌봄 미충족 15명 이상",
+          "evidence": {
+            "id": "industry",
+            "name": "산업·신규 주거 생활권",
+            "population": 2761,
+            "children": 485,
+            "workingAge": 1755,
+            "seniors": 521,
+            "laborSupply": 1368,
+            "housingCapacity": 1110,
+            "occupiedHomes": 1092,
+            "vacantHomes": 18,
+            "jobCapacity": 1420,
+            "employed": 1171,
+            "vacantJobs": 249,
+            "serviceCapacity": 15,
+            "staff": 57,
+            "serviceStaff": 57,
+            "effectiveCapacity": 15,
+            "serviceDemand": 40,
+            "localUsed": 15,
+            "serviceUsed": 20,
+            "importedService": 5,
+            "exportedService": 0,
+            "access": 1,
+            "healthAccess": 0.85,
+            "unmet": 20,
+            "coverage": 0.5,
+            "bottlenecks": [
+              "돌봄 미충족 20명"
+            ]
+          }
+        }
+      ],
+      "achievements": [
+        {
+          "id": "sustainable",
+          "title": "지속 가능한 서비스 개선",
+          "description": "서비스 15%p 개선과 비적자 운영을 함께 달성",
+          "area": "care",
+          "district": "oldtown",
+          "turn": 1
+        },
+        {
+          "id": "care:oldtown",
+          "title": "돌봄 공백 완화",
+          "description": "기존 주거 생활권의 서비스 충족률 85% 달성",
+          "area": "care",
+          "district": "oldtown",
+          "turn": 2
+        },
+        {
+          "id": "reuse:oldtown",
+          "title": "기존 시설의 새 역할",
+          "description": "기존 주거 생활권의 시설 재편 운영과 서비스 충족률 70%",
+          "area": "plot",
+          "district": "oldtown",
+          "turn": 4
+        }
+      ],
+      "projects": [
+        {
+          "id": "care",
+          "key": "care:oldtown",
+          "district": "oldtown",
+          "status": "active",
+          "startedTurn": 0,
+          "readyTurn": 1
+        },
+        {
+          "id": "health",
+          "key": "health",
+          "district": null,
+          "status": "active",
+          "startedTurn": 1,
+          "readyTurn": 1
+        },
+        {
+          "id": "consolidate",
+          "key": "consolidate:industry",
+          "district": "industry",
+          "status": "active",
+          "startedTurn": 2,
+          "readyTurn": 3
+        },
+        {
+          "id": "consolidate",
+          "key": "consolidate:oldtown",
+          "district": "oldtown",
+          "status": "active",
+          "startedTurn": 3,
+          "readyTurn": 4
+        }
+      ]
+    }
+  ]
+}

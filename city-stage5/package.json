@@ -1,0 +1,1 @@
+{"name":"daon-restored-stage5","version":"0.9.1","private":true,"scripts":{"build":"node tools/build.cjs","start":"python3 -m http.server 4179 --bind 127.0.0.1","test":"node tests/engine.test.cjs","test:strategies":"node tests/strategies.cjs","test:browser":"node tests/browser.cjs"},"devDependencies":{"playwright":"1.62.1"},"engines":{"node":">=20"}}
