@@ -1,0 +1,23 @@
+{
+  "name": "daon-city-stage6-rc",
+  "version": "0.10.0-rc.1",
+  "private": true,
+  "scripts": {
+    "build": "node tools/build.cjs",
+    "start": "python3 -m http.server 4180 --bind 127.0.0.1",
+    "test": "node tests/engine.test.cjs",
+    "test:strategies": "node tests/strategies.cjs",
+    "test:browser": "node tests/browser.cjs",
+    "test:acceptance": "node tests/acceptance.cjs",
+    "test:interaction": "node tests/interaction-performance.cjs",
+    "test:storage": "node tests/storage-safety.cjs",
+    "test:ui": "node tests/ui-extra.cjs",
+    "package": "python3 tools/package.py"
+  },
+  "devDependencies": {
+    "playwright": "1.62.1"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

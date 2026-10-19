@@ -1,0 +1,22 @@
+{
+  "viewport": [
+    1366,
+    768
+  ],
+  "next": {
+    "x": 885.078125,
+    "y": 699.359375,
+    "bottom": 742.453125,
+    "visible": true
+  },
+  "canvas": {
+    "w": 960,
+    "h": 640
+  },
+  "hasTutorial": false,
+  "hasSettings": false,
+  "modal": {
+    "backgroundInert": false,
+    "dialogNative": false
+  }
+}

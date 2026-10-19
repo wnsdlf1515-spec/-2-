@@ -1,0 +1,42 @@
+{
+  "passed": true,
+  "errors": [],
+  "checks": [
+    "5save pendingevent RNG and delayed effect restored",
+    "drag pans withoutselection and5silhouettehitselections",
+    "pause700ms0draw0RAF",
+    "evolvedcity rendering and12remounts measured",
+    "frozen lifecycle and tabreturn preservemodel"
+  ],
+  "performance": {
+    "browser": "154.0.8037.57",
+    "platform": "linux",
+    "architecture": "x64",
+    "cpu": "AMD EPYC 9V74 80-Core Processor",
+    "logicalCPUs": 5,
+    "viewport": [
+      1366,
+      768
+    ],
+    "deviceScaleFactor": 1,
+    "headless": true,
+    "elapsedMs": 2205,
+    "drawCount": 17,
+    "drawMsTotal": 80.80000001192093,
+    "maxDrawMs": 8.199999988079071,
+    "frame": 19,
+    "scheduled": true,
+    "paused": false,
+    "hidden": false,
+    "hovered": null,
+    "selected": "care",
+    "averageDrawMs": 4.752941177171819,
+    "uiSelectMs": {
+      "mean": 17.45833332836628,
+      "max": 34.400000005960464
+    },
+    "drawsAfter12RemountsIn1100ms": 8
+  },
+  "lifecycleFreezeResume": true,
+  "realBackgroundTabHidden": false
+}

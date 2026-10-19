@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "invalidSavePreserved": true,
+  "rawDownloadExact": true,
+  "invalidImportNoMutation": true,
+  "quotaFailureReported": true,
+  "exportWorksWithoutStorage": true
+}
