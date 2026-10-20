@@ -99,3 +99,7 @@ node classroom/tests/browser.cjs
 - 동일 조 복수 조작자의 협업/권한 분담, 교사 계정/여러 수업방 목록, 계정 기반 복구는 없음.
 - 게임의 도트와 인구·정책 규칙은6단계와 동일하며 실제 정책 예측 모형이 아님.
 - 무료 호스팅의 휴면이나 임시 저장소를 전제로 수업의 안정성을 보장하지 않음.
+
+## Windows에서 MODULE_NOT_FOUND가 나올 때
+
+경로가 `AppData\Local\Temp\...zip...`이고 `start-local.cjs`를 찾지 못한다면 ZIP 안에서 CMD만 실행했을 가능성이 큽니다. Node.js를 다시 설치할 필요는 없습니다. ZIP을 우클릭해 **모두 압축 풀기**를 실행한 뒤, 풀린 `daon-classroom/classroom/수업서버-시작.cmd`를 여세요. 같은 폴더에 `start-local.cjs`와 `server.cjs`가 보여야 하며, 상위 폴더에는 `city-stage6`도 있어야 합니다. CMD만 다른 폴더로 옮기지 마세요.
