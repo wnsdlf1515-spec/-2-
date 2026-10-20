@@ -1,0 +1,238 @@
+{
+  "policies": [
+    {
+      "id": "houses",
+      "name": "빈집 정비와 주거 지원",
+      "area": "housing",
+      "scope": "district",
+      "cost": 22,
+      "delay": 2,
+      "upkeep": 1,
+      "canPause": false,
+      "kind": "construction",
+      "description": "거주 가능 주택 +100호. 2년 준비 후 운영, 실제 입주는 일자리와 정착 조건에 따릅니다."
+    },
+    {
+      "id": "jobs",
+      "name": "지역 일자리·직업 교육",
+      "area": "work",
+      "scope": "district",
+      "cost": 18,
+      "delay": 1,
+      "upkeep": 2,
+      "canPause": true,
+      "kind": "service",
+      "description": "일자리 +180개·돌봄 인력 환산 정원 +30명. 지역 구직자 연 최대 18명 연결. 노동 공급이 한도입니다."
+    },
+    {
+      "id": "care",
+      "name": "복합 돌봄센터 전환",
+      "area": "care",
+      "scope": "district",
+      "cost": 24,
+      "delay": 1,
+      "upkeep": 3,
+      "canPause": true,
+      "kind": "construction",
+      "description": "기존 공공시설을 전환해 정원 +70명·운영 인력 환산 +35명. 이용은 인력·접근성·수요에 제한됩니다."
+    },
+    {
+      "id": "health",
+      "name": "의료·이동 연결",
+      "area": "park",
+      "scope": "city",
+      "cost": 10,
+      "delay": 0,
+      "upkeep": 2,
+      "canPause": true,
+      "kind": "service",
+      "description": "도시 전체 의료 접근 +18%p·돌봄 접근 +14%p. 인접 생활권 여유 정원 공유 한도 15%→30%."
+    },
+    {
+      "id": "integration",
+      "name": "이주민 정착·지역사회 연결",
+      "area": "park",
+      "scope": "city",
+      "cost": 8,
+      "delay": 0,
+      "upkeep": 1,
+      "canPause": true,
+      "kind": "service",
+      "description": "전입 후보 연 45→75명/생활권, 연결 비율 70→95%. 주택·일자리가 없으면 유입은 제한됩니다."
+    },
+    {
+      "id": "consolidate",
+      "name": "저이용 시설 재편",
+      "area": "plot",
+      "scope": "district",
+      "cost": 16,
+      "delay": 1,
+      "upkeep": -2,
+      "canPause": false,
+      "kind": "construction",
+      "description": "중복 정원 -10명·인력 환산 +35명, 돌봄 접근 +18%p·의료 +12%p. 연 2억 절감, 수요가 크면 정원 축소에 유의하세요."
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "departure",
+      "name": "다시 머무는 도시",
+      "goal": "settlement",
+      "description": "첫 플레이 추천. 기존 주거지에 빈집은 있지만 채용 가능한 일자리가 부족합니다. 직업 교육과 정착 연결의 순서를 고민하세요."
+    },
+    {
+      "id": "arrival",
+      "name": "맞이할 준비가 필요한 도시",
+      "goal": "settlement",
+      "description": "중심·산업 지역에 일자리 여유가 있지만 빈 주택과 돌봄 공급이 부족합니다. 유입 여건을 마련한 뒤 수요 증가에 대응하세요."
+    },
+    {
+      "id": "aging",
+      "name": "가까운 일상의 도시",
+      "goal": "resilience",
+      "description": "고령 주민 비중이 높고 기존 주거지의 돌봄 인력·의료 접근이 부족합니다. 새 공급과 기존 시설 재편을 비교하세요."
+    }
+  ],
+  "goals": {
+    "settlement": {
+      "name": "정착하는 도시",
+      "description": "누적 순이동 +80명·취업 +40명, 서비스 40% 이상과 비적자 운영"
+    },
+    "resilience": {
+      "name": "함께 살아가는 도시",
+      "description": "서비스 충족 85%·의료 접근 78% 이상과 비적자 운영"
+    }
+  },
+  "initial": {
+    "population": 10000,
+    "employed": 4100,
+    "employmentChange": 0,
+    "laborSupply": 4797,
+    "occupiedHomes": 3800,
+    "housingCapacity": 4010,
+    "jobCapacity": 4100,
+    "serviceCapacity": 140,
+    "effectiveCapacity": 140,
+    "serviceUsed": 118,
+    "serviceDemand": 171,
+    "unmet": 53,
+    "coverage": 0.6900584795321637,
+    "healthAccess": 0.5644,
+    "revenue": 25,
+    "expenses": 20,
+    "policyExpenses": 0,
+    "baseExpenses": 20,
+    "annualBalance": 5,
+    "committedBalance": 5,
+    "cumulativeMigration": 0,
+    "births": 0,
+    "deaths": 0,
+    "inflow": 0,
+    "outflow": 0,
+    "internalIn": 0,
+    "internalOut": 0,
+    "naturalChange": 0,
+    "netMigration": 0,
+    "populationChange": 0
+  },
+  "districts": [
+    {
+      "id": "center",
+      "name": "중심 생활권",
+      "population": 3200,
+      "children": 400,
+      "workingAge": 2100,
+      "seniors": 700,
+      "laborSupply": 1638,
+      "housingCapacity": 1210,
+      "occupiedHomes": 1200,
+      "vacantHomes": 10,
+      "jobCapacity": 1420,
+      "employed": 1420,
+      "vacantJobs": 0,
+      "serviceCapacity": 80,
+      "staff": 85,
+      "serviceStaff": 85,
+      "effectiveCapacity": 80,
+      "serviceDemand": 50,
+      "localUsed": 45,
+      "serviceUsed": 45,
+      "importedService": 0,
+      "exportedService": 13,
+      "access": 0.9,
+      "healthAccess": 0.72,
+      "unmet": 5,
+      "coverage": 0.9,
+      "bottlenecks": [
+        "주택 여유 부족",
+        "채용 가능한 일자리 부족",
+        "돌봄 미충족 5명"
+      ]
+    },
+    {
+      "id": "oldtown",
+      "name": "기존 주거 생활권",
+      "population": 4000,
+      "children": 500,
+      "workingAge": 2200,
+      "seniors": 1300,
+      "laborSupply": 1716,
+      "housingCapacity": 1690,
+      "occupiedHomes": 1500,
+      "vacantHomes": 190,
+      "jobCapacity": 1420,
+      "employed": 1420,
+      "vacantJobs": 0,
+      "serviceCapacity": 35,
+      "staff": 40,
+      "serviceStaff": 40,
+      "effectiveCapacity": 35,
+      "serviceDemand": 87,
+      "localUsed": 35,
+      "serviceUsed": 48,
+      "importedService": 13,
+      "exportedService": 0,
+      "access": 0.68,
+      "healthAccess": 0.45,
+      "unmet": 39,
+      "coverage": 0.5517241379310345,
+      "bottlenecks": [
+        "채용 가능한 일자리 부족",
+        "돌봄 미충족 39명"
+      ]
+    },
+    {
+      "id": "industry",
+      "name": "산업·신규 주거 생활권",
+      "population": 2800,
+      "children": 550,
+      "workingAge": 1850,
+      "seniors": 400,
+      "laborSupply": 1443,
+      "housingCapacity": 1110,
+      "occupiedHomes": 1100,
+      "vacantHomes": 10,
+      "jobCapacity": 1260,
+      "employed": 1260,
+      "vacantJobs": 0,
+      "serviceCapacity": 25,
+      "staff": 30,
+      "serviceStaff": 30,
+      "effectiveCapacity": 25,
+      "serviceDemand": 34,
+      "localUsed": 25,
+      "serviceUsed": 25,
+      "importedService": 0,
+      "exportedService": 0,
+      "access": 0.8,
+      "healthAccess": 0.55,
+      "unmet": 9,
+      "coverage": 0.7352941176470589,
+      "bottlenecks": [
+        "주택 여유 부족",
+        "채용 가능한 일자리 부족",
+        "돌봄 미충족 9명"
+      ]
+    }
+  ]
+}

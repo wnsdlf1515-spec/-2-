@@ -1,0 +1,66 @@
+[
+  {
+    "name": "학생용_사전학습_안내_활동지",
+    "pages": [
+      {
+        "page": 1,
+        "bottom": 918.421875,
+        "footer": 1070.484375,
+        "horizontalOverflow": false
+      },
+      {
+        "page": 2,
+        "bottom": 788.671875,
+        "footer": 1070.484375,
+        "horizontalOverflow": false
+      },
+      {
+        "page": 3,
+        "bottom": 819.515625,
+        "footer": 1070.484375,
+        "horizontalOverflow": false
+      },
+      {
+        "page": 4,
+        "bottom": 952.421875,
+        "footer": 1070.484375,
+        "horizontalOverflow": false
+      },
+      {
+        "page": 5,
+        "bottom": 948.921875,
+        "footer": 1070.484375,
+        "horizontalOverflow": false
+      },
+      {
+        "page": 6,
+        "bottom": 968.78125,
+        "footer": 1070.484375,
+        "horizontalOverflow": false
+      }
+    ]
+  },
+  {
+    "name": "교사용_수업운영_해설",
+    "pages": [
+      {
+        "page": 1,
+        "bottom": 827.25,
+        "footer": 1070.484375,
+        "horizontalOverflow": false
+      },
+      {
+        "page": 2,
+        "bottom": 936.265625,
+        "footer": 1070.484375,
+        "horizontalOverflow": false
+      },
+      {
+        "page": 3,
+        "bottom": 981.9375,
+        "footer": 1070.484375,
+        "horizontalOverflow": false
+      }
+    ]
+  }
+]

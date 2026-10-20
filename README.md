@@ -28,3 +28,11 @@ GitHub 저장소 Settings → Pages → Build and deployment에서 Source를 Dep
 - [실제 교사 집계 화면](classroom/artifacts/teacher-final.png)
 
 교사 PC에 Node.js24 이상을 설치하고 ZIP 전체를 푼 뒤 `classroom/수업서버-시작.cmd`를 실행합니다. 표시되는 내부망 주소와 수업 참가 코드를 학생들에게 공유합니다. 20명은2인1조/10개 도시를 권장합니다. 학생 기기에는 설치가 필요 없습니다. 기존 GitHub Pages 개인용 게임은 그대로이며 실시간 수업은 교사 PC가 제공하는 별도 주소에서 실행됩니다.
+
+## 사전 학습·게임 안내·활동지
+
+- [학생용 PDF6쪽](classroom/materials/student-handout.pdf)
+- [교사용 PDF3쪽](classroom/materials/teacher-guide.pdf)
+- [PDF·편집용 DOCX·HTML 묶음](https://github.com/wnsdlf1515-spec/-2-/raw/refs/heads/main/classroom/materials/daon-class-materials-review.zip)
+
+제공된 사진의 인구 문제·해결 방안과 실제 게임 규칙을 연결한 검토본입니다. 첨부 교과서 PDF는 전송 한도 때문에 원문을 확인하지 못했으므로, 교과서 쪽수·내용 대조를 완료한 자료가 아닙니다. 관련 부분을 제공받은 후 개정할 수 있습니다.
