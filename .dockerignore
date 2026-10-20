@@ -1,0 +1,10 @@
+.git
+**/node_modules
+**/data
+**/.env
+**/artifacts
+city-stage5
+release
+city-stage6/release
+city-stage6/tests
+city-stage6/docs

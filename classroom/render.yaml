@@ -1,0 +1,19 @@
+# 배포 확인 전 제공자의 유료 웹 서비스/디스크 가격을 확인하세요.
+# Render Blueprint 생성 시 Blueprint Path를 classroom/render.yaml로 지정합니다.
+services:
+  - type: web
+    name: daon-classroom
+    runtime: docker
+    plan: starter
+    dockerfilePath: ./classroom/Dockerfile
+    dockerContext: .
+    healthCheckPath: /healthz
+    envVars:
+      - key: CLASSROOM_CREATE_KEY
+        generateValue: true
+      - key: DATA_FILE
+        value: /app/data/classroom.sqlite
+    disk:
+      name: classroom-records
+      mountPath: /app/data
+      sizeGB: 1

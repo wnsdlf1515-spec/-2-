@@ -1,0 +1,17 @@
+{
+  "name": "daon-classroom",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "build": "node tools/build.cjs",
+    "start": "node server.cjs",
+    "test": "node --test tests/server.test.cjs",
+    "test:browser": "node tests/browser.cjs",
+    "start:local": "node start-local.cjs",
+    "test:launcher": "node tests/launcher.cjs",
+    "package": "python3 tools/package.py"
+  }
+}

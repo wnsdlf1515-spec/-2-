@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "platform": "linux",
+  "archiveExtraction": true,
+  "interactivePassword": true,
+  "teacherCreate": true,
+  "gameServed": true,
+  "sqliteSaved": true,
+  "passwordNotLogged": true,
+  "cleanShutdown": true
+}

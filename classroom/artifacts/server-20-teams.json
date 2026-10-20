@@ -1,0 +1,172 @@
+{
+  "passed": true,
+  "teams": 20,
+  "streams": 21,
+  "turns": 160,
+  "strategies": [
+    "jobs oldtown",
+    "care oldtown"
+  ],
+  "results": [
+    {
+      "name": "1조",
+      "turn": 8,
+      "cash": 91.09,
+      "population": 9565,
+      "employed": 3905,
+      "coverage": 0.6722222222222223
+    },
+    {
+      "name": "2조",
+      "turn": 8,
+      "cash": 74.05,
+      "population": 9607,
+      "employed": 3792,
+      "coverage": 0.8722222222222222
+    },
+    {
+      "name": "3조",
+      "turn": 8,
+      "cash": 91.09,
+      "population": 9565,
+      "employed": 3905,
+      "coverage": 0.6722222222222223
+    },
+    {
+      "name": "4조",
+      "turn": 8,
+      "cash": 74.05,
+      "population": 9607,
+      "employed": 3792,
+      "coverage": 0.8722222222222222
+    },
+    {
+      "name": "5조",
+      "turn": 8,
+      "cash": 91.09,
+      "population": 9565,
+      "employed": 3905,
+      "coverage": 0.6722222222222223
+    },
+    {
+      "name": "6조",
+      "turn": 8,
+      "cash": 74.05,
+      "population": 9607,
+      "employed": 3792,
+      "coverage": 0.8722222222222222
+    },
+    {
+      "name": "7조",
+      "turn": 8,
+      "cash": 91.09,
+      "population": 9565,
+      "employed": 3905,
+      "coverage": 0.6722222222222223
+    },
+    {
+      "name": "8조",
+      "turn": 8,
+      "cash": 74.05,
+      "population": 9607,
+      "employed": 3792,
+      "coverage": 0.8722222222222222
+    },
+    {
+      "name": "9조",
+      "turn": 8,
+      "cash": 91.09,
+      "population": 9565,
+      "employed": 3905,
+      "coverage": 0.6722222222222223
+    },
+    {
+      "name": "10조",
+      "turn": 8,
+      "cash": 74.05,
+      "population": 9607,
+      "employed": 3792,
+      "coverage": 0.8722222222222222
+    },
+    {
+      "name": "11조",
+      "turn": 8,
+      "cash": 91.09,
+      "population": 9565,
+      "employed": 3905,
+      "coverage": 0.6722222222222223
+    },
+    {
+      "name": "12조",
+      "turn": 8,
+      "cash": 74.05,
+      "population": 9607,
+      "employed": 3792,
+      "coverage": 0.8722222222222222
+    },
+    {
+      "name": "13조",
+      "turn": 8,
+      "cash": 91.09,
+      "population": 9565,
+      "employed": 3905,
+      "coverage": 0.6722222222222223
+    },
+    {
+      "name": "14조",
+      "turn": 8,
+      "cash": 74.05,
+      "population": 9607,
+      "employed": 3792,
+      "coverage": 0.8722222222222222
+    },
+    {
+      "name": "15조",
+      "turn": 8,
+      "cash": 91.09,
+      "population": 9565,
+      "employed": 3905,
+      "coverage": 0.6722222222222223
+    },
+    {
+      "name": "16조",
+      "turn": 8,
+      "cash": 74.05,
+      "population": 9607,
+      "employed": 3792,
+      "coverage": 0.8722222222222222
+    },
+    {
+      "name": "17조",
+      "turn": 8,
+      "cash": 91.09,
+      "population": 9565,
+      "employed": 3905,
+      "coverage": 0.6722222222222223
+    },
+    {
+      "name": "18조",
+      "turn": 8,
+      "cash": 74.05,
+      "population": 9607,
+      "employed": 3792,
+      "coverage": 0.8722222222222222
+    },
+    {
+      "name": "19조",
+      "turn": 8,
+      "cash": 91.09,
+      "population": 9565,
+      "employed": 3905,
+      "coverage": 0.6722222222222223
+    },
+    {
+      "name": "20조",
+      "turn": 8,
+      "cash": 74.05,
+      "population": 9607,
+      "employed": 3792,
+      "coverage": 0.8722222222222222
+    }
+  ]
+}

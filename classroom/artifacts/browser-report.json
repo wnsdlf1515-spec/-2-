@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "checks": [
+    "teacher and2isolated browser teams",
+    "waiting/pause gates",
+    "policy investment live table",
+    "server ack preserves turn report",
+    "refresh and offline reconnect restore",
+    "two actual8turn routes and18chart points",
+    "weighted summary matches export",
+    "JSON/CSV download and teacher refresh",
+    "1280/1920layouts"
+  ],
+  "browser": "154.0.8037.57",
+  "errors": []
+}
